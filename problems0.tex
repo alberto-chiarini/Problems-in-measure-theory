@@ -1,0 +1,115 @@
+In this section we will review some of the basic set operations which will be much needed in the sequel. 
+
+\begin{problem} Let $A$, $B$ and $C$ be sets, show that 
+    \begin{equation*}
+        A\cap (B\cup C) = (A\cap B) \cup (A\cap C),\quad  A\cup (B\cap C) = (A\cup B) \cap (A\cup C).
+    \end{equation*}
+\end{problem}
+
+\begin{problem} Let $A$, $B$ be sets, show that $A\cap (A\cup B) = A$.    
+\end{problem}
+
+\begin{problem} Let $A,B\subseteq \Omega$. We define the symmetric difference to be 
+    \begin{equation*}
+        A\Delta B = (A\setminus B)\cup (B\setminus A).
+    \end{equation*}
+    Show that $A\cup B$ is the disjoint union of $A\Delta B$ and $A\cap B$. 
+\end{problem}
+
+\begin{problem} Let $A,B\subseteq \Omega$, show that 
+    \begin{equation*}
+    \Omega\setminus (A\cup B) = (\Omega\setminus A)\cap(\Omega\setminus B).
+    \end{equation*}
+\end{problem}
+
+\begin{problem} (De Morgan's law) Let $I$ be any index set and let $\{A_i\}_{i\in I}\subseteq 2^\Omega$ be a family subsets of $\Omega$. Show that 
+    \begin{equation*}
+        \Omega\setminus \bigg(\bigcup_{i\in I} A_i\bigg) = \bigcap_{i\in I} \Omega\setminus A_i. 
+    \end{equation*}
+\end{problem}
+
+
+\begin{problem} Let $f:\Omega \to E$ be some function. Recall that for any $D\subseteq \Omega$ the \emph{image} of $D$ under $f$ is the set
+    \begin{equation*}
+        f(D) = \{f(x) :\,x\in D\},
+    \end{equation*}
+    Let $A,B\subseteq \Omega$. Show that
+    \begin{itemize}
+        \item $f(A\cap B) \subseteq f(A)\cap f(B)$,
+        \item $f(A\cup B) = f(A)\cup f(B)$.
+    \end{itemize}
+    Find an example where $f(A\cap B) \neq f(A)\cap f(B)$. Is it true that $f(\Omega\setminus A) = E \setminus f(A)$?
+\end{problem}
+
+\begin{problem}Let $f:\Omega \to E$ be some function. Recall that for any $F\subseteq E$ the \emph{inverse image} of $F$ under $f$ is the set 
+    \begin{equation*}
+        f^{-1}(F) = \{x:\,f(x)\in F\}.
+    \end{equation*}
+    Let $H,K\subseteq E$. Show that, taking the inverse image commutes with the set operations:
+\begin{itemize}
+        \item $f^{-1}(H\cap K) = f^{-1}(H)\cap f^{-1}(K)$,
+        \item $f^{-1}(H\cup K) = f^{-1}(H)\cup f^{-1}(K)$,
+        \item $f^{-1}(E\setminus H) = \Omega \setminus f^{-1}(H)$.
+\end{itemize}
+\end{problem}
+
+\begin{problem} Let $f:\Omega \to E$ be some function.
+    \begin{itemize}
+        \item Let $A\subseteq \Omega$. Is it true that $f^{-1}(f(A)) = A$? Provide a proof or a counterexample.
+        \item Let $H\subseteq E$.  Is it true that $f(f^{-1}(E)) = E$? Provide a proof or a counterexample.
+    \end{itemize}
+\end{problem}
+
+\begin{problem} Recall that given a set $\Omega$, $2^{\Omega}$ denotes the set of all subsets of $\Omega$. Suppose $\Omega = \{0,1\}$, list all the elements of $2^{\Omega}$. What is $|2^{\Omega}|$, where $|\cdot|$ denotes the number of elements of a set? Suppose that $|\Omega|<\infty$, what is $|2^{\Omega}|$ in this case? 
+\end{problem}
+
+\begin{problem} Let $\{a_i\}_{i\in I} \subseteq [0,\infty]$, where $I$ is an arbitrary (index) set. Recall that their sum is defined by
+    \begin{equation*}
+        \sum_{i\in I} a_i = \sup\Big\{\sum_{i\in K} a_i:\, K\subseteq I,\text{ $K$ finite}\Big\}.
+    \end{equation*}
+Now, suppose that $I = \bbN$. Show that the above definition agrees with the standard one, that is
+\begin{equation*}
+    \sum_{i\in I} a_i = \lim_{n\to\infty} \sum_{i=1}^n a_i.
+\end{equation*}
+Show that the value of the series does not depend on the ordering of the elements in the sequence. That is, if $\sigma:\bbN\to \bbN$ is a bijection, then 
+\begin{equation*}
+    \sum_{i=1}^\infty a_i = \sum_{i=1}^\infty a_{\sigma(i)}.
+\end{equation*}
+\end{problem}
+
+\begin{problem} Let $\{a_i\}_{i\in I} \subseteq [0,\infty)$, where $I$ is an arbitrary (index) set. Suppose that
+    \begin{equation*}
+        \sum_{i\in I} a_i < \infty.
+    \end{equation*}
+Show that the set $J_n = \{i\in I:\, a_i>1/n\}$ is finite. Conclude that the set of $i\in I$ such that $a_i>0$ is at most countable. 
+\end{problem}
+
+\begin{problem} Let $\{a_i\}_{i\in I} \subseteq (0,\infty)$ be a family of \emph{positive} real numbers, where $I$ is an (index) set with uncountably many elements.
+Show that
+ \begin{equation*}
+     \sum_{i\in I} a_i = \infty.
+ \end{equation*}
+\end{problem}
+
+\begin{problem} (*) Let $\Omega$ be a non-empty set and $p_\omega\in [0,1]$, $\omega\in \Omega$ be real numbers such that 
+\begin{equation*}
+    \sum_{\omega\in \Omega} p_\omega = 1.
+\end{equation*}    
+Define the set function $\bbP:2^\Omega \to [0,1]$ by
+\begin{equation*}
+    \bbP(A) = \sum_{\omega\in A} p_\omega.
+\end{equation*}    
+Show that $\bbP$ is a measure on $2^\Omega$.
+\end{problem}
+
+\begin{problem} (*)
+    Let $A\subset \bbR$ be an open set. Show that $A$ is the union of at most countable many intervals. (\emph{Hint:} define for all $x\in A$ the interval $I_x = \bigcup_{\text{$I$ interval:} x\in I \subseteq A} I$ to be the largest interval contained in $A$ containing $x$)
+\end{problem}
+
+\begin{problem}
+    Let $I$ and $J$ be two index sets and $a_{i,j}$, $i\in I$ and $j\in J$ be non-negative real numbers. Show that 
+    \begin{equation*}
+        \sum_{i\in I} \sum_{j\in J} a_{i,j} = \sum_{j\in J} \sum_{i\in I} a_{i,j}. 
+    \end{equation*}
+\end{problem}
+

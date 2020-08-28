@@ -1,0 +1,279 @@
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%	handin_solutions.sty - LaTeX2e package for typesetting solutions to handin exercises for the  %
+%	course Measure, Integration and Probability theory.												  %
+%	Version 1.0																					  %
+%	Written by Alberto Chiarini											  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{handin_solutions}[27/3/2020 custom handin exercises macros]
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{bbm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%									    Shortcuts letters									      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Calligraphic letters
+
+\newcommand{\cA}{\ensuremath{\mathcal A}}
+\newcommand{\cB}{\ensuremath{\mathcal B}}
+\newcommand{\cC}{\ensuremath{\mathcal C}}
+\newcommand{\cD}{\ensuremath{\mathcal D}}
+\newcommand{\cE}{\ensuremath{\mathcal E}}
+\newcommand{\cF}{\ensuremath{\mathcal F}}
+\newcommand{\cG}{\ensuremath{\mathcal G}}
+\newcommand{\cH}{\ensuremath{\mathcal H}}
+\newcommand{\cI}{\ensuremath{\mathcal I}}
+\newcommand{\cJ}{\ensuremath{\mathcal J}}
+\newcommand{\cK}{\ensuremath{\mathcal K}}
+\newcommand{\cL}{\ensuremath{\mathcal L}}
+\newcommand{\cM}{\ensuremath{\mathcal M}}
+\newcommand{\cN}{\ensuremath{\mathcal N}}
+\newcommand{\cO}{\ensuremath{\mathcal O}}
+\newcommand{\cP}{\ensuremath{\mathcal P}}
+\newcommand{\cQ}{\ensuremath{\mathcal Q}}
+\newcommand{\cR}{\ensuremath{\mathcal R}}
+\newcommand{\cS}{\ensuremath{\mathcal S}}
+\newcommand{\cT}{\ensuremath{\mathcal T}}
+\newcommand{\cU}{\ensuremath{\mathcal U}}
+\newcommand{\cV}{\ensuremath{\mathcal V}}
+\newcommand{\cW}{\ensuremath{\mathcal W}}
+\newcommand{\cX}{\ensuremath{\mathcal X}}
+\newcommand{\cY}{\ensuremath{\mathcal Y}}
+\newcommand{\cZ}{\ensuremath{\mathcal Z}}
+
+% Blackboard letters
+
+\newcommand{\bbA}{\ensuremath{\mathbb A}}
+\newcommand{\bbB}{\ensuremath{\mathbb B}}
+\newcommand{\bbC}{\ensuremath{\mathbb C}}
+\newcommand{\bbD}{\ensuremath{\mathbb D}}
+\newcommand{\bbE}{\ensuremath{\mathbb E}}
+\newcommand{\bbF}{\ensuremath{\mathbb F}}
+\newcommand{\bbG}{\ensuremath{\mathbb G}}
+\newcommand{\bbH}{\ensuremath{\mathbb H}}
+\newcommand{\bbI}{\ensuremath{\mathbb I}}
+\newcommand{\bbJ}{\ensuremath{\mathbb J}}
+\newcommand{\bbK}{\ensuremath{\mathbb K}}
+\newcommand{\bbL}{\ensuremath{\mathbb L}}
+\newcommand{\bbM}{\ensuremath{\mathbb M}}
+\newcommand{\bbN}{\ensuremath{\mathbb N}}
+\newcommand{\bbO}{\ensuremath{\mathbb O}}
+\newcommand{\bbP}{\ensuremath{\mathbb P}}
+\newcommand{\bbQ}{\ensuremath{\mathbb Q}}
+\newcommand{\bbR}{\ensuremath{\mathbb R}}
+\newcommand{\bbS}{\ensuremath{\mathbb S}}
+\newcommand{\bbT}{\ensuremath{\mathbb T}}
+\newcommand{\bbU}{\ensuremath{\mathbb U}}
+\newcommand{\bbV}{\ensuremath{\mathbb V}}
+\newcommand{\bbW}{\ensuremath{\mathbb W}}
+\newcommand{\bbX}{\ensuremath{\mathbb X}}
+\newcommand{\bbY}{\ensuremath{\mathbb Y}}
+\newcommand{\bbZ}{\ensuremath{\mathbb Z}}
+
+% Frakur letters
+
+\newcommand{\frA}{\ensuremath{\mathfrak A}}
+\newcommand{\frB}{\ensuremath{\mathfrak B}}
+\newcommand{\frC}{\ensuremath{\mathfrak C}}
+\newcommand{\frD}{\ensuremath{\mathfrak D}}
+\newcommand{\frE}{\ensuremath{\mathfrak E}}
+\newcommand{\frF}{\ensuremath{\mathfrak F}}
+\newcommand{\frG}{\ensuremath{\mathfrak G}}
+\newcommand{\frH}{\ensuremath{\mathfrak H}}
+\newcommand{\frI}{\ensuremath{\mathfrak I}}
+\newcommand{\frJ}{\ensuremath{\mathfrak J}}
+\newcommand{\frK}{\ensuremath{\mathfrak K}}
+\newcommand{\frL}{\ensuremath{\mathfrak L}}
+\newcommand{\frM}{\ensuremath{\mathfrak M}}
+\newcommand{\frN}{\ensuremath{\mathfrak N}}
+\newcommand{\frO}{\ensuremath{\mathfrak O}}
+\newcommand{\frP}{\ensuremath{\mathfrak P}}
+\newcommand{\frQ}{\ensuremath{\mathfrak Q}}
+\newcommand{\frR}{\ensuremath{\mathfrak R}}
+\newcommand{\frS}{\ensuremath{\mathfrak S}}
+\newcommand{\frT}{\ensuremath{\mathfrak T}}
+\newcommand{\frU}{\ensuremath{\mathfrak U}}
+\newcommand{\frV}{\ensuremath{\mathfrak V}}
+\newcommand{\frW}{\ensuremath{\mathfrak W}}
+\newcommand{\frX}{\ensuremath{\mathfrak X}}
+\newcommand{\frY}{\ensuremath{\mathfrak Y}}
+\newcommand{\frZ}{\ensuremath{\mathfrak Z}}
+\newcommand{\fra}{\ensuremath{\mathfrak a}}
+\newcommand{\frb}{\ensuremath{\mathfrak b}}
+\newcommand{\frc}{\ensuremath{\mathfrak c}}
+\newcommand{\frd}{\ensuremath{\mathfrak d}}
+\newcommand{\fre}{\ensuremath{\mathfrak e}}
+\newcommand{\frf}{\ensuremath{\mathfrak f}}
+\newcommand{\frg}{\ensuremath{\mathfrak g}}
+\newcommand{\frh}{\ensuremath{\mathfrak h}}
+\newcommand{\fri}{\ensuremath{\mathfrak i}}
+\newcommand{\frj}{\ensuremath{\mathfrak j}}
+\newcommand{\frk}{\ensuremath{\mathfrak k}}
+\newcommand{\frl}{\ensuremath{\mathfrak l}}
+\newcommand{\frm}{\ensuremath{\mathfrak m}}
+\newcommand{\frn}{\ensuremath{\mathfrak n}}
+\newcommand{\fro}{\ensuremath{\mathfrak o}}
+\newcommand{\frp}{\ensuremath{\mathfrak p}}
+\newcommand{\frr}{\ensuremath{\mathfrak r}}
+\newcommand{\frs}{\ensuremath{\mathfrak s}}
+\newcommand{\frt}{\ensuremath{\mathfrak t}}
+\newcommand{\fru}{\ensuremath{\mathfrak u}}
+\newcommand{\frv}{\ensuremath{\mathfrak v}}
+\newcommand{\frw}{\ensuremath{\mathfrak w}}
+\newcommand{\frx}{\ensuremath{\mathfrak x}}
+\newcommand{\fry}{\ensuremath{\mathfrak y}}
+\newcommand{\frz}{\ensuremath{\mathfrak z}}
+
+% Bold letters
+
+\newcommand{\bfA}{\ensuremath{\mathbf A}}
+\newcommand{\bfB}{\ensuremath{\mathbf B}}
+\newcommand{\bfC}{\ensuremath{\mathbf C}}
+\newcommand{\bfD}{\ensuremath{\mathbf D}}
+\newcommand{\bfE}{\ensuremath{\mathbf E}}
+\newcommand{\bfF}{\ensuremath{\mathbf F}}
+\newcommand{\bfG}{\ensuremath{\mathbf G}}
+\newcommand{\bfH}{\ensuremath{\mathbf H}}
+\newcommand{\bfI}{\ensuremath{\mathbf I}}
+\newcommand{\bfJ}{\ensuremath{\mathbf J}}
+\newcommand{\bfK}{\ensuremath{\mathbf K}}
+\newcommand{\bfL}{\ensuremath{\mathbf L}}
+\newcommand{\bfM}{\ensuremath{\mathbf M}}
+\newcommand{\bfN}{\ensuremath{\mathbf N}}
+\newcommand{\bfO}{\ensuremath{\mathbf O}}
+\newcommand{\bfP}{\ensuremath{\mathbf P}}
+\newcommand{\bfQ}{\ensuremath{\mathbf Q}}
+\newcommand{\bfR}{\ensuremath{\mathbf R}}
+\newcommand{\bfS}{\ensuremath{\mathbf S}}
+\newcommand{\bfT}{\ensuremath{\mathbf T}}
+\newcommand{\bfU}{\ensuremath{\mathbf U}}
+\newcommand{\bfV}{\ensuremath{\mathbf V}}
+\newcommand{\bfW}{\ensuremath{\mathbf W}}
+\newcommand{\bfX}{\ensuremath{\mathbf X}}
+\newcommand{\bfY}{\ensuremath{\mathbf Y}}
+\newcommand{\bfZ}{\ensuremath{\mathbf Z}}
+\newcommand{\bfa}{\ensuremath{\mathbf a}}
+\newcommand{\bfb}{\ensuremath{\mathbf b}}
+\newcommand{\bfc}{\ensuremath{\mathbf c}}
+\newcommand{\bfd}{\ensuremath{\mathbf d}}
+\newcommand{\bfe}{\ensuremath{\mathbf e}}
+\newcommand{\bff}{\ensuremath{\mathbf f}}
+\newcommand{\bfg}{\ensuremath{\mathbf g}}
+\newcommand{\bfh}{\ensuremath{\mathbf h}}
+\newcommand{\bfi}{\ensuremath{\mathbf i}}
+\newcommand{\bfj}{\ensuremath{\mathbf j}}
+\newcommand{\bfk}{\ensuremath{\mathbf k}}
+\newcommand{\bfl}{\ensuremath{\mathbf l}}
+\newcommand{\bfm}{\ensuremath{\mathbf m}}
+\newcommand{\bfn}{\ensuremath{\mathbf n}}
+\newcommand{\bfo}{\ensuremath{\mathbf o}}
+\newcommand{\bfp}{\ensuremath{\mathbf p}}
+\newcommand{\bfq}{\ensuremath{\mathbf q}}
+\newcommand{\bfr}{\ensuremath{\mathbf r}}
+\newcommand{\bfs}{\ensuremath{\mathbf s}}
+\newcommand{\bft}{\ensuremath{\mathbf t}}
+\newcommand{\bfu}{\ensuremath{\mathbf u}}
+\newcommand{\bfv}{\ensuremath{\mathbf v}}
+\newcommand{\bfw}{\ensuremath{\mathbf w}}
+\newcommand{\bfx}{\ensuremath{\mathbf x}}
+\newcommand{\bfy}{\ensuremath{\mathbf y}}
+\newcommand{\bfz}{\ensuremath{\mathbf z}}
+
+% Bold Symbol letters
+
+\newcommand{\bsA}{\ensuremath{\boldsymbol A}}
+\newcommand{\bsB}{\ensuremath{\boldsymbol B}}
+\newcommand{\bsC}{\ensuremath{\boldsymbol C}}
+\newcommand{\bsD}{\ensuremath{\boldsymbol D}}
+\newcommand{\bsE}{\ensuremath{\boldsymbol E}}
+\newcommand{\bsF}{\ensuremath{\boldsymbol F}}
+\newcommand{\bsG}{\ensuremath{\boldsymbol G}}
+\newcommand{\bsH}{\ensuremath{\boldsymbol H}}
+\newcommand{\bsI}{\ensuremath{\boldsymbol I}}
+\newcommand{\bsJ}{\ensuremath{\boldsymbol J}}
+\newcommand{\bsK}{\ensuremath{\boldsymbol K}}
+\newcommand{\bsL}{\ensuremath{\boldsymbol L}}
+\newcommand{\bsM}{\ensuremath{\boldsymbol M}}
+\newcommand{\bsN}{\ensuremath{\boldsymbol N}}
+\newcommand{\bsO}{\ensuremath{\boldsymbol O}}
+\newcommand{\bsP}{\ensuremath{\boldsymbol P}}
+\newcommand{\bsQ}{\ensuremath{\boldsymbol Q}}
+\newcommand{\bsR}{\ensuremath{\boldsymbol R}}
+\newcommand{\bsS}{\ensuremath{\boldsymbol S}}
+\newcommand{\bsT}{\ensuremath{\boldsymbol T}}
+\newcommand{\bsU}{\ensuremath{\boldsymbol U}}
+\newcommand{\bsV}{\ensuremath{\boldsymbol V}}
+\newcommand{\bsW}{\ensuremath{\boldsymbol W}}
+\newcommand{\bsX}{\ensuremath{\boldsymbol X}}
+\newcommand{\bsY}{\ensuremath{\boldsymbol Y}}
+\newcommand{\bsZ}{\ensuremath{\boldsymbol Z}}
+\newcommand{\bsa}{\ensuremath{\boldsymbol a}}
+\newcommand{\bsb}{\ensuremath{\boldsymbol b}}
+\newcommand{\bsc}{\ensuremath{\boldsymbol c}}
+\newcommand{\bsd}{\ensuremath{\boldsymbol d}}
+\newcommand{\bse}{\ensuremath{\boldsymbol e}}
+\newcommand{\bsf}{\ensuremath{\boldsymbol f}}
+\newcommand{\bsg}{\ensuremath{\boldsymbol g}}
+\newcommand{\bsh}{\ensuremath{\boldsymbol h}}
+\newcommand{\bsi}{\ensuremath{\boldsymbol i}}
+\newcommand{\bsj}{\ensuremath{\boldsymbol j}}
+\newcommand{\bsk}{\ensuremath{\boldsymbol k}}
+\newcommand{\bsl}{\ensuremath{\boldsymbol l}}
+\newcommand{\bsm}{\ensuremath{\boldsymbol m}}
+\newcommand{\bsn}{\ensuremath{\boldsymbol n}}
+\newcommand{\bso}{\ensuremath{\boldsymbol o}}
+\newcommand{\bsp}{\ensuremath{\boldsymbol p}}
+\newcommand{\bsq}{\ensuremath{\boldsymbol q}}
+\newcommand{\bsr}{\ensuremath{\boldsymbol r}}
+\newcommand{\bss}{\ensuremath{\boldsymbol s}}
+\newcommand{\bst}{\ensuremath{\boldsymbol t}}
+\newcommand{\bsu}{\ensuremath{\boldsymbol u}}
+\newcommand{\bsv}{\ensuremath{\boldsymbol v}}
+\newcommand{\bsw}{\ensuremath{\boldsymbol w}}
+\newcommand{\bsx}{\ensuremath{\boldsymbol x}}
+\newcommand{\bsy}{\ensuremath{\boldsymbol y}}
+\newcommand{\bsz}{\ensuremath{\boldsymbol z}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%									    	Probability 									      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Prob}[1]{\bbP\left(#1\right)}					%	Standard probability command, argument is event
+\newcommand{\CProb}[2]{\bbP\left(\left.#1\right|#2\right)}	%	Conditional probability command, second argument is conditioned event/random variable
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%									    	Expectation 									      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\Exp}[1]{\bbE\left[#1\right]}					%	Standard expectation command, argument is random variable
+\newcommand{\CExp}[2]{\bbE\left[\left.#1\right|#2\right]}	%	Conditional expectation, second argument is conditioned event/random variable.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%									  Probabilistic limits 									      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\plim}{\ensuremath{\stackrel{\bbP}{\rightarrow}}}			%	Convergence in probability
+\newcommand{\dlim}{\ensuremath{\stackrel{d}{\rightarrow}}}				%	Convergence in distribution
+\newcommand{\aslim}{\ensuremath{\stackrel{\mathrm{a.s.}}{\rightarrow}}}	%	Almost sure convergence
+\newcommand{\llim}{\ensuremath{\stackrel{L^1}{\rightarrow}}}			%	L1 convergence
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%									    	Indicators  									      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\ind}[1]{\mathbbm{1}_{\left\{#1\right\}}}	%	Command for indicator where argument is a condition
+\newcommand{\indE}[1]{\mathbbm{1}_{#1}}					%	Command for indicator where the argument is an event 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%									  Asymptotic relations 									      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\bigO}[1]{O\left(#1\right)}				%	Big O notation
+\newcommand{\smallO}[1]{o\left(#1\right)}			%	Small o notation
+\newcommand{\bigT}[1]{\Theta\left(#1\right)}		%	Theta notation

@@ -1,0 +1,172 @@
+\begin{problem} Let $(\Omega,\cF,\mu)$ be a measure space. Show that for all $E,F\in \cF$ such that $E\subseteq F$, one has $\mu(E)\leq \mu(F)$. 
+\end{problem}
+
+\begin{problem} Let $(\Omega,\cF,\mu)$ be a measure space. Show that for all $E,F\in \cF$ then
+\begin{equation*}
+    \mu(E\cup F) = \mu(E) + \mu(F) - \mu(E\cap F).
+\end{equation*}    
+Conclude that $\mu(E\cup F) \leq \mu(E) + \mu(F)$.
+\end{problem}
+
+% \begin{problem}
+% Let $(\Omega,\cF,\mu)$ be a measure space and $(A_n)_{n\in \bbN} \subseteq \cF$. Show that 
+% \begin{equation*}
+%     \mu\bigg(\bigcup_{n\in \bbN} A_n\bigg) \leq \sum_{n=1}^\infty \mu(A_n).
+% \end{equation*}
+% \end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF)$ be a measurable space and $\mu:\cF\to [0,\infty]$ be a set function. Assume that $\mu(\varnothing)=0$, $\mu$ is finitely additive and continuous from below. Show that $\mu$ is a measure.
+\end{problem}
+
+\begin{problem}
+    Consider a non-empty uncountable set $\Omega$ and the $\sigma$-algebra 
+    \begin{equation*}
+        \cF=\{A\subseteq \Omega:\, \text{$A$ is countable or $\Omega\setminus A$ is countable}\}. 
+    \end{equation*}
+    We define the set function $\mu : \cF \to [0,\infty]$ by $\mu(E)=0$ if $E$ is countable, and $\mu(E)=1$ if $\Omega\setminus E$ is countable. Show that $\mu$ is a measure on $(\Omega,\cF)$.
+\end{problem}
+
+\begin{problem}
+Let $\Omega$ be an infinite set and $\cF = 2^\Omega$. Define $\mu$ on $\cF$ by $\mu(E)=0$ if $E$ is finite and $\mu(E)=\infty$ if $E$ is not finite. Show that $\mu$ is finitely additive but not a measure.     
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF)$ be a measurable space and $\mu:\cF\to [0,1]$ be an additive set function, that is, $\mu(A\cup B) = \mu(A) + \mu(B)$ for all $A,B\in \cF$ such that $A\cap B = \varnothing$. Show that $\mu(\varnothing) = 0$.
+\end{problem}
+
+\begin{problem}(Inclusion-exclusion) Let $(\Omega,\cF,\mu)$ be a finite measure space. Let $A_1,A_2,A_3\in \cF$. Show that
+\begin{multline*}
+    \mu(A_1\cup A_2 \cup A_3) = \mu(A_1) + \mu(A_2) + \mu(A_3) \\- \mu(A_1\cap A_2) - \mu(A_2\cap A_3) - \mu(A_3\cap A_1) + \mu(A_1\cap A_2\cap A_3).   
+\end{multline*}
+Let $A_1,\ldots,A_n\in \cF$. Show that 
+\begin{equation*}
+    \mu\Big(\bigcup_{i=1}^n A_i \Big) = \sum_{j=1}^n (-1)^{j-1} \sum_{\substack{I\subseteq \{1,\ldots,n\}\\ |I| = j}} \mu\Big(\bigcap_{i\in I} A_i\Big).
+\end{equation*}
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF,\mu)$ be a finite measure space.
+    \begin{itemize}
+        \item If $E,F\in \cF$ and $\mu(E\Delta F) =0$, then $\mu(E) = \mu(F)$.
+        \item Define $\rho(E,F) = \mu(E\Delta F)$ for all $E,F\in \cF$. Show that $\rho(E,F) \leq \rho(E,G)+\rho(G,F)$ for all $E,F,G\in \cF$.
+    \end{itemize}
+\end{problem}
+
+\begin{problem} If $\mu_1,\ldots ,\mu_n$ are measures on a measurable space $(\Omega,\cF)$, and $a_1,\ldots, a_n$ are non-negative real numbers, then $\mu:=\sum_{i=1}^n a_i \mu_i$ is a measure on $\cF$. Moreover $\mu$ is $\sigma$-finite if $\mu_i$ is $\sigma$-finite for all $i=1,\ldots,n$. 
+\end{problem}
+
+
+
+\begin{problem}
+    Let $(\Omega,\cF,\mu)$ be a measure space and $\cG\subseteq \cF$ be a $\sigma$-algebra. Show that $(\Omega,\cG,\mu)$ is a measure space.
+\end{problem}
+
+\begin{problem}
+    Let $\mu$ be a finite measure on $(\bbR,\cB_{\bbR})$. Define $F:\bbR\to\bbR$ by 
+    \begin{equation*}
+        F(x) = \mu((-\infty,x]), \quad \forall x\in \bbR.
+    \end{equation*}
+    Show that $F$ is non-decreasing, right-continuous, and 
+    \begin{equation*}
+        \lim_{x\to-\infty} F(x) = 0,\quad \lim_{x\to\infty} F(x) = \mu(\bbR).
+    \end{equation*}
+\end{problem} 
+
+\begin{problem}
+Find a measure space $(\Omega,\cF,\mu)$ and a decreasing sequence $B_1\supseteq B_2\supseteq\ldots \in \cF$ such that $\lim_{n\to\infty}\mu(B_n) > \mu(\cap_{n\in \bbN} B_n)$.    
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF,\mu)$ be a measure space and $A\in \cF$. Show that the set function $\mu_A:\cF\to[0,\infty]$ defined by $\mu_A(B):=\mu(B\cap A)$ is a measure on $(\Omega,\cF)$.  
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF)$ be a measure space $\mu:\cF\to[0,\infty]$ be a set function which is finitely additive and such that $\mu(\varnothing)=0$. Show that $\mu$ is a measure on $(\Omega,\cF)$ if and only if $\mu$ is continuous from below. 
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF)$ be a measure space $\mu:\cF\to[0,\infty]$ be a set function which is finitely additive and such that $\mu(\Omega)<\infty$. Show that $\mu$ is a measure on $(\Omega,\cF)$ if and only if $\mu$ is continuous from above. 
+\end{problem}
+
+
+\begin{problem}
+    Let $(\Omega,\cF,\mu)$ be a finite measure space. Let $(A_n)_{n\in \bbN}$ be a sequence in $\cF$. Recall that 
+    \begin{equation*}
+        \limsup_{n\to\infty} A_n = \bigcap_{n\in \bbN} \bigcup_{m\geq n} A_m,\qquad \liminf_{n\to\infty} A_n = \bigcup_{n\in \bbN} \bigcap_{m\geq n} A_m.
+    \end{equation*} 
+    Show that
+    \begin{equation*}
+        \limsup_{n\to\infty} \mu(A_n) \leq  \mu \Big(\limsup_{n\to\infty} A_n\Big),\qquad \liminf_{n\to\infty} \mu(A_n) \geq  \mu \Big(\liminf_{n\to\infty} A_n\Big).
+    \end{equation*}
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF,\mu)$ be a $\sigma$-finite measure space. Let $\cE\subseteq \cF$ be a $\pi$-system such that there exists $E_1,E_2,\ldots \in \cE$ such that $E_n\uparrow \Omega$ and $\mu(E_n)<\infty$ for all $n\in \bbN$. Show that $\mu$ is uniquely determined by its values on $\cE$.
+\end{problem}
+
+\begin{problem}  Let $F:\bbR\to \bbR$ be a non-decreasing, right-continuous function. Let $\nu_F$ be the unique measure on $(\bbR,\cB_{\bbR})$ associated to $F$. Show that $\nu_F(\{x\}) = F(x)-F(x-)$ where we define 
+    \begin{equation*}
+        F(x-) := \lim_{y\uparrow x} F(y).
+    \end{equation*} 
+Conclude that it if $F$ is continuous, then $\nu_F(\bbQ) = 0$.
+\end{problem}
+
+\begin{problem} Let $\lambda$ be the unique measure on $(\bbR,\cB_{\bbR})$ such that $\lambda((a,b]) = b-a$ for all $a<b$. Show that $\lambda$ is translation invariant, that is $\lambda(A+x) = \lambda(A)$ for all $A\in \cB_{\bbR}$ and all $x\in \bbR$, where we write $A+x := \{a+x:\, a\in A\}$ for the translation of $A$ by $x$.
+(\emph{Hint:} a solution can be obtained with the $\pi-\lambda$ theorem.)    
+\end{problem}
+
+\begin{problem} Let $\lambda$ be the unique measure on $(\bbR,\cB_{\bbR})$ such that $\lambda((a,b]) = b-a$ for all $a<b$. Show that $\lambda(\tau A) = |\tau|\lambda(A)$ for all $A\in \cB_{\bbR}$ and all $\tau\neq 0$, where we write $\tau A := \{\tau a:\, a\in A\}$ for the dilation of $A$ by $\tau$.
+\end{problem}
+
+\begin{problem}
+    Let $F:\bbR\to \bbR$ be a non-decreasing, right-continuous function. Let $\nu_F$ be the unique measure on $(\bbR,\cB_{\bbR})$ such that $\nu_F((a,b]) = F(b)-F(a)$ for all $a<b$. Show that $\nu_F$ is $\sigma$-finite.
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF,\mu)$ be a measure space. Suppose that $A,N\in \cF$ and $\mu(N) =0$. Show that $\mu(A\cup N) = \mu(A)$.
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\bbF,\bbP)$ be a probability space. Let $(A_i)_{i\in \bbN}\subseteq \cF$ be a sequence such that $\bbP(A_i)=1$ for all $i\in\bbN$. Show that $\bbP(\cap_{i\in \bbN} A_i) = 1$.
+\end{problem}
+
+\begin{problem}
+    Let $\mu$ be a finite measure on $(\bbR,\cB_{\bbR})$. Show that the set $\{x\in \bbR:\, \mu(\{x\})>0\}$ is at most countable.
+\end{problem}
+
+\begin{problem}(The Cantor set) The Lebesgue null sets include not only the countable sets but also many sets having the cardinality of the continuum. The Cantor set $C$ is the set of all $x \in [0, 1]$ that have a base-$3$ expansion
+\begin{equation*}
+    x = \sum_{j=1}^\infty \frac{a_j}{3^j},\quad \text{with $a_j\in\{0,2\}$ for all $j\in \bbN$.}
+\end{equation*} 
+Thus $C$ is obtained from $[0,1]$ by removing the open middle third $(1/3,2/3)$, then removing the middle thirds $(1/9,2/9)$ and $(7/9,8/9)$ of the remaining intervals and so forth.
+Show that 
+\begin{itemize}
+    \item $C$ is compact and with zero Lebesgue measure.
+    \item $\mathrm{Card}(C) = \mathrm{Card}([0,1])$. Hint: consider the so called Cantor function, for $x\in C$, $x=\sum_{j=1}^\infty \frac{a_j}{3^j}$, define
+    \begin{equation*}
+        f(x) =\sum_{j=1}^\infty \frac{b_j}{2^j},\quad b_j=a_j/2.
+    \end{equation*}
+    \item (*) Show that $C$ has empty interior and is totally disconnected (that is for all $x<y\in C$ there is $z\in(x,y)$ such that $z\notin C$). Moreover $C$ has no isolated points.
+\end{itemize}
+\end{problem}
+
+\begin{problem}
+    Let $E\subseteq \bbR$ be a Lebesgue measurable set and let $V$ be the Vitali set. Show that $E$ is a null-set.
+\end{problem}
+
+\begin{problem}
+    Let $(A_n)_{n\in \bbN}$ be null sets in a measure space $(\Omega,\cF,\mu)$. Show that $\cup_{n\in \bbN} A_n$ is a null set.
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF,\mu)$ be a measure space. Show that a property holds for almost all $\omega\in \Omega$ if and only if there exists $B \in \cF$ such that $\mu(B)=0$ and the property holds for all $\omega$ in $\Omega\setminus B$.
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF,\bbP)$ be a probability space. Show that a property holds for almost all $\omega\in \Omega$ if and only if there exists $\Omega'\in \cF$ such that $\bbP(\Omega')=1$ and the property holds for all $\omega$ in $\Omega'$.
+\end{problem}
+
+\begin{problem}(*) Let $E\subseteq \bbR$ be a Lebesgue measurable set such that $\cL(E)>0$. Show that there exists $N\subseteq E$ not Lebesgue measurable. (Hint: assume first $E\subseteq (0,1)$ and look at $V\cap E$ where $V$ is the Vitali set.) 
+\end{problem}
+
