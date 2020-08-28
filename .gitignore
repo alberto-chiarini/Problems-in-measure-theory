@@ -7,7 +7,6 @@
 *.fdb_latexmk
 *.blg
 *.synctex.gz
-*.pdf
 *.toc
 /auxiliary
 /.vscode
