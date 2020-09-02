@@ -57,6 +57,10 @@
 \newtheorem{problem}{Problem}[chapter]
 \theoremstyle{plain}
 
+%Solution
+\newenvironment{solution}[3][]{\par\medskip
+   \noindent \textbf{Solution to Problem #1} \emph{(by #2) }\rmfamily #3}{\qed\medskip}
+
 
 %Theorem
 \newcounter{theo}[chapter] \setcounter{theo}{0}

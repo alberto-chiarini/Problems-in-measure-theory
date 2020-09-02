@@ -1,0 +1,51 @@
+\begin{solution}[1.1]{Kempen, S.F.M.} 
+    
+\noindent a) To be proven: $A\cap (B\cup C) = (A\cap B) \cup (A\cap C)$.
+
+\noindent $``\subseteq"$ Let $x \in A\cap(B\cup C)$ then $x\in A$ and $x\in B\cup C$, which means $x\in A$ and ($x\in B$ or $x\in C$). 
+\begin{itemize}
+	\item If $x\in A$ and $x\in B$, then $x\in A\cap B$ so also $x\in (A\cap B) \cup (A\cap C)$.
+	\item If $x\in A$ and $x\in C$, then $x\in A\cap C$ so also $x\in (A\cap B) \cup (A\cap C)$.
+\end{itemize}
+
+\noindent $``\supseteq"$ Let $x\in (A\cap B) \cup (A\cap C)$ then $x\in A\cap B$ or $x\in A\cap C$.
+\begin{itemize}
+	\item If $x\in A\cap B$, then $x\in A$ and $x\in B$ so $x\in B\cup C$ so also $x\in A\cap (B \cup C)$.
+	\item If $x\in A\cap C$, then $x\in A$ and $x\in C$ so $x\in B\cup C$ so also $x\in A\cap (B \cup C)$.
+\end{itemize}
+
+\noindent b) To be proven: $A\cup(B\cap C) = (A\cup B) \cap (A\cup C)$.
+
+\noindent $``\subseteq"$ Let $x\in A\cup (B\cap C)$ then $x\in A$ or $x\in B\cap C$, which means $x\in A$ or ($x\in B$ and $x\in C$). 
+\begin{itemize}
+	\item If $x\in A$, then $x\in A\cup B$ and $x\in A\cup C$ so also $x\in (A\cup B) \cap (A\cup C)$.
+	\item If $x\in B$ and $x\in C$, then $x\in A\cup B$ and $x\in A\cup C$ so also $x\in (A\cup B) \cap (A\cup C)$.
+\end{itemize}
+\noindent $``\supseteq"$ Let $x\in (A\cup B) \cap (A\cup C)$ then $x\in A\cup B$ and $x\in A\cup C$, which means $(x\in A$ or $x\in B$) and ($x\in A$ or $x\in C$). 
+\begin{itemize}
+	\item If $x\in A$ then definitely $x\in A\cup (B\cap C)$.
+	\item If $x\notin A$ then $x\in B$ and $x\in C$ which means $x\in B\cap C$ so also $x\in A\cup (B\cap C)$.
+\end{itemize}
+\end{solution}
+
+
+\begin{solution}[1.2]{Kempen, S.F.M.} To be proven: $A\cap (A\cup B) = A$. 
+
+\noindent $``\subseteq"$ Let $x\in A\cap (A\cup B)$, then $x\in A$ so we are done.
+
+\noindent $``\supseteq"$ Let $x\in A$, then also ($x\in A$ or $x\in B$) is true, therefore $x\in A\cup B$. So $x\in A\cap (A\cup B)$. 
+\end{solution}
+
+\begin{solution}[1.5]{Kempen, S.F.M.} To be proven: $\Omega \setminus \left(\bigcup_{i\in I} A_i \right) = \bigcap_{i\in I} \Omega \setminus A_i$. 
+
+\noindent $``\subseteq"$ Let $x\in \Omega \setminus \left(\bigcup_{i\in I} A_i \right)$ then $x\in \Omega$ and $x\notin \bigcup_{i\in I} A_i$, so for all $i \in I $ holds $x\notin A_i$. Then for all $i \in I$ we have $x\in \Omega\setminus A_i$. Since this is true for any $i\in I$, we can write $x\in \bigcap_{i\in I} \Omega \setminus A_i$. 
+
+\noindent $``\supseteq"$ Let $x\in \bigcap_{i\in I} \Omega \setminus A_i$ then for all $i\in I$ we have $x\in \Omega\setminus A_i$, so $x\in \Omega$ and $x\notin A_i$. Since this holds for all $i\in I$, we can write $x\notin \bigcup_{i\in I} A_i $ and therefore $x\in \Omega \setminus \left(\bigcup_{i\in I} A_i \right)$.
+\end{solution}
+
+\begin{solution}[1.8]{Kempen, S.F.M.} 
+    
+\noindent a) The statement $f^{-1}(f(A)) = A$ is not true since $f$ is not assumed to be injective. As a counterexample, take $\Omega = \{0,1\}, E = \{0\}, f(\{0\}) = f(\{1\}) = \{0\}, A = \{0\}$ then $f(A) = \{0\}$ and $f^{-1}(f(A)) = f^{-1}(\{0\}) = \{0,1\} \neq A$.
+
+\noindent b) The statement $f(f^{-1}(H)) = H$ is not true since f is not assumed to be surjective. As a counterexample, take $\Omega = \{1\}$, $E = \{1,2\}$, $f(\{1\}) = \{1\}$, $H = \{1,2\}$ then $f^{-1}(H) = f^{-1}(\{1,2\}) = \{1\}$ and $f(f^{-1}(H)) = f(\{1\}) = \{1\} \neq H$.
+\end{solution}
