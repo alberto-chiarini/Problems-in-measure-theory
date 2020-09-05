@@ -50,6 +50,46 @@
 \noindent b) The statement $f(f^{-1}(H)) = H$ is not true since f is not assumed to be surjective. As a counterexample, take $\Omega = \{1\}$, $E = \{1,2\}$, $f(\{1\}) = \{1\}$, $H = \{1,2\}$ then $f^{-1}(H) = f^{-1}(\{1,2\}) = \{1\}$ and $f(f^{-1}(H)) = f(\{1\}) = \{1\} \neq H$.
 \end{solution}
 
+\begin{solution}[1.10]{Beurskens, T.P.J.}
+Let $n \in \bbN$, and define $K = \{1, \ldots, n\}$.
+By definition of the supremum, we then have
+$$\sum_{i = 1}^n a_i = \sum_{i \in K} a_i \leq \sup \left( \sum_{i \in K} a_i : K \subseteq I, K~\text{finite} \right) = \sum_{i \in I} a_i.$$
+Letting $n \to \infty$, we get
+\[
+\lim_{n \to \infty} \sum^n_{i = 1} a_i \leq \sum_{i \in I} a_i.
+\]
+Next, let $K \subseteq \bbN$ be finite, so that $K \subset \{1, \ldots, n\}$ for some $n \in \bbN$.
+Note that $n \geq \sup K$.
+We get
+\[
+\sum_{i \in K} a_i \leq \sum_{i \in \{1,\ldots, n\}} a_i = \sum_{i = 1}^n  a_i \leq \lim_{n\to\infty} \sum_{i = 1}^n  a_i.
+\]
+Since this holds for arbitrary finite $K$, it holds for all finite $K$.
+Thus we get
+\[
+\sum_{i \in I} a_i = \sup \left( \sum_{i \in K} a_i : K \subseteq I, K~\text{finite} \right) \leq \lim_{n\to\infty} \sum_{i = 1}^n  a_i.
+\]
+Using both inequalities, we see that indeed $\sum_{i \in I} a_i = \lim_{n \to \infty} \sum^n_{i = 1} a_i$. 
+
+We are left with showing that the sum $\sum_{i = 1}^\infty a_i$ does not depend on the ordering of the elements in the sequence $(a_i)$. This follows immediately from the fact that for any index set $I$
+\begin{equation*}
+	\sum_{i \in I} a_i = \sup\Big\{\sum_{i\in K} a_i:\, K\subseteq I,\text{ $K$ finite}\Big\}
+\end{equation*}
+is completely blind to any ordering of $I$, in fact $I$ is possibly not even ordered. To be more precise, if $\sigma:I\to I$ is a bijection, then
+\begin{equation*}
+	\begin{aligned}
+	\sum_{i \in I} a_{\sigma(i)} & =  \sup\Big\{\sum_{i\in K} a_{\sigma(i)}:\, K\subseteq I,\text{ $K$ finite}\Big\} \\ 
+	& = \sup\Big\{\sum_{i\in \sigma^{-1}(K)} a_i:\, \sigma^{-1}(K)\subseteq I,\text{ $\sigma^{-1}(K)$ finite}\Big\} = \sum_{i \in I} a_{i},
+	\end{aligned}
+\end{equation*}
+where we used that $K\subseteq I$ is finite if and only if $\sigma^{-1}(K)$ is finite.
+So, from this observation and the first part of the problem, one has that for any bijection $\sigma:\bbN\to \bbN$
+\begin{equation*}
+	\sum^\infty_{i = 1} a_i = \sum_{i\in \bbN} a_i = \sum_{i\in \bbN} a_{\sigma(i)} = \sum_{i = 1}^\infty a_{\sigma(i)},
+\end{equation*}
+where the summation in the middle is with respect the new notion.
+\end{solution}
+
 \begin{solution}[1.12]{Bakker, A.}
 	Proof by contradiction. Suppose $\sum_{i\in I}a_i < \infty$, then by Problem 1.11 we have that the set $I$ contains at most a countable number of elements $i$ with $a_i$ positive. This, together with the fact that $a_i>0$ for all $i\in I$, contradicts that there are uncountable many elements in $I$. Hence  $\sum_{i\in I}a_i = \infty$.
 \end{solution}
