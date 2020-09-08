@@ -1,73 +1,60 @@
 \begin{problem}
-    Let $(\Omega,\cF)$ be a measure space. Let $A\subseteq \Omega$ and consider the indicator function $\indE{A} : \Omega\to \bbR$, defined by 
-    \begin{equation*}
-        \indE{A}(\omega) = 1, \text{ if $\omega\in A$},\quad  \indE{A}(\omega) = 0, \text{ if $\omega\notin A$}.
-    \end{equation*}
-    Show that $\indE{A}$ is $(\cF,\cB)$-measurable if and only if $A\in \cF$.
+    Let $(\Omega,\cF,\mu)$ be a measure space. Suppose that $A,N\in \cF$ and $\mu(N) =0$. Show that $\mu(A\cup N) = \mu(A)$.
 \end{problem}
 
-\begin{problem}
-    Let $(\Omega,\cF)$ be a measure space and $A,B\in \cF$. Show that
-    \begin{equation*}
-        \indE{A\cup B} = \indE{A} + \indE{B} - \indE{A\cap B},\qquad \indE{A\cap B} = \indE{A} \indE{B}. 
-    \end{equation*}
+\begin{problem} Suppose that $(\Omega,\cF,\mu)$ is a measure space and let $N$ be a null set. Show that for all $M\subseteq N$, $M$ is a null set.
 \end{problem}
-
-\begin{problem}
-    Let $(\Omega,\cF,\bbP)$ be a probability space, and $X,Y:\Omega\to \bbR$ be random variables. Recall that $X$ and $Y$ are called independent if
-    \begin{equation*}
-        \bbP(A\cap B) = \bbP(A)\bbP(B),\qquad\forall A\in \sigma(X),\, \forall B\in \sigma(Y).
-    \end{equation*} 
-    Show that $X$ and $Y$ are independent if and only if 
-    \begin{equation*}
-        \bbP(X\geq s, Y\geq t) = \bbP(X\geq s) \bbP(Y\geq t),\qquad\forall s,t\in \bbR.
-    \end{equation*} 
-    (Hint: you might need the $\pi-\lambda$ Theorem.)
-\end{problem}
-
-\begin{problem}
-    Let $(\Omega,\cF)$ be a measurable space and $f,g:\Omega\to \bbR$ be  $\cF$-measurable functions. Show that $\max(f,g)$, $\min(f,g)$ and $|f|$ are measurable. 
-\end{problem}
-
-\begin{problem} Let $(\Omega,\cF)$ be a measurable space and $E_1,\ldots,E_n\in \cF$ be measurable sets. Show that if $a_1,\ldots,a_n$ are real numbers, then
-\begin{equation*}
-    f = \sum_{i=1}^n a_i \indE{E_i}
-\end{equation*}
-is $\cF$-measurable.
-\end{problem}
-
-\begin{problem}
-    Let $(\Omega,\cF)$ be a measurable space, $f:\Omega\to \overline{\bbR}$, and $Y = f^{-1}(\bbR)$. Show that $f$ is measurable if and only if $Y\in \cF$, $f^{-1}(\{-\infty\})\in\cF$, $f^{-1}(\{\infty\})\in \cF$, and $f$ is measurable when restricted to $Y$.  
-\end{problem}
-
-\begin{problem}
-    Let $(\Omega,\cF)$ be a measurable space and $f_i$, $i\in \bbN$ be measurable functions from $(\Omega,\cF)$ to $(\bbR,\cB_\bbR)$. Show that the set 
-    \begin{equation*}
-        \{\omega\in \Omega: \lim_{n\to \infty} f_n(\omega) = 0\}
-    \end{equation*}
-    is measurable, that is, it belongs to $\cF$.
-    (Hint: recall $\lim_{n\to \infty} f_n(\omega) = 0$ means that for all $m>0$ there exists $N>0$ such that $|f_n(\omega)|\leq 1/m$ for all $n\geq N$. Can you now write the set as countable union and intersections of measurable sets.)
-\end{problem}
-
-\begin{problem} Consider a function $f:\bbR\to \bbR$. Show that $f$ is Lebesgue measurable if and only if there exists a Borel measurable function $g$ such that $f\equiv g$ almost everywhere.
-\end{problem}
-
-\begin{problem} Show that if $f\bbR\to\bbR$ is monotone, then $f$ is Borel-measurable.
-\end{problem}
-
-\begin{problem} Let $c:[0,1]\to [0,1]$ be the Cantor function ...
     
+ \begin{problem}
+    Let $(N_n)_{n\in \bbN}$ be null sets in a measure space $(\Omega,\cF,\mu)$. Show that $\cup_{n\in \bbN} N_n$ is a null set.
 \end{problem}
 
-\begin{problem} Let $(\Omega,\cF,\mu)$ be a complete measure space. Show that 
-\begin{itemize}
-    \item if $f$ is measurable and $f\equiv g$ $\mu$-a.e. then $g$ is measurable.
-    \item if $f_n$, $n\in \bbN$ are measurable and $f_n\to f$ $\mu$-a.e. then $f$ is measurable.
+\begin{problem}
+    Let $(f_n)_{n\in \bbN}$ be a sequence of function. Show that $f_n = 0$ almost everywhere for all $n\in \bbN$ if and only if almost everywhere $f_n=0$ for all $n\in \bbN$. (Careful with the quantifiers!)
+\end{problem}
+
+\begin{problem} Let $(\Omega,\cF,\bbP)$ be a probability, we say that $A\in\cF$ happens almost surely if $\Omega\setminus A$ is a null set for $\bbP$.
+    \begin{itemize}
+        \item Show that $A$ happens almost surely if and only if $\bbP(A) = 0$.
+        \item Suppose that $A\in \cF$ happens almost surely, show that $\bbP(A) = 1$.
+        \item Assume now that $(A_n)_{n\in \bbN}\subseteq \cF$ is such that $A_n$ happens almost surely for all $n\in \bbN$. Show that $\bbP(\cap_{n\in \bbN} A_n) = 1$.
+    \end{itemize} 
+\end{problem}
+
+\begin{problem}
+        Let $E\subseteq \bbR$ be a Lebesgue measurable set and let $V$ be the Vitali set. Show that if $E \subseteq V$, then $E$ is a null-set.
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF,\mu)$ be a measure space and $(\Omega,\overline{\cF},\overline{\mu})$ its completion. Show that $\overline{A}\in \overline{\cF}$ if and only if there is $A\in \cF$ such that $A\Delta \overline{A}$ is a null set.
+\end{problem}
+
+\begin{problem}(*) Let $E\subseteq \bbR$ be a Lebesgue measurable set such that $\cL(E)>0$. Show that there exists $N\subseteq E$ not Lebesgue measurable. (Hint: assume first $E\subseteq (0,1)$ and look at $V\cap E$ where $V$ is the Vitali set.) 
+    \end{problem}
+    
+\begin{problem}(The Cantor set) The Lebesgue null sets include not only the countable sets but also many sets having the cardinality of the continuum. The Cantor set $C$ is the set of all $x \in [0, 1]$ that have a base-$3$ expansion
+        \begin{equation*}
+            x = \sum_{j=1}^\infty \frac{a_j}{3^j},\quad \text{with $a_j\in\{0,2\}$ for all $j\in \bbN$.}
+        \end{equation*} 
+        Thus $C$ is obtained from $[0,1]$ by removing the open middle third $(1/3,2/3)$, then removing the middle thirds $(1/9,2/9)$ and $(7/9,8/9)$ of the remaining intervals and so forth.
+        Show that 
+        \begin{itemize}
+            \item $C$ is compact and with zero Lebesgue measure.
+            \item $\mathrm{Card}(C) = \mathrm{Card}([0,1])$. Hint: consider the so called Cantor function, for $x\in C$, $x=\sum_{j=1}^\infty \frac{a_j}{3^j}$, define
+            \begin{equation*}
+                f(x) =\sum_{j=1}^\infty \frac{b_j}{2^j},\quad b_j=a_j/2.
+            \end{equation*}
+            \item (*) Show that $C$ has empty interior and is totally disconnected (that is for all $x<y\in C$ there is $z\in(x,y)$ such that $z\notin C$). Moreover $C$ has no isolated points.
 \end{itemize}
 \end{problem}
-
+        
 \begin{problem}
-    Let $(\Omega,\cF)$ be a measurable space and $f:\Omega\to\overline{\bbR}$ be a function. 
-    Define $f^+(\omega) = \max(f(\omega),0)$ and  $f^-(\omega) = -\min(f(\omega),0)$.
-    Show that $f$ is measurable if and only if $f^+$ and $f^{-}$ are measurable.
+    Let $(\Omega,\cF,\bbP)$ be a probability space. We say that two $\sigma$-algebras $\cA_1, \cA_2\subseteq \cF$ are independent if
+    \begin{equation*}
+        \bbP(A_1\cap A_2) = \bbP(A_1)\bbP(A_2),\quad \forall A_1\in\cA_1,\,\forall A_2\in \cA_2.
+    \end{equation*}
+    Suppose that $\cE_1$, $\cE_2$ are $\pi$-systems generating $\cA_1$ and $\cA_2$ respectively. Show that $\cA_1$ and $\cA_2$ are independent if and only if
+    \begin{equation*}
+        \bbP(A_1\cap A_2) = \bbP(A_1)\bbP(A_2),\quad \forall A_1\in\cE_1,\,\forall A_2\in \cE_2.
+    \end{equation*} 
 \end{problem}

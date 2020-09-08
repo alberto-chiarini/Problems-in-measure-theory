@@ -1,7 +1,73 @@
 \begin{problem}
-    
+    Let $(\Omega,\cF)$ be a measure space. Let $A\subseteq \Omega$ and consider the indicator function $\indE{A} : \Omega\to \bbR$, defined by 
+    \begin{equation*}
+        \indE{A}(\omega) = 1, \text{ if $\omega\in A$},\quad  \indE{A}(\omega) = 0, \text{ if $\omega\notin A$}.
+    \end{equation*}
+    Show that $\indE{A}$ is $(\cF,\cB)$-measurable if and only if $A\in \cF$.
 \end{problem}
 
 \begin{problem}
+    Let $(\Omega,\cF)$ be a measure space and $A,B\in \cF$. Show that
+    \begin{equation*}
+        \indE{A\cup B} = \indE{A} + \indE{B} - \indE{A\cap B},\qquad \indE{A\cap B} = \indE{A} \indE{B}. 
+    \end{equation*}
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF,\bbP)$ be a probability space, and $X,Y:\Omega\to \bbR$ be random variables. Recall that $X$ and $Y$ are called independent if
+    \begin{equation*}
+        \bbP(A\cap B) = \bbP(A)\bbP(B),\qquad\forall A\in \sigma(X),\, \forall B\in \sigma(Y).
+    \end{equation*} 
+    Show that $X$ and $Y$ are independent if and only if 
+    \begin{equation*}
+        \bbP(X\geq s, Y\geq t) = \bbP(X\geq s) \bbP(Y\geq t),\qquad\forall s,t\in \bbR.
+    \end{equation*} 
+    (Hint: you might need the $\pi-\lambda$ Theorem.)
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF)$ be a measurable space and $f,g:\Omega\to \bbR$ be  $\cF$-measurable functions. Show that $\max(f,g)$, $\min(f,g)$ and $|f|$ are measurable. 
+\end{problem}
+
+\begin{problem} Let $(\Omega,\cF)$ be a measurable space and $E_1,\ldots,E_n\in \cF$ be measurable sets. Show that if $a_1,\ldots,a_n$ are real numbers, then
+\begin{equation*}
+    f = \sum_{i=1}^n a_i \indE{E_i}
+\end{equation*}
+is $\cF$-measurable.
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF)$ be a measurable space, $f:\Omega\to \overline{\bbR}$, and $Y = f^{-1}(\bbR)$. Show that $f$ is measurable if and only if $Y\in \cF$, $f^{-1}(\{-\infty\})\in\cF$, $f^{-1}(\{\infty\})\in \cF$, and $f$ is measurable when restricted to $Y$.  
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF)$ be a measurable space and $f_i$, $i\in \bbN$ be measurable functions from $(\Omega,\cF)$ to $(\bbR,\cB_\bbR)$. Show that the set 
+    \begin{equation*}
+        \{\omega\in \Omega: \lim_{n\to \infty} f_n(\omega) = 0\}
+    \end{equation*}
+    is measurable, that is, it belongs to $\cF$.
+    (Hint: recall $\lim_{n\to \infty} f_n(\omega) = 0$ means that for all $m>0$ there exists $N>0$ such that $|f_n(\omega)|\leq 1/m$ for all $n\geq N$. Can you now write the set as countable union and intersections of measurable sets.)
+\end{problem}
+
+\begin{problem} Consider a function $f:\bbR\to \bbR$. Show that $f$ is Lebesgue measurable if and only if there exists a Borel measurable function $g$ such that $f\equiv g$ almost everywhere.
+\end{problem}
+
+\begin{problem} Show that if $f\bbR\to\bbR$ is monotone, then $f$ is Borel-measurable.
+\end{problem}
+
+\begin{problem} Let $c:[0,1]\to [0,1]$ be the Cantor function ...
     
+\end{problem}
+
+\begin{problem} Let $(\Omega,\cF,\mu)$ be a complete measure space. Show that 
+\begin{itemize}
+    \item if $f$ is measurable and $f\equiv g$ $\mu$-a.e. then $g$ is measurable.
+    \item if $f_n$, $n\in \bbN$ are measurable and $f_n\to f$ $\mu$-a.e. then $f$ is measurable.
+\end{itemize}
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF)$ be a measurable space and $f:\Omega\to\overline{\bbR}$ be a function. 
+    Define $f^+(\omega) = \max(f(\omega),0)$ and  $f^-(\omega) = -\min(f(\omega),0)$.
+    Show that $f$ is measurable if and only if $f^+$ and $f^{-}$ are measurable.
 \end{problem}
