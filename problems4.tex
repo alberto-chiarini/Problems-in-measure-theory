@@ -52,17 +52,16 @@ is $\cF$-measurable.
 \begin{problem} Consider a function $f:\bbR\to \bbR$. Show that $f$ is Lebesgue measurable if and only if there exists a Borel measurable function $g$ such that $f\equiv g$ almost everywhere.
 \end{problem}
 
-\begin{problem} Show that if $f\bbR\to\bbR$ is monotone, then $f$ is Borel-measurable.
+\begin{problem} Show that if $f:\bbR\to\bbR$ is monotone, then $f$ is Borel-measurable.
 \end{problem}
 
-\begin{problem} Let $c:[0,1]\to [0,1]$ be the Cantor function ...
-    
+\begin{problem} Suppose that $f:\bbR\to \bbR$ is an homeomorphism, that is $f$ is continuous with continuous inverse. Show that $f$ maps Borel measurable sets to Borel measurable sets.   
 \end{problem}
 
 \begin{problem} Let $(\Omega,\cF,\mu)$ be a complete measure space. Show that 
 \begin{itemize}
     \item if $f$ is measurable and $f\equiv g$ $\mu$-a.e. then $g$ is measurable.
-    \item if $f_n$, $n\in \bbN$ are measurable and $f_n\to f$ $\mu$-a.e. then $f$ is measurable.
+    \item if $f_n$, $n\in \bbN$ are measurable and $f_n\to f$ $\mu$-a.e.\ then $f$ is measurable.
 \end{itemize}
 \end{problem}
 
@@ -83,14 +82,23 @@ is $\cF$-measurable.
     Show that $E_y$ is measurable for all $y\in \cY$.
 \end{problem}
 
-\begin{problem}
-    
+\begin{problem} Let $(\Omega,\cF)$ and $(E,\cG)$ be measurable spaces, and let $f :\Omega \to E$
+ be a function. Suppose that $A\in \cF$, we say that $f$ is measurable on $A$ if 
+ $f^{-1}(B)\cap A\in \cF$ for all $B\in  \cG$. Show that $f$ is measurable on $A\in \cF$ if and only if $f|_A$ is $(\cF_A,\cG)$-measurable, where $\cF_A = \{A\cap B: B\in \cF\}$. 
+ Show that if $f$ is $(\cF,\cG)$-measurable, then $f$ is measurable on $A$ for all $A\in \cF$.
+\end{problem}
+
+\begin{problem} Let $(\Omega,\cF)$ be a measurable space, $f :\Omega \to \overline{\bbR}$ and $\cY=f^{-1}(\bbR)$. Then $f$ is measurable if and only if $f^{-1} ( \{ -\infty\}) \in \cF$, $f^{-1} ( \{ \infty\}) \in  \cF$, and $f$ is measurable when restricted on $\cY$. 
 \end{problem}
 
 \begin{problem}
-    
-\end{problem}
-
-\begin{problem}
-    
+    If a function $Y_A : A \to E$ is $(\cF_A, \cG)$-measurable, and $p \in E$, then
+the extension $Y$ defined by
+\begin{equation*}
+    Y (\omega) := \begin{cases}
+Y_A(\omega),  &\omega \in A,\\
+p, &\omega\notin A,
+    \end{cases}
+\end{equation*}
+is $(\cF, \cG)$-measurable.
 \end{problem}
