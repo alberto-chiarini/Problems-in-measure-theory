@@ -1,0 +1,189 @@
+\begin{solution}[2.2]{Castella, A.}
+    By the definition of a $\sigma$-algebra, all countable unions of sets in $\mathcal{F}$ are also in $\mathcal{F}$. Thus let create a sequence $(A_n)_{n\in\mathbb{N}}$ such that $A_1 = A$ and $A_i = B$ for all $i > 1$. Clearly
+    $$
+        \bigcup_{i=1}^\infty A_i = A\cup B \in \mathcal{F}.
+    $$
+    Since $A$ and $B$ are arbitrary, this must hold for all pairs of sets in $\mathcal{F}$. From the fact that $\mathcal{F}$ is a $\sigma$-algebra we find that $A^c,B^c \in \mathcal{F}$. As we have proven that unions of pairs are in $\mathcal{F}$, we find that
+    $$
+        (A^c \cup B^c)^c = A\cap B \in \mathcal{F}.
+    $$
+    This again holds for all possible pairs of sets in $\mathcal{F}$. Now let us note that
+    $$
+        A\setminus B = A\cap B^c.
+    $$
+    It is clear from the properties that we have already proven and the complementation property of $\sigma$-algebras, we can conclude that
+    $$
+        A\setminus B \in \mathcal{F}.
+    $$
+    The final set, $A\Delta B$ follows by definition. The set is defined by $(A\cup B)\setminus (A\cap B)$. It is clear that this is a composition of the properties we have already proven. Since the sets $A$ and $B$ were arbitrary, we can conclude that
+    $$
+        A\Delta B \in \mathcal{F}.
+    $$
+\end{solution}
+
+\begin{solution}[2.4]{Castella, A.} 
+    A $\sigma$-algebra $\mathcal{G}$ is defined as a set of subsets such that
+    \begin{itemize}
+        \item $E \in \mathcal{G}$,
+        \item for all infinite sequences $\{A_i\}$ in $\mathcal{G}$ the union $\bigcup_{i=1}^\infty A_i$ also belongs to the set $\mathcal{G}$,
+        \item for all sets $A$ in $\mathcal{G}$, the set $A^c$ belongs to $\mathcal{G}$.
+    \end{itemize}
+    Therefore, we begin by verifying that $\Omega \in \mathcal{F}$. From the definition of $f$ it directly follows that
+    $$
+        f^{-1}(E) = \Omega.
+    $$
+    Since $\mathcal{G}$ is a $\sigma$-algebra, we find that $E \in \mathcal{G}$. Therefore, we conclude that $\Omega \in \mathcal{F}$.
+    
+    We now verify the second condition. Let us take an arbitrary infinite sequence $\{A_i\}$ in $\mathcal{F}$. By the definition of $\mathcal{F}$ we know that for all $A_i$, there exists $B_i \in \mathcal{G}$ such that $A_i = f^{-1}(B_i)$. In order to prove the condition, we notice that
+    $$
+        \bigcup_{i=1}^\infty B_i \in \mathcal{G}.
+    $$
+    
+    Before we continue with the proof, we need to prove an intermediary. Let us take some family of sets $\{C_\alpha\}_{\alpha\in\mathcal{I}}$ where $\mathcal{I}$ is an index set. We will prove that for some function $g : \Omega \rightarrow E$ we have
+    $$
+        g^{-1}\left(\bigcup_{\alpha\in\mathcal{I}}C_\alpha\right) = \bigcup_{\alpha\in\mathcal{I}}g^{-1}(C_\alpha).
+    $$
+    We begin by showing that $g^{-1}\left(\bigcup_{\alpha\in\mathcal{I}}C_\alpha\right) \subset \bigcup_{\alpha\in\mathcal{I}}g^{-1}(C_\alpha)$. Let us take an arbitrary $a \in g^{-1}\left(\bigcup_{\alpha\in\mathcal{I}}C_\alpha\right)$. Then we find that there exists some $b \in \bigcup_{\alpha\in\mathcal{I}}C_\alpha$ such that $g(a) = b$. This implies that there exists an $\alpha \in \mathcal{I}$ such that $b \in C_\alpha$. From this we find that
+    $$
+        a \in g^{-1}(C_\alpha) \subset \bigcup_{\alpha\in\mathcal{I}}g^{-1}(C_\alpha).
+    $$
+    Since $a$ was chosen arbitrarily, we can conclude that
+    $$
+        g^{-1}\left(\bigcup_{\alpha\in\mathcal{I}}C_\alpha\right) \subset \bigcup_{\alpha\in\mathcal{I}}g^{-1}(C_\alpha).
+    $$
+    Now we show that the converse is also true. Let us take an arbitrary $a' \in \bigcup_{\alpha\in\mathcal{I}}g^{-1}(C_\alpha)$. Then we find that there must exist some $\alpha' \in \mathcal{I}$ such that $a' \in g^{-1}(C_{\alpha'})$. We can now choose some $b' \in C_{\alpha'}$ such that $g(a') = b'$. It is clear that $b' \in \bigcup_{\alpha\in\mathcal{I}}C_\alpha$ as well. Thus we know that
+    $$
+        a' \in g^{-1}\left(\bigcup_{\alpha\in\mathcal{I}}C_\alpha\right).
+    $$
+    Since again, our choice of $a'$ was arbitrary, we can conclude that
+    $$
+        \bigcup_{\alpha\in\mathcal{I}}g^{-1}(C_\alpha) \subset g^{-1}\left(\bigcup_{\alpha\in\mathcal{I}}C_\alpha\right).
+    $$
+    These two inequalities clearly imply that
+    $$
+        g^{-1}\left(\bigcup_{\alpha\in\mathcal{I}}C_\alpha\right) = \bigcup_{\alpha\in\mathcal{I}}g^{-1}(C_\alpha).
+    $$
+    
+    Using the result that we have just proven we can continue with the proof. For the infinite sequence $\{A_i\}$ we find that
+    $$
+        f^{-1}\left(\bigcup_{i=1}^\infty B_i\right) = \bigcup_{i=1}^\infty f^{-1}(B_i) = \bigcup_{i=1}^\infty A_i.
+    $$
+    By the definition of our set $\mathcal{F}$ we now find that
+    $$
+        \bigcup_{i=1}^\infty A_i \in \mathcal{F}.
+    $$
+    Therefore, we conclude that the second condition holds for $\mathcal{F}$ as well.
+    
+    We now prove the third and final condition. Let us take $A \in \mathcal{F}$. By the definition of $\mathcal{F}$ we find that there exists $B \in \mathcal{G}$ such that
+    $$
+        A = f^{-1}(B).
+    $$
+    By the definition of a $\sigma$-algebra we know that $B^c \in \mathcal{G}$. Additionally, we know that
+    $$
+        f^{-1}(B^c) = f^{-1}(B)^c = A^c.
+    $$
+    By using these two facts and the definition of the set $\mathcal{F}$ again, we find that
+    $$
+        A^c \in \mathcal{F}.
+    $$
+    This proves that the third condition holds as well.
+    
+    Since all of the required conditions hold, we can come to the final conclusion that $\mathcal{F}$ is indeed a $\sigma$-algebra.
+\end{solution}
+
+\begin{solution}[2.5]{Castella, A.}
+\begin{itemize}
+    \item Before we begin with the proof, we will prove the intermediary that if $A,B \in \mathcal{F}$, then $A \setminus B \in \mathcal{F}$. We begin by noting that
+    $$
+        A \setminus B = A \cap (B^c).
+    $$
+    From this it becomes very clear that the statement is true. We know by the definition of a $\sigma$-algebra that $B \in \mathcal{F}$ implies $B^c \in \mathcal{F}$. Additionally, we know that intersections of infinite sequences also belong to the same $\sigma$-algebra. We take the sequence $A_1 = A$, $A_i = B^c$ for $i \in \mathbb{N}\setminus\{1\}$. With this we find that $A \cap B^c \in \mathcal{F}$ and therefore
+    $$
+        A\setminus B \in \mathcal{F}.
+    $$
+    We now proceed to showing that for all infinite sequences $(A_n)_{n\in\mathbb{N}}$, there exits a mutually disjoint sequence who's union is equal to $\cup_{n\in\mathbb{N}}A_n$. We define the sequence $(E_n)_{n\in\mathbb{N}}$ such that
+    $$
+        E_n = A_n \setminus \bigcup_{i=1}^{n-1}A_i.
+    $$
+    By the intermediary and since infinite unions, and by the same argument as in the intermediary, also finite unions are contained in the $\sigma$-algebra, it is easy to see that
+    $$
+        E_n \in \mathcal{F}
+    $$
+    for all $n\in\mathbb{N}$. It is clear from the definition of the sequence that it is mutually disjoint and that its union is equal to the union of $(A_n)_{n\in\mathbb{N}}$.
+    \item We take the same arbitrary sequence $(A_n)_{n\in\mathbb{N}}$ as in the previous item. We define the sequence $(F_n)_{n\in\mathbb{N}}$ by
+    $$
+        F_n = A_n \cup \left(\bigcup_{i=1}^{n-1}A_i\right) = \bigcup_{i=1}^n A_i.
+    $$
+    We first note that it is clear from the definition that this is an increasing sequence, as each element is the union of $A_n$ and all of its predecessors. As mentioned in the previous item, infinite unions are contained in the $\sigma$-algebra as well as finite unions. Therefore we know that
+    $$
+        F_n \in \mathcal{F}
+    $$
+    for all $n \in \mathbb{N}$. From the definition of a union we also know that
+    $$
+        \bigcup_{i=1}^\infty \left(\bigcup_{j=1}^i A_j\right) = \bigcup_{i=1}^\infty A_n.
+    $$
+    Thus we have now proven that the sequence $(F_n)_{n\in\mathbb{N}}$ is such that $F_n \subset F_{n+1}$ and $\cup_{n\in\mathbb{N}}A_n = \cup_{n\in\mathbb{N}}F_n$.
+\end{itemize}
+\end{solution}
+
+\begin{solution}[2.14]{Castella, A.}
+    In order to prove equality of the sets, we will prove that they are both subsets of one another.
+    \begin{itemize}
+        \item As we know, the set $\mathcal{B}_{\mathbb{R}^2}$ is generated by the $\pi$-system of open rectangles. Let us assume that $\mathcal{A}$ is the set of open rectangles in $\mathbb{R}^2$. Let us take some arbitrary $A \in \mathcal{A}$, then there exists $a,b,c,d \in \mathbb{R}$ such that $a < b$, $c < d$, and $A = (a,b)\times(c,d)$. Since the Borel set $\mathcal{B}_\mathbb{R}$ is generated by the set of open intervals in $\mathbb{R}$, we find that $(a,b), (c,d) \in \mathcal{B}_\mathbb{R}$. From this we immediately find that $(a,b)\times(c,d) \in \mathcal{B}_\mathbb{R}\times\mathcal{B}_\mathbb{R}$. Since $\mathcal{B}_\mathbb{R}\otimes\mathcal{B}_\mathbb{R}$ is the $\sigma$-algebra generated by the cross product $\mathcal{B}_\mathbb{R}\times\mathcal{B}_\mathbb{R}$ we find that
+        $$
+            \mathcal{B}_{\mathbb{R}^2} \subset \mathcal{B}_\mathbb{R}\otimes\mathcal{B}_\mathbb{R}.
+        $$
+        \item We now prove the converse. Let us begin by defining the projections $\pi_1$ and $\pi_2$ as
+        $$
+            \pi_1(x,y) = x
+        $$
+        and
+        $$
+            \pi_2(x,y) = y.
+        $$
+        We will show that these two functions are measurable with respect to $\cB_{\bbR^2}$ and $\cB_{\bbR}$. Let us take an arbitrary $t \in \mathbb{R}$. We will show that the set
+        $$
+            A = \{(x\times y) \in \mathbb{R}^2 : \pi_1(x,y) < t\}
+        $$
+        is a Borel set. We find that $\pi_1(x,y) < t$ if and only if $x < t$. Thus we find that
+        $$
+            A = (-\infty, t) \times \mathbb{R}.
+        $$
+        Let us define the set $B_n$ as
+        $$
+            B_n = (-n,t) \times (-n,n)
+        $$
+        Clearly, for all $n\in\mathbb{N}$, the set $B_n$ is an open rectangle and therefore $B_n \in \cB_{\bbR^2}$. We also find that
+        $$
+            \bigcup_{i=1}^\infty B_n = (-\infty,t)\times \mathbb{R} = A.
+        $$
+        Since $\cB_{\bbR^2}$ is a $\sigma$-algebra, it contains all countable unions of its sets. Therefore, we find that
+        $$
+            \bigcup_{i=1}^\infty B_n = A \in \cB_{\bbR^2}.
+        $$
+        Thus the set $A$ is indeed a Borel measurable set. Since $t$ was chosen arbitrarily, this holds for all $t \in \mathbb{R}$. Thus $\pi_1$ is a measurable function. The proof is analogous for $\pi_2$. Since both of these functions are measurable, we know that the preimage of a set in $\cB_{\bbR}$ is in $\cB_{\bbR^2}$. Therefore, for all $A \in \cB_{\bbR}$, we find that
+        $$
+            A \times \mathbb{R} \in \cB_{\bbR^2},
+        $$
+        by the measurability of $\pi_1$ and
+        $$
+            \mathbb{R} \times A \in \cB_{\bbR^2},
+        $$
+        by the measurability of $\pi_2$. Let us take arbitrary $A,B \in \cB_{\bbR}$. By our previous result and since $\cB_{\bbR^2}$ is a $\sigma$-algebra and thus contains countable intersections, we know that
+        $$
+            (A\times\mathbb{R})\cap(\mathbb{R}\times B) = A\times B \in \cB_{\bbR^2}.
+        $$
+        By the fact that $A$ and $B$ were chosen arbitrarily we find that
+        $$
+            \cB_{\bbR} \times \cB_{\bbR} \subset \cB_{\bbR^2}.
+        $$
+        Since $\cB_{\bbR}\otimes\cB_{\bbR}$ is the $\sigma$-algebra generated by the Cartesian product of $\cB_{\bbR}$ with itself, we can conclude that
+        $$
+            \cB_{\bbR}\otimes\cB_{\bbR} \subset \cB_{\bbR^2}.
+        $$
+    \end{itemize}
+    Combining both of the results, we arrive at the final conclusion that
+    $$
+        \mathcal{B}_{\mathbb{R}^2} = \mathcal{B}_\mathbb{R}\otimes\mathcal{B}_\mathbb{R}.
+    $$
+\end{solution}
