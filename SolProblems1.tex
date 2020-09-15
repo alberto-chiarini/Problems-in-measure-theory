@@ -1,3 +1,23 @@
+% \begin{solution}[2.1]{Beerens, L.}
+%     Let $(\Omega, \mathcal{A}_0)$ be a measurable space, where $\Omega\neq\varnothing$. Assume that $\mathcal{A}_0$ has an odd number of elements. Choose $n\in\mathbb{N}$ such that $|\mathcal{A}_0|=2n+1$. Choose some set $A\in \mathcal{A}_0$. Since $\mathcal{A}_0$ is a $\sigma$-algebra, we know that $A^c\in\mathcal{A}_0$. Let $\mathcal{A}_1 = \mathcal{A}\setminus\{A, A^c\}$.
+%     For all elements $A\in\mathcal{A}_1$, the complement is clearly still in $\mathcal{A}_1$.
+%     We can repeat the process by noticing that
+%     $$
+%         \forall_{A\in\mathcal{A}_k}: A^c\in\mathcal{A}_k,
+%     $$
+%     for all $k\leq n$.
+%     For $k=0$, it is true since we know that $\mathcal{A}_0$ is a $\sigma$-algebra. Assume that for some $k\in\mathbb{N}\cap[0,n)$ we have
+%     $$
+%         \forall A\in\mathcal{A}_k}: A^c\in\mathcal{A}_k.
+%     $$
+%     Note that $|\mathcal{A}_k|=2(n-k)+1\geq 3$, since $k\leq n -1$. We can thus create $\mathcal{A}_{k+1}$ using the method of picking some set $A\in\mathcal{
+%     A}_{k}$ and defining $\mathcal{A}_{k+1} = \mathcal{A}_k\setminus\{A, A^c\}$. Let $B\in\mathcal{A}_{k+1}\subset\mathcal{A}_0$. By the fact that $\mathcal{A}_0$ is a $\sigma$-algebra, we know that $B^c\in\mathcal{A_0}$. Clearly, $B^c$ has not been removed in any of the $k+1$ steps, since that would imply that $B$ was removed too. Therefore, $B^c\in\mathcal{A}_{k+1}$. By induction, we find that
+%     $$
+%         \forall_{A\in\mathcal{A}_n}: A^c\in\mathcal{A}_n.
+%     $$
+%     However, $|\mathcal{A}_n|=1$. Let $A\in\mathcal{A}_n$. Since we assumed that $\Omega\neq \varnothing$, we know that $A^c\neq A$, which leads to a contradiction. Therefore, we can conclude that $\mathcal{A}_0$ has an even amount of elements.
+% \end{solution}
+
 \begin{solution}[2.2]{Castella, A.}
     By the definition of a $\sigma$-algebra, all countable unions of sets in $\mathcal{F}$ are also in $\mathcal{F}$. Thus let create a sequence $(A_n)_{n\in\mathbb{N}}$ such that $A_1 = A$ and $A_i = B$ for all $i > 1$. Clearly
     $$
@@ -21,7 +41,7 @@
     $$
 \end{solution}
 
-\begin{solution}[2.4]{Castella, A.} 
+\begin{solution}[2.4]{Castella, A.}
     A $\sigma$-algebra $\mathcal{G}$ is defined as a set of subsets such that
     \begin{itemize}
         \item $E \in \mathcal{G}$,
@@ -33,12 +53,12 @@
         f^{-1}(E) = \Omega.
     $$
     Since $\mathcal{G}$ is a $\sigma$-algebra, we find that $E \in \mathcal{G}$. Therefore, we conclude that $\Omega \in \mathcal{F}$.
-    
+
     We now verify the second condition. Let us take an arbitrary infinite sequence $\{A_i\}$ in $\mathcal{F}$. By the definition of $\mathcal{F}$ we know that for all $A_i$, there exists $B_i \in \mathcal{G}$ such that $A_i = f^{-1}(B_i)$. In order to prove the condition, we notice that
     $$
         \bigcup_{i=1}^\infty B_i \in \mathcal{G}.
     $$
-    
+
     Before we continue with the proof, we need to prove an intermediary. Let us take some family of sets $\{C_\alpha\}_{\alpha\in\mathcal{I}}$ where $\mathcal{I}$ is an index set. We will prove that for some function $g : \Omega \rightarrow E$ we have
     $$
         g^{-1}\left(\bigcup_{\alpha\in\mathcal{I}}C_\alpha\right) = \bigcup_{\alpha\in\mathcal{I}}g^{-1}(C_\alpha).
@@ -63,7 +83,7 @@
     $$
         g^{-1}\left(\bigcup_{\alpha\in\mathcal{I}}C_\alpha\right) = \bigcup_{\alpha\in\mathcal{I}}g^{-1}(C_\alpha).
     $$
-    
+
     Using the result that we have just proven we can continue with the proof. For the infinite sequence $\{A_i\}$ we find that
     $$
         f^{-1}\left(\bigcup_{i=1}^\infty B_i\right) = \bigcup_{i=1}^\infty f^{-1}(B_i) = \bigcup_{i=1}^\infty A_i.
@@ -73,7 +93,7 @@
         \bigcup_{i=1}^\infty A_i \in \mathcal{F}.
     $$
     Therefore, we conclude that the second condition holds for $\mathcal{F}$ as well.
-    
+
     We now prove the third and final condition. Let us take $A \in \mathcal{F}$. By the definition of $\mathcal{F}$ we find that there exists $B \in \mathcal{G}$ such that
     $$
         A = f^{-1}(B).
@@ -87,7 +107,7 @@
         A^c \in \mathcal{F}.
     $$
     This proves that the third condition holds as well.
-    
+
     Since all of the required conditions hold, we can come to the final conclusion that $\mathcal{F}$ is indeed a $\sigma$-algebra.
 \end{solution}
 
@@ -124,6 +144,40 @@
     $$
     Thus we have now proven that the sequence $(F_n)_{n\in\mathbb{N}}$ is such that $F_n \subset F_{n+1}$ and $\cup_{n\in\mathbb{N}}A_n = \cup_{n\in\mathbb{N}}F_n$.
 \end{itemize}
+\end{solution}
+
+\begin{solution}[2.13]{Beerens, L.}
+    Let $\Omega_1$ and $\Omega_2$ be two non-empty sets, and let $\mathcal{F}_1$ and $\mathcal{F}_2$ be $\sigma$-algebras on $\Omega_1$ and $\Omega_2$ respectively. We consider the product $\sigma$-algebra on $\Omega_1\times\Omega_2$ given by
+    $$
+        \mathcal{F}_1\otimes\mathcal{F}_2:=\sigma(\{ A_1\times A_2: A_1\in\mathcal{F}_1, A_2\in\mathcal{F}_2 \}).
+    $$
+    Suppose that $\mathcal{F}_1$ is generated by $\mathcal{A}_1$ and $\mathcal{F}_2$ is generated by $\mathcal{A}_2$. Let $\mathcal{F}:=\mathcal{F}_1\otimes\mathcal{F}_2$ and
+    $$
+        \mathcal{S}:=\sigma(\{ A_1\times A_2: A_1\in\mathcal{A}_1, A_2\in\mathcal{A}_2 \}).
+    $$
+    Let
+    $$
+        A\in\{ A_1\times A_2: A_1\in\mathcal{A}_1, A_2\in\mathcal{A}_2 \}.
+    $$
+    Then $A=A_1\times A_2$ for some $A_1\in\mathcal{A}_1$ and $A_2\in\mathcal{A}_2$. Since $\mathcal{A}_1\subset\mathcal{F}_1$ and $\mathcal{A}_2\subset\mathcal{F}_2$, we find that
+    $$
+        A\in\{ A_1\times A_2: A_1\in\mathcal{F}_1, A_2\in\mathcal{F}_2 \}.
+    $$
+    Therefore,
+    $$
+        \{ A_1\times A_2: A_1\in\mathcal{A}_1, A_2\in\mathcal{A}_2 \}\subset\{ A_1\times A_2: A_1\in\mathcal{F}_1, A_2\in\mathcal{F}_2 \},
+    $$
+    from which it follows that $\mathcal{S}\subset\mathcal{F}$ (By Problem 2.12).
+
+    To prove the converse, suppose that $F\in\{ A_1\times A_2: A_1\in\mathcal{F}_1, A_2\in\mathcal{F}_2 \}$. Then there exist $A_1\in\mathcal{F}_1$ and $A_2\in\mathcal{F}_2$ such that $F = A_1\times A_2 = (A_1\times\Omega_2)\cap(\Omega_1\times A_2)$. By definition for all $A\in\mathcal{A}_1$ we have
+    $$
+         A\times\Omega_2\in \mathcal{S}.
+    $$
+    Therefore, the collection $\{A \in \cF_1: A\times \Omega_2 \in \cS\}$ is a $\sigma$-algebra containing $\cA_1$ and contained in $\cF_1$. It follows that, 
+    $$
+    \cF_1 = \sigma(\mathcal{A}_1) = \{A \in \cF_1: A\times \Omega_2 \in \cS\}.
+    $$
+    Since $A_1\in\mathcal{F}_1$, it now follows that $A_1\times\Omega_2\in \mathcal{S}$. Analogously, $\Omega_1\times A_2\in \mathcal{S}$. Since $\mathcal{S}$ is a $\sigma$-algebra, it follows that $F = (A_1\times\Omega_2)\cap(\Omega_1\times A_2) \in \mathcal{S}$. Thus, $\mathcal{F}\subset\mathcal{S}$, from which we can conclude that $\mathcal{F}=\mathcal{S}$, as was to be shown.
 \end{solution}
 
 \begin{solution}[2.14]{Castella, A.}
@@ -186,4 +240,4 @@
     $$
         \mathcal{B}_{\mathbb{R}^2} = \mathcal{B}_\mathbb{R}\otimes\mathcal{B}_\mathbb{R}.
     $$
-\end{solution}
+\end{solution} 
