@@ -1,22 +1,22 @@
-\begin{solution}[2.1]{Beerens, L.}
-    Let $(\Omega, \mathcal{A}_0)$ be a measurable space, where $\Omega\neq\varnothing$. Assume that $\mathcal{A}_0$ has an odd number of elements. Choose $n\in\mathbb{N}$ such that $|\mathcal{A}_0|=2n+1$. Choose some set $A\in \mathcal{A}_0$. Since $\mathcal{A}_0$ is a $\sigma$-algebra, we know that $A^c\in\mathcal{A}_0$. Let $\mathcal{A}_1 = \mathcal{A}\setminus\{A, A^c\}$.
-    For all elements $A\in\mathcal{A}_1$, the complement is clearly still in $\mathcal{A}_1$.
-    We can repeat the process by noticing that
-    $$
-        \forall_{A\in\mathcal{A}_k}: A^c\in\mathcal{A}_k,
-    $$
-    for all $k\leq n$.
-    For $k=0$, it is true since we know that $\mathcal{A}_0$ is a $\sigma$-algebra. Assume that for some $k\in\mathbb{N}\cap[0,n)$ we have
-    $$
-        \forall_{A\in\mathcal{A}_k}: A^c\in\mathcal{A}_k.
-    $$
-    Note that $|\mathcal{A}_k|=2(n-k)+1\geq 3$, since $k\leq n -1$. We can thus create $\mathcal{A}_{k+1}$ using the method of picking some set $A\in\mathcal{
-    A}_{k}$ and defining $\mathcal{A}_{k+1} = \mathcal{A}_k\setminus\{A, A^c\}$. Let $B\in\mathcal{A}_{k+1}\subset\mathcal{A}_0$. By the fact that $\mathcal{A}_0$ is a $\sigma$-algebra, we know that $B^c\in\mathcal{A_0}$. Clearly, $B^c$ has not been removed in any of the $k+1$ steps, since that would imply that $B$ was removed too. Therefore, $B^c\in\mathcal{A}_{k+1}$. By induction, we find that
-    $$
-        \forall_{A\in\mathcal{A}_n}: A^c\in\mathcal{A}_n.
-    $$
-    However, $|\mathcal{A}_n|=1$. Let $A\in\mathcal{A}_n$. Since we assumed that $\Omega\neq \varnothing$, we know that $A^c\neq A$, which leads to a contradiction. Therefore, we can conclude that $\mathcal{A}_0$ has an even amount of elements.
-\end{solution}
+% \begin{solution}[2.1]{Beerens, L.}
+%     Let $(\Omega, \mathcal{A}_0)$ be a measurable space, where $\Omega\neq\varnothing$. Assume that $\mathcal{A}_0$ has an odd number of elements. Choose $n\in\mathbb{N}$ such that $|\mathcal{A}_0|=2n+1$. Choose some set $A\in \mathcal{A}_0$. Since $\mathcal{A}_0$ is a $\sigma$-algebra, we know that $A^c\in\mathcal{A}_0$. Let $\mathcal{A}_1 = \mathcal{A}\setminus\{A, A^c\}$.
+%     For all elements $A\in\mathcal{A}_1$, the complement is clearly still in $\mathcal{A}_1$.
+%     We can repeat the process by noticing that
+%     $$
+%         \forall_{A\in\mathcal{A}_k}: A^c\in\mathcal{A}_k,
+%     $$
+%     for all $k\leq n$.
+%     For $k=0$, it is true since we know that $\mathcal{A}_0$ is a $\sigma$-algebra. Assume that for some $k\in\mathbb{N}\cap[0,n)$ we have
+%     $$
+%         \forall A\in\mathcal{A}_k}: A^c\in\mathcal{A}_k.
+%     $$
+%     Note that $|\mathcal{A}_k|=2(n-k)+1\geq 3$, since $k\leq n -1$. We can thus create $\mathcal{A}_{k+1}$ using the method of picking some set $A\in\mathcal{
+%     A}_{k}$ and defining $\mathcal{A}_{k+1} = \mathcal{A}_k\setminus\{A, A^c\}$. Let $B\in\mathcal{A}_{k+1}\subset\mathcal{A}_0$. By the fact that $\mathcal{A}_0$ is a $\sigma$-algebra, we know that $B^c\in\mathcal{A_0}$. Clearly, $B^c$ has not been removed in any of the $k+1$ steps, since that would imply that $B$ was removed too. Therefore, $B^c\in\mathcal{A}_{k+1}$. By induction, we find that
+%     $$
+%         \forall_{A\in\mathcal{A}_n}: A^c\in\mathcal{A}_n.
+%     $$
+%     However, $|\mathcal{A}_n|=1$. Let $A\in\mathcal{A}_n$. Since we assumed that $\Omega\neq \varnothing$, we know that $A^c\neq A$, which leads to a contradiction. Therefore, we can conclude that $\mathcal{A}_0$ has an even amount of elements.
+% \end{solution}
 
 \begin{solution}[2.2]{Castella, A.}
     By the definition of a $\sigma$-algebra, all countable unions of sets in $\mathcal{F}$ are also in $\mathcal{F}$. Thus let create a sequence $(A_n)_{n\in\mathbb{N}}$ such that $A_1 = A$ and $A_i = B$ for all $i > 1$. Clearly
@@ -146,7 +146,6 @@
 \end{itemize}
 \end{solution}
 
-
 \begin{solution}[2.13]{Beerens, L.}
     Let $\Omega_1$ and $\Omega_2$ be two non-empty sets, and let $\mathcal{F}_1$ and $\mathcal{F}_2$ be $\sigma$-algebras on $\Omega_1$ and $\Omega_2$ respectively. We consider the product $\sigma$-algebra on $\Omega_1\times\Omega_2$ given by
     $$
@@ -170,15 +169,15 @@
     $$
     from which it follows that $\mathcal{S}\subset\mathcal{F}$ (By \textbf{Problem 2.12}).
 
-    To prove the converse, suppose that $F\in\{ A_1\times A_2: A_1\in\mathcal{F}_1, A_2\in\mathcal{F}_2 \}$. Then there exist $A_1\in\mathcal{F}_1$ and $A_2\in\mathcal{F}_2$ such that $F = A_1\times A_2 = (A_1\times\Omega_2)\cap(\Omega_1\times A_2)$. By definition
+    To prove the converse, suppose that $F\in\{ A_1\times A_2: A_1\in\mathcal{F}_1, A_2\in\mathcal{F}_2 \}$. Then there exist $A_1\in\mathcal{F}_1$ and $A_2\in\mathcal{F}_2$ such that $F = A_1\times A_2 = (A_1\times\Omega_2)\cap(\Omega_1\times A_2)$. By definition for all $A\in\mathcal{A}_1$ we have
     $$
-        \forall_{A\in\mathcal{A}_1}: A\times\Omega_2\in \mathcal{S}.
+         A\times\Omega_2\in \mathcal{S}.
     $$
     Thus we find that
     $$
         \sigma(\mathcal{A}_1)\times \{\Omega_2\} = \sigma(\mathcal{A}_1\times \{\Omega_2\})\subset \mathcal{S}.
     $$
-    Since $A_1\in\mathcal{F}_1 = \sigma(\mathcal{A}_1)$, it now follows that $A_1\times\Omega_2\in \mathcal{S}$. Analogously, $\Omega_1\times A_2\in \mathcal{S}$. Since $\mathcal{S}$ is a $\sigma$-algebra, it follows that $F\in \mathcal{S}$. Thus, $\mathcal{F}\subset\mathcal{S}$, from which we can conclude that $\mathcal{F}=\mathcal{S}$, as was to be shown.
+    Since $A_1\in\mathcal{F}_1 = \sigma(\mathcal{A}_1)$, it now follows that $A_1\times\Omega_2\in \mathcal{S}$. Analogously, $\Omega_1\times A_2\in \mathcal{S}$. Since $\mathcal{S}$ is a $\sigma$-algebra, it follows that $F = (A_1\times\Omega_2)\cap(\Omega_1\times A_2) \in \mathcal{S}$. Thus, $\mathcal{F}\subset\mathcal{S}$, from which we can conclude that $\mathcal{F}=\mathcal{S}$, as was to be shown.
 \end{solution}
 
 \begin{solution}[2.14]{Castella, A.}
