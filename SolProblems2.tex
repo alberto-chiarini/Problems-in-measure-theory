@@ -1,0 +1,43 @@
+\begin{solution}[3.11]{Beerens, L.}
+    \begin{itemize}
+        \item Let $x_1,x_2\in\mathbb{R}$ with $x_1<x_2$. Then
+        $$
+            F(x_2) = \mu((-\infty,x_1]\cup (x_1,x_2]) = \mu((-\infty, x_1)) + \mu((x_1,x_2])\geq\mu((-\infty, x_1)) = F(x_1).
+        $$
+        Therefore, $F$ is non-decreasing.
+        
+        \item Consider $\lim_{x\downarrow x_0}F(x)$. This can be written as 
+        $$
+            \lim_{x\downarrow x_0}\mu((-\infty,x]).
+        $$
+        We know that this limit exists, so we can look at a sequence that converges to $x_0$ from above instead. Let $(x_n)$ be a strictly decreasing sequence in $\mathbb{R}$ such that $x_n\rightarrow x_0$. For all $n\in\mathbb{N}$, let $A_n:=(-\infty,x_n]$. Then
+        $$
+            \lim_{x\downarrow x_0}\mu((-\infty,x]) = \lim_{n\rightarrow \infty}\mu((-\infty,x_n]) = \lim_{n\rightarrow \infty}\mu(A_n).
+        $$
+        Since $A_n$ is a decreasing sequence of measurable sets such that $\mu(A_1)$ is finite, we find that
+        $$
+            \lim_{n\rightarrow \infty}\mu(A_n) = \mu\left( \bigcap_{i=1}^\infty A_i \right) = \mu((-\infty, x_0]),
+        $$
+        which completes the proof.
+        
+        \item We shall turn towards $\lim_{x\rightarrow -\infty}F(x)$. We know that this limit exists, so we can look at a sequence that diverges to $-\infty$ instead. Let the sequence $(x_n)$ be defined by $x_n = -n$. For all $n\in\mathbb{N}$, let $A_n:=(-\infty,x_n]$. Then
+        $$
+            \lim_{x\downarrow x_0}\mu((-\infty,x]) = \lim_{n\rightarrow \infty}\mu((-\infty,x_n]) = \lim_{n\rightarrow \infty}\mu(A_n).
+        $$
+        Since $A_n$ is a decreasing sequence of measurable sets such that $\mu(A_1)$ is finite, we find that
+        $$
+            \lim_{n\rightarrow \infty}\mu(A_n) = \mu\left( \bigcap_{i=1}^\infty A_i \right) = \mu(\varnothing) = 0,
+        $$
+        which completes the proof.
+        
+        \item Finally, we consider $\lim_{x\rightarrow \infty}F(x)$. We know that this limit exists, so we can look at a sequence that diverges to $\infty$ instead. Let $(x_n)$ be a sequence in $\mathbb{R}$ defined by $x_n = n$. For all $n\in\mathbb{N}$, let $A_n:=(-\infty,x_n]$. Then
+        $$
+            \lim_{x\rightarrow \infty}F(x) = \lim_{n\rightarrow \infty}F(x_n).
+        $$
+        Since $A_n$ is an increasing sequence of measurable sets, we find that
+        $$
+            \lim_{n\rightarrow \infty}\mu(A_n) = \mu\left( \bigcup_{i=1}^\infty A_i \right) = \mu(\mathbb{R}),
+        $$
+        which completes the proof.
+    \end{itemize}
+\end{solution}
