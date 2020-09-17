@@ -1,0 +1,154 @@
+\begin{solution}[3.19]{Castella, A.}
+    We will split the proof of this exercise into 5 individual parts for convenience.\\
+    \\
+    \textbf{Part I:} \textit{Equivalence of the measures on intervals of the form $(a,b]$}.
+    
+    Let us take a arbitrary values $a,b \in \mathbb{R}$. Let us define the set $A$ as $A = (a,b]$. Then $A$ is a Borel set. We find that for all $x\in\mathbb{R}$, we have $A + x = (a+x,b+x]$ and therefore, by the definition of $\lambda$, we get 
+    $$
+        \lambda(A+x) = (b+x)-(a+x) = b - a = \lambda(A).
+    $$
+    We will now show that we can extend this equivalence to the entire Borel set.\\
+    \\
+    \textbf{Part II:} \textit{Defining the set $\mathcal{A}_n$}
+    
+    We begin by defining the set $E_n$ as the half open interval
+    $$
+        E_n = (-n,n]
+    $$
+    for all $n \in \mathbb{N}$. We will now use the set $E_n$ to define the set of sets on which the two measures are equivalent for the restriction to $E_n$. We define the set as
+    $$
+        \mathcal{A}_n = \{A\in\cB_{\bbR} : \lambda(A\cap E_n + x) = \lambda(A\cap E_n) \text{ for all }x\in\mathbb{R}\}.
+    $$
+    We note that this set contains all the half open intervals in $\mathbb{R}$. This holds for all bounded and unbounded half open intervals.\\
+    \\
+    \textbf{Part III:} \textit{Proving that $\mathcal{A}_n$ is a $\lambda$-system on $\mathbb{R}$}
+    
+    We will split this into three parts. First we will show that the entire set $\mathbb{R}$ is contained in the set. Then we will show that all complements of sets are contained in $\mathcal{A}_n$ as well. Finally, we will show that all countable unions of mutually disjoint sets belong to it.
+    \begin{itemize}
+        \item It is clear from its definition that $E_n \subset \mathbb{R}$. Therefore we know that $\mathbb{R}\cap E_n = E_n$. Since $E_n$ is a half open interval, we know that
+        $$
+            \lambda(E_n + x) = \lambda(E_n).
+        $$
+        Thus we can conclude that $\mathbb{R} \in \mathcal{A}_n$.
+        \item Let us now take an arbitrary set $A \in \mathcal{A}_n$. By the definition of our set $\mathcal{A}_n$ we find that
+        $$
+            \lambda(A\cap E_n + x) = \lambda(A\cap E_n).
+        $$
+        Additionally, we note that the measure of $E_n$ is finite since
+        $$
+            \lambda(E_n) = 2n < \infty.
+        $$
+        Therefore, the restriction of the measures to $E_n$ is a finite measure. Additionally we note that
+        $$
+            A^c\cap E_n = E_n\setminus(A\cap E_n).
+        $$
+        It is clear form the fact that $A\cap E_n \subset E_n$ and since the measures of both sets are finite that we can therefore apply proposition 3.3.1 from the lecture notes. Thus we find that
+        $$
+            \lambda(A^c\cap E_n + x) = \lambda(E_n + x) - \lambda(A\cap E_n + x).
+        $$
+        Using what we have already stated and proposition 3.3.1 again we find that
+        $$
+            \lambda(E_n + x) - \lambda(A\cap E_n + x) = \lambda(E_n) - \lambda(A\cap E_n) = \lambda(A^c\cap E_n).
+        $$
+        We can now conclude that
+        $$
+            \lambda(A^c\cap E_n + x) = \lambda(A^c\cap E_n).
+        $$
+        Therefore we find that $A^c \in \mathcal{A}_n$ as well. Since $A$ was chosen arbitrarily, for all $A \in \mathcal{A}_n$ we have $A^c \in \mathcal{A}_n$.
+        \item We now take an arbitrary sequence $(A_k)_{k\in\mathbb{N}}$ of mutually disjoint sets in $\mathcal{A}_n$. By the disjointedness of the sets and countable additivity of the measures we find that
+        $$
+            \lambda\left(\bigcup_{i=1}^\infty (A_i\cap E_n) + x\right) = \sum_{i=1}^\infty \lambda(A_i\cap E_n + x).
+        $$
+        By the definition of $\mathcal{A}_n$ we find that
+        $$
+            \lambda(A_k \cap E_n + x) = \lambda(A_k \cap E_n)
+        $$
+        for all $k\in \mathbb{N}$. Using countable additivity again, we also find that
+        $$
+            \sum_{i=1}^\infty \lambda(A_i \cap E_n + x) = \sum_{i=1}^\infty \lambda(A_i \cap E_n) = \lambda\left(\bigcup_{i=1}^\infty A_i\cap E_n\right).
+        $$
+        Combining our results we can conclude that
+        $$
+            \lambda\left(\bigcup_{i=1}^\infty A_i\cap E_n + x\right) = \lambda\left(\bigcup_{i=1}^\infty A_i\cap E_n\right)
+        $$
+        and therefore we find that
+        $$
+            \bigcup_{i=1}^\infty A_i \in \mathcal{A}_n
+        $$
+        for all sequences of mutually disjoint sets.
+    \end{itemize}
+    Since we have proven all three properties, we can conclude that $\mathcal{A}_n$ is indeed a $\lambda$-system.\\
+    \\
+    \textbf{Part IV:} \textit{Applying the $\pi-\lambda$ theorem}
+    
+    Before we start this part of the proof let us note that the set of all half open intervals from below forms a $\pi$-system. A $\pi$-system requires only finite intersections to be possible. Finite intersections of half open intervals clearly result in half open intervals as well.
+    
+    As we stated previously, for all $n$ we know that all half open intervals (including unbounded ones) are contained in the $\lambda$-system $\mathcal{A}_n$. The $\pi-\lambda$ theorem states that a $\lambda$-system generated from a $\pi$-system must be a $\sigma$-algebra. Therefore, we can conclude that for all $n$, the set $\mathcal{A}_n$ must be a $\sigma$-algebra. Additionally, since it is generated by the half open intervals we find that
+    $$
+        \cB_{\bbR} \subset \mathcal{A}_n
+    $$
+    for all $n$. We also note that from the definition of the set $\mathcal{A}_n$ we find that
+    $$
+        \mathcal{A}_n \subset \cB_{\bbR}.
+    $$
+    Thus we can conclude that
+    $$
+        \cB_{\bbR} = \mathcal{A}_n
+    $$
+    for all $n$ in the natural numbers.\\
+    \\
+    \textbf{Part V:} \textit{Applying continuity of measures}
+    
+    Although we have proven that $\mathcal{A}_n$ is equal to the Borel set for all $n$, this does not imply that the two measures are equivalent on the Borel set. In order to prove this, we must go one step further and apply the continuity of measures.
+    
+    Let us take an arbitrary set $A \in \cB_{\bbR}$. We define the sequence $(B_n)_{n\in\mathbb{N}}$ such that for all $i$, the sets are defined=d as $B_i = A\cap E_i$. We note that $B_i$ is clearly an increasing sequence. We now begin by applying continuity of measures to find that
+    $$
+        \lim_{i\rightarrow\infty}\lambda(B_i) = \lambda\left(\bigcup_{i=1}^\infty A\cap E_i\right) = \lambda\left(A\cap\bigcup_{i=1}^\infty E_i\right) = \lambda(A\cap\mathbb{R}) = \lambda(A).
+    $$
+    Similarly for the other measure, we find that
+    $$
+        \lim_{i\rightarrow\infty}\lambda(B_i + x) = \lambda\left(\bigcup_{i=1}^\infty A\cap E_i + x\right) = \lambda(A\cap\mathbb{R} + x) = \lambda(A+x).
+    $$
+    Using the fact that the $\sigma$-algebras $\mathcal{A}_n$ are equal for all $n$, we find that the measures agree on $B_i$ for all $i$ and therefore
+    $$
+        \lim_{i\rightarrow\infty}\lambda(B_i + x) = \lim_{i\rightarrow\infty}\lambda(B_i) = \lambda(A),
+    $$
+    which implies that
+    $$
+        \lambda(A + x) = \lambda(A).
+    $$
+    Since we chose the set $A \in \cB_{\bbR}$ arbitrarily, we find that the two measures agree on the entire Borel set and we can therefore conclude the proof.
+\end{solution}
+
+\begin{solution}[3.20]{Castella, A.}
+    We make a case distinction between positive and negative $\tau$.
+    \begin{itemize}
+        \item  Let us take an arbitrary $A \in \mathcal{B}_\mathbb{R}$ such that there exist $a,b \in \mathbb{R}$, where $a < b$ and $A = (a,b]$. We take an arbitrary $\tau \in \mathbb{R}^+$. We find that $\tau A = (\tau a, \tau b]$ and therefore, by the definition of $\lambda$, we find
+        $$
+            \lambda(\tau A) = \tau b - \tau a = \tau (b-a) = \tau \lambda(A).
+        $$
+        By the same argument as in Problem 3.19 we find that $\lambda(\tau A) = \tau\lambda(A)$ holds for all $\tau \in \mathbb{R}^+$ and $A \in \mathcal{B}_\mathbb{R}$.
+        \item We begin this part of the proof by showing that for all $a,b \in \mathbb{R}$, where $a < b$, we have
+        $$
+            \lambda([a,b)) = \lambda((a,b]).
+        $$
+        Let us define the sequence $(A_n)_{n\in\mathbb{N}}$ as $A_n = (a-\frac{1}{n},b-\frac{1}{n}]$. From the definition, we find that $\lim_n A_n = [a,b)$, since for all $n \in \mathbb{N}$ we have $a \notin A_n$ and $b \in A_n$. Since we can interchange the measure and the limit, we find that
+        $$
+            \lambda([a,b)) = \lim_n \lambda(A_n) = \lim_n\left(b+\frac{1}{n}-a-\frac{1}{n}\right) = \lim_n(b-a) = (b-a).
+        $$
+        Therefore, by the definition of the measure we find that
+        $$
+            \lambda([a,b)) = \lambda((a,b]).
+        $$
+        We now use this to prove the statement for an arbitrary $\tau \in \mathbb{R}^-$. Let us take an arbitrary $B \in \mathcal{B}_\mathbb{R}$ such that $B = [a, b)$. We find that $\tau A = (\tau b, \tau a]$, since $\tau b < \tau a$. By the definition of $\lambda$ and the statement we just proved, we find
+        $$
+            \lambda(\tau B) = \tau a - \tau b = -\tau (b-a) = -\tau\lambda(B).
+        $$
+        By the same argument as in Problem 3.19 we find that $\lambda(\tau B) = -\tau\lambda(B)$ for all $B \in \mathcal{B}_\mathbb{R}$ and $\tau \in \mathbb{R}^-$.
+    \end{itemize}
+    We can now use these two results to conclude that
+    $$
+        \lambda(\tau A) = |\tau|\lambda(A),
+    $$
+    for all $A \in \mathcal{B}_\mathbb{R}$ and $\tau \in \mathbb{R}$.
+\end{solution}
