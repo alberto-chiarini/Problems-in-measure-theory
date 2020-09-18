@@ -41,3 +41,36 @@
         which completes the proof.
     \end{itemize}
 \end{solution}
+
+\begin{solution}[3.14]{Beerens, L.}
+    Let $(\Omega,\mathcal{F})$ be a measure space. Let $\mu:\mathcal{F}\rightarrow[0,\infty]$ be a set function which is finitely additive and such that $\mu(\varnothing) = 0$. If $\mu$ is a measure, then it is continuous from below, since that is a property of measures. Conversely, suppose that $\mu$ is continuous from below. Note that $\mu$ assigns to each set $A\in\mathcal{F}$ a nonnegative extended real number $\mu(A)$. It was already assumed that $\mu(\varnothing) =0$, so we will proceed by proving that $\mu$ is $\sigma$-additive. Let $A_1, A_2,\hdots$ be a sequence of mutually disjoint elements of $\mathcal{F}$. For all $n\in\mathcal{N}$, let 
+    $$
+        B_n = \bigcup_{i=1}^n A_i.
+    $$
+    Since $\mathcal{F}$ is a $\sigma$-algebra, we find that all $B_n$ are sets in $\mathcal{F}$.
+    From finite additivity, we find that for all $n\in\mathbb{N}$ we have
+    $$
+        \mu(B_n) = \mu\left( \bigcup_{i=1}^n A_i \right) = \sum_{i=1}^n \mu(A_i). 
+    $$
+    Note that $(B_n)$ is an increasing sequence of measurable sets in $\mathcal{F}$. By continuity from below it follows that
+    $$
+        \mu\left( \bigcup_{i=1}^\infty B_i \right) = \lim_{n\rightarrow\infty}\mu(B_n) = \sum_{i=1}^\infty\mu(A_i).
+    $$
+    Therefore,
+    $$
+        \mu\left( \bigcup_{i=1}^\infty A_i \right) = \mu\left( \bigcup_{i=1}^\infty B_i \right) = \sum_{i=1}^\infty\mu(A_i).
+    $$
+    Thus $\mu$ is $\sigma$-additive and we can conclude that $\mu$ is a measure.
+\end{solution}
+
+\begin{solution}[3.21]{Beerens, L.}
+    Let $F:\mathbb{R}\rightarrow\mathbb{R}$ be a non-decreasing, right-continuous function. Let $\nu_F$ be the unique measure on $(\mathbb{R},\mathcal{B}_\mathbb{R})$ such that $\nu_F((a,b])=F(b)-F(a)$ for all $a<b$. For all $i\in\mathbb{Z}$, let
+    $$
+        A_i:= (i,i+1]
+    $$
+    and let $\mathcal{A}$ be the collection of all these sets $A_i$. Note that $\mathcal{A}$ is a countable cover of $\mathbb{R}$. By the assumption we know that for all $i\in\mathbb{Z}$ we have
+    $$
+        \nu(A_i)  = F(i+1) - F(i).
+    $$
+    Since $F$ takes values in $\mathbb{R}$, we find that $\nu(A_i)$ is finite for all $i\in\mathbb{Z}$. Therefore, $\mathcal{A}$ is a countable cover of $\mathbb{R}$ that consists of sets with finite measure. Thus we conclude that $\mu$ is $\sigma$-finite.
+\end{solution}
