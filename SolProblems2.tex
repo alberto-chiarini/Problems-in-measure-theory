@@ -43,7 +43,7 @@
 \end{solution}
 
 \begin{solution}[3.14]{Beerens, L.}
-    Let $(\Omega,\mathcal{F})$ be a measure space. Let $\mu:\mathcal{F}\rightarrow[0,\infty]$ be a set function which is finitely additive and such that $\mu(\varnothing) = 0$. If $\mu$ is a measure, then it is continuous from below, since that is a property of measures. Conversely, suppose that $\mu$ is continuous from below. Note that $\mu$ assigns to each set $A\in\mathcal{F}$ a nonnegative extended real number $\mu(A)$. It was already assumed that $\mu(\varnothing) =0$, so we will proceed by proving that $\mu$ is $\sigma$-additive. Let $A_1, A_2,\hdots$ be a sequence of mutually disjoint elements of $\mathcal{F}$. For all $n\in\mathcal{N}$, let 
+    Let $(\Omega,\mathcal{F})$ be a measure space. Let $\mu:\mathcal{F}\rightarrow[0,\infty]$ be a set function which is finitely additive and such that $\mu(\varnothing) = 0$. If $\mu$ is a measure, then it is continuous from below, since that is a property of measures. Conversely, suppose that $\mu$ is continuous from below. Note that $\mu$ assigns to each set $A\in\mathcal{F}$ a nonnegative extended real number $\mu(A)$. It was already assumed that $\mu(\varnothing) =0$, so we will proceed by proving that $\mu$ is $\sigma$-additive. Let $A_1, A_2,\hdots$ be a sequence of mutually disjoint elements of $\mathcal{F}$. For all $n\in\mathbb{N}$, let 
     $$
         B_n = \bigcup_{i=1}^n A_i.
     $$
@@ -73,4 +73,56 @@
         \nu(A_i)  = F(i+1) - F(i).
     $$
     Since $F$ takes values in $\mathbb{R}$, we find that $\nu(A_i)$ is finite for all $i\in\mathbb{Z}$. Therefore, $\mathcal{A}$ is a countable cover of $\mathbb{R}$ that consists of sets with finite measure. Thus we conclude that $\mu$ is $\sigma$-finite.
+\end{solution}
+
+\begin{solution}[3.22]{Beerens, L.}
+    Let $(\Omega, \mathbb{F}, \mathbb{P})$ be a probability space. Let $(A_i)_{i\in\mathbb{N}}\subset\mathcal{F}$ be a sequence such that $\mathbb{P}(A_i) = 1$ for all $i\in\mathbb{N}$. Let
+    $$
+        A:=\bigcup_{i=1}^\infty A_i
+    $$
+    Since we are talking about a probability space, we know that $\mathbb{P}(\Omega) = 1$. Additionally, we have $A_1\subset A$, which implies that $\mathbb{P}(A)\geq 1$. However, $A\subset \Omega$, from which it now follows that $\mathbb{P}(A) = 1$. We can see that for all $i\in\mathbb{N}$, we have
+    $$
+        \mathbb{P}(A\setminus A_i) = \mathbb{P}(A) - \mathbb{P}(A_i) = 0.
+    $$
+    We shall now proceed by proving that 
+    $$
+        A\setminus\bigcup_{i=1}^\infty(A\setminus A_i) = \bigcap_{i=1}^\infty A_i.
+    $$
+    First, suppose that 
+    $$
+        x\in A\setminus\bigcup_{i=1}^\infty(A\setminus A_i).
+    $$
+    Then there does not exist an $i\in\mathbb{N}$ such that $x\in A\setminus A_i$. Thus, for all $i\in\mathbb{N}$ we have $x\in A_i$, from which it follows that 
+    $$
+        x\in\bigcap_{i=1}^\infty A_i.
+    $$
+    Conversely, suppose that 
+    $$
+        x\in\bigcap_{i=1}^\infty A_i.
+    $$
+    Then for all $i\in\mathbb{N}$ we have $x\in A_i$. Therefore, for all $i\in\mathbb{N}$ we have $x\notin A\setminus A_i$. However, $x\in A$. Thus we conclude that
+    $$
+        x\in A\setminus\bigcup_{i=1}^\infty(A\setminus A_i),
+    $$
+    from which it follows that indeed
+    $$
+        A\setminus\bigcup_{i=1}^\infty(A\setminus A_i) = \bigcap_{i=1}^\infty A_i.
+    $$
+    Hence, we find that
+    $$
+        \mathbb{P}\left( \bigcap_{i=1}^\infty A_i \right) = \mathbb{P}\left( A\setminus\bigcup_{i=1}^\infty(A\setminus A_i) \right) = \mathbb{P}(A) - \mathbb{P}\left( \bigcup_{i=1}^\infty(A\setminus A_i) \right).
+    $$
+    The countable subadditivity property of measures implies that
+    $$
+        \mathbb{P}\left( \bigcup_{i=1}^\infty(A\setminus A_i) \right)\leq\sum_{i=1}^\infty \mathbb{P}(A\setminus A_i)=0.
+    $$
+    Since measures map to $[0,\infty]$, we have
+    $$
+        \mathbb{P}\left( \bigcup_{i=1}^\infty(A\setminus A_i) \right)=0
+    $$
+    and therefore
+    $$
+        \mathbb{P}\left( \bigcap_{i=1}^\infty A_i \right) = \mathbb{P}(A) - \mathbb{P}\left( \bigcup_{i=1}^\infty(A\setminus A_i) \right) = 1-0=1,
+    $$
+    which completes the proof.
 \end{solution}
