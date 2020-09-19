@@ -1,3 +1,97 @@
+\begin{solution}[3.15]{Castella, A.}
+    We note that for a set function $\mu$, continuity from above implies that for all sequences of sets $(A_n)$ such that $A_{i+1} \subset A_i$ and $\mu(A_1) < \infty$ we have
+    $$
+        \lim_{i\rightarrow\infty}\mu(A_i) = \mu\left(\bigcap_{i=1}^\infty A_i\right).
+    $$
+    Let us now choose an arbitrary sequence $(B_n)$ of mutually disjoint sets in $\mathcal{F}$. Let us additionally define the the sequence $(C_n)$ such that $C_j = \bigcup_{i=j}^\infty B_i$. By finite additivity of the measure we find that
+    $$
+        \mu(\Omega) = \mu(C_1) + \mu(C_1^c) < \infty,
+    $$
+    which, since the measure does not take on negative values, implies that
+    $$
+        \mu(C_1) < \infty.
+    $$
+    Additionally, it is clear that the sequence $(C_n)$ is such that $C_{i=1} \subset C_{i}$. We note that we can also interpret the definition of this sequence as $C_1 = \bigcup_{i=1}^\infty B_i$ and $C_j = C_1 \setminus \bigcup_{i=1}^j B_i$ for $j > 1$. In order to use this property we will quickly show that for all sets $A,B \in \mathcal{F}$ such that $A \subset B$, we have
+    $$
+        \mu(B\setminus A) = \mu(B) - \mu(A).
+    $$
+    We find that clearly $B = A \cup (B\setminus A)$. Thus by finite additivity we get that
+    $$
+        \mu(B) = \mu(A) + \mu(B\setminus A),
+    $$
+    which proves our property. Thus we can use this and finite additivity to finite that for all finite $n$, we have
+    $$
+        \mu(C_n) = \mu(C_1) - \mu\left(\bigcup_{i=1}^n B_i\right) = \mu(C_1) - \sum_{i=1}^n\mu(B_i).
+    $$
+    Since we know that the limit exists, we find that
+    $$
+        \lim_{i\rightarrow\infty}\mu(C_i) = \lim_{i\rightarrow\infty}\left(\mu(C_1) - \sum_{j=1}^i \mu(B_j)\right) = \mu(C_1) - \lim_{i\rightarrow\infty}\sum_{j=1}^i\mu(B_j) = \mu(C_1) - \sum_{i=1}^\infty \mu(B_i).
+    $$
+    Applying continuity from above as we stated it at the start of this proof, we find that
+    $$
+        \lim_{i\rightarrow\infty}\mu(C_i) = \mu\left(\bigcap_{i=1}^\infty C_i\right) = \mu\left(C_1\setminus \bigcup_{i=1}^\infty B_i\right) = \mu(C_1) - \mu\left(\bigcup_{i=1}^\infty B_i\right).
+    $$
+    Combining both of these results and subtracting $\mu(C_1)$ from both sides, we find that
+    $$
+        \sum_{i=1}^\infty \mu(B_i) = \mu\left(\bigcup_{i=1}^\infty B_i\right).
+    $$
+    Since our sequence $(B_i)$ was chosen as an arbitrary mutually disjoint sequence of sets in $\mathcal{F}$ we find that countable additivity of $\mu$ does indeed hold and therefore $\mu$ must be a measure. We note that the inverse implication is covered by proposition 3.4.2 of the lecture notes.
+\end{solution}
+
+\begin{solution}[3.18]{Castella, A.}
+    We will tackle the two parts of the proof separately. We will first show that taking the limit from below will give us the measure of the one element said as proposed by the problem. Then we will use this to show that the set of rational numbers has measure zero if $F$ is continuous.
+    \begin{itemize}
+        \item Let us assume that $\nu_F$ is the unique measure associated to $F$ as given by the question. By definition, we know that
+        $$
+            \mu((a,b]) = F(b) - F(a).
+        $$
+        We begin the proof by defining the sequence $(A_n)_{n\in\mathbb{N}}$ such that $A_i = (x - \frac{1}{i},x]$ for all $i$. It is clear from its definition that
+        $$
+            \bigcap_{i=1}^\infty A_i = \{x\}.
+        $$
+        Additionally, by the continuity of the measure proven in proposition 3.4.2 we find that
+        $$
+            \lim_{i\rightarrow\infty}\nu_F(A_i) = \nu_{F}\left(\bigcap_{i=1}^\infty A_i\right) = \nu_F(\{x\}).
+        $$
+        By the definition of the measure stated above, we also know that
+        $$
+            \nu_F(A_n) = F(x) - F(x - \frac{1}{n}),
+        $$
+        for all $n \in \mathbb{N}$. Now assuming that the limit $F(x-)$ exists we find that
+        $$
+            \lim_{i\rightarrow\infty}\nu_F(A_i) = \lim_{i\rightarrow\infty}\left(F(x) - F(x-\frac{1}{i})\right) = F(x) - \lim_{i\rightarrow\infty}F(x-\frac{1}{i}) = F(x) - F(x-).
+        $$
+        Combining both of our results we arrive at the conclusion that
+        $$
+            \nu_F(\{x\}) = F(x) - F(x-).
+        $$
+        \item Assuming that the first part of the proof holds, we find that for all $x \in \mathbb{R}$ we have
+        $$
+            \nu_F(\{x\}) = F(x) - F(x-).
+        $$
+        By continuity of the function $F$ however, we find that
+        $$
+            F(x) = F(x-).
+        $$
+        This implies that for all one element sets $\{x\}$ we have
+        $$
+            \nu_F(\{x\}) = 0.
+        $$
+        We know that the set $\mathbb{Q}$ is countable and thus we can choose a sequence $(x_n)$ such that for all $y \in \mathbb{Q}$, there exists $i \in \mathbb{N}$ such that $x_i = y$. Thus we find that for such a sequence
+        $$
+            \mathbb{Q} = \bigcup_{i=1}^\infty \{x_i\}.
+        $$
+        However, by countable additivity of the measure $\nu_F$ we find that
+        $$
+            \nu_F(\mathbb{Q}) = \nu_F\left(\bigcup_{i=1}^\infty \{x_i\}\right) = \sum_{i=1}^\infty \nu_F(\{x_i\}).
+        $$
+        Since $\{x_n\}$ is $\nu_F$-null for all $n \in \mathbb{N}$, we find that
+        $$
+            \nu_F(\mathbb{Q}) = \sum_{i=1}^\infty 0 = 0.
+        $$
+    \end{itemize}
+\end{solution}
+
 \begin{solution}[3.19]{Castella, A.}
     We will split the proof of this exercise into 5 individual parts for convenience.\\
     \\
@@ -151,4 +245,61 @@
         \lambda(\tau A) = |\tau|\lambda(A),
     $$
     for all $A \in \mathcal{B}_\mathbb{R}$ and $\tau \in \mathbb{R}$.
+\end{solution}
+
+\begin{solution}[3.23]{Castella, A.}
+    Let $\mu$ be a finite measure on $(\bbR, \cB_{\bbR})$. Show that the set $\{x\in\bbR:\mu(\{x\}) > 0\}$ is at most countable.
+    We start the proof by denoting the set
+    $$
+        S = \{x\in\bbR : \mu(\{x\}) > 0\}
+    $$
+    in order to simplify our notation. We now define the sets $T_n$ such that
+    $$
+        T_n = \{x\in\bbR : \mu(\{x\} > \frac{1}{n}\},
+    $$
+    for all $n \in \mathbb{N}$. We will now use a proof by contradiction to show that $T_n$ must be finite for all $n$. Thus, let us assume the contrary. Then there exists a sequence $(x_n)_{n\in\mathbb{N}}$ in $T_n$ such that for all $i,j \in \mathbb{N}$ we have $x_i \neq x_j$. By countable additivity of the measure $\mu$ we find that
+    $$
+        \mu\left(\bigcup_{i=1}^\infty \{x_i\}\right) = \sum_{i=1}^\infty\mu(\{x_i\}).
+    $$
+    By definition of the set $T_n$ we find that
+    $$
+        \sum_{i=1}^\infty\mu(\{x_i\}) > \sum_{i=1}^\infty\frac{1}{n} = \infty.
+    $$
+    This implies that
+    $$
+        \mu\left(\bigcup_{i=1}^\infty \{x_i\}\right) > \infty,
+    $$
+    which is a contradiction to the finiteness of the measure $\mu$. Thus we can conclude that the sets $T_n$ are indeed finite for all $n$. Let us now define the set $T$ as
+    $$
+        T = \bigcup_{i=1}^\infty T_n.
+    $$
+    Since $T_n$ is finite for all $n$, this implies that $T$ must be at most countable. We will now show that $T = S$. Let us split this into two part. We being by noting that
+    $$
+        T \subset S
+    $$
+    follows trivially as $T_n$ is the set of one element sets with measure greater than $\frac{1}{n}$ which is greater than zero, which implies that
+    $$
+        T_n \subset S.
+    $$
+    Thus we only need to prove that $S \subset T$. Let us take some arbitrary element $s \in S$. By definition, we find that
+    $$
+        \mu(\{s\}) > 0.
+    $$
+    Since it is strictly greater than, we can choose some $n' \in \mathbb{N}$ such that
+    $$
+        \mu(\{s\}) > \frac{1}{n'}.
+    $$
+    From this we find that
+    $$
+        s \in T_{n'} \subset T.
+    $$
+    Since $s$ was chosen arbitrarily we find that
+    $$
+        S \subset T.
+    $$
+    We can now use this to conclude that
+    $$
+        S = T.
+    $$
+    Since $T$ is at most countable, we find that $S$ must be at most countable as well.
 \end{solution}
