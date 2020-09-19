@@ -11,7 +11,7 @@
     $$
         \mu(C_1) < \infty.
     $$
-    Additionally, it is clear that the sequence $(C_n)$ is such that $C_{i=1} \subset C_{i}$. We note that we can also interpret the definition of this sequence as $C_1 = \bigcup_{i=1}^\infty B_i$ and $C_j = C_1 \setminus \bigcup_{i=1}^j B_i$ for $j > 1$. In order to use this property we will quickly show that for all sets $A,B \in \mathcal{F}$ such that $A \subset B$, we have
+    Additionally, it is clear that the sequence $(C_n)$ is such that $C_{i+1} \subset C_{i}$. We note that we can also interpret the definition of this sequence as $C_1 = \bigcup_{i=1}^\infty B_i$ and $C_j = C_1 \setminus \bigcup_{i=1}^{j-1} B_i$ for $j > 1$. In order to use this property we will quickly show that for all sets $A,B \in \mathcal{F}$ such that $A \subset B$, we have
     $$
         \mu(B\setminus A) = \mu(B) - \mu(A).
     $$
@@ -19,13 +19,13 @@
     $$
         \mu(B) = \mu(A) + \mu(B\setminus A),
     $$
-    which proves our property. Thus we can use this and finite additivity to finite that for all finite $n$, we have
+    which proves our property. Thus we can use this and finite additivity to find that for all finite $n$, we have
     $$
-        \mu(C_n) = \mu(C_1) - \mu\left(\bigcup_{i=1}^n B_i\right) = \mu(C_1) - \sum_{i=1}^n\mu(B_i).
+        \mu(C_n) = \mu(C_1) - \mu\left(\bigcup_{i=1}^{n-1} B_i\right) = \mu(C_1) - \sum_{i=1}^{n-1}\mu(B_i).
     $$
     Since we know that the limit exists, we find that
     $$
-        \lim_{i\rightarrow\infty}\mu(C_i) = \lim_{i\rightarrow\infty}\left(\mu(C_1) - \sum_{j=1}^i \mu(B_j)\right) = \mu(C_1) - \lim_{i\rightarrow\infty}\sum_{j=1}^i\mu(B_j) = \mu(C_1) - \sum_{i=1}^\infty \mu(B_i).
+        \lim_{i\rightarrow\infty}\mu(C_i) = \lim_{i\rightarrow\infty}\left(\mu(C_1) - \sum_{j=1}^{i-1} \mu(B_j)\right) = \mu(C_1) - \lim_{i\rightarrow\infty}\sum_{j=1}^{i-1}\mu(B_j) = \mu(C_1) - \sum_{i=1}^\infty \mu(B_i).
     $$
     Applying continuity from above as we stated it at the start of this proof, we find that
     $$
@@ -35,7 +35,7 @@
     $$
         \sum_{i=1}^\infty \mu(B_i) = \mu\left(\bigcup_{i=1}^\infty B_i\right).
     $$
-    Since our sequence $(B_i)$ was chosen as an arbitrary mutually disjoint sequence of sets in $\mathcal{F}$ we find that countable additivity of $\mu$ does indeed hold and therefore $\mu$ must be a measure. We note that the inverse implication is covered by proposition 3.4.2 of the lecture notes.
+    Since our sequence $(B_n)$ was chosen as an arbitrary mutually disjoint sequence of sets in $\mathcal{F}$ we find that countable additivity of $\mu$ does indeed hold and therefore $\mu$ must be a measure. We note that the inverse implication is covered by proposition 3.4.2 of the lecture notes.
 \end{solution}
 
 \begin{solution}[3.18]{Castella, A.}
