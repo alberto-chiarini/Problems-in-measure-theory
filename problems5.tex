@@ -1,13 +1,38 @@
-\begin{problem} Let $(\Omega,\cF,\mu)$ be a measure space and suppose that $(f_{n})$ is a sequence of measurable functions 
-    
+\begin{problem} Consider the measure space $(\cX, 2^{\cX},\delta_x)$ where $\delta_x$ is the delta measure at $x\in \cX$. Let $f:\cX\to \overline{\bbR}$ be a non-negative measurable function. Show that 
+\begin{equation*}
+    \int_{\cX} f \,\De \delta_x = f(x).
+\end{equation*}  
 \end{problem}
 
 \begin{problem}
-    
+    Let $(\Omega,\cF,\mu)$ be a measure space and $f:\Omega\to \overline{\bbR}$ be a non-negative measurable function
+    \begin{itemize}
+        \item Let $A,B\in \cF$ be such that $A\subseteq B$. Show that
+        \begin{equation*}
+            \int_{A} f\,\De \mu \leq  \int_{B} f\,\De \mu.
+        \end{equation*}
+        \item Let $A,B\in \cF$ be such that $A\cap B = \varnothing$. Show that 
+        \begin{equation*}
+            \int_{A\cup B} f\,\De \mu =  \int_{A} f\,\De \mu + \int_{B} f\,\De \mu.
+        \end{equation*}
+    \end{itemize}
+\end{problem}
+
+\begin{problem} Let $(\Omega,\cF,\mu)$ be a measure space and suppose that $(f_{n})$ is a sequence of measurable functions such that $f_1\geq f_2\geq\ldots \geq 0$. Show using the MCT that if $f :=\lim_{n\to\infty} f_n$ and $\int_{\Omega} f_1<\infty$, then
+\begin{equation*}
+    \lim_{n\to\infty} \int_\Omega f_n\,\De \mu =  \int_\Omega f\,\De \mu.
+\end{equation*}
+Show that if $\int_{\Omega} f_1\,\De \mu = \infty$ the above conclusion might not hold.    
+\end{problem}
+
+\begin{problem} Suppose that $f$ is a Lebesgue-integrable function on $\bbR$. Show that for all $z\in \bbR$
+    \begin{equation*}
+        \int_\bbR f(x)\,\De \cL^1(x) = \int_\bbR f(x+z)\,\De \cL^1(x).
+    \end{equation*}
 \end{problem}
 
 \begin{problem}
     Let $(\Omega_1,\cF_1)$ and $(\Omega_2,\cF_2)$ be two measure spaces. Let $f:\Omega_1\times\Omega_2\to \overline{\bbR}$, $f\geq 0$ be a $\cF_1\otimes \cF_2$-measurable function. Show that for all $y\in \Omega_2$ the map $f_y : \Omega_1\to \overline{\bbR}$, defined by $f_y(x) = f(x,y)$ for all $x\in \Omega_1$, is $\cF_1$-measurable.
 
-    (\emph{Hint:} use an approximation with simple functions.)
+    \noindent (\emph{Hint:} use an approximation with simple functions.)
 \end{problem}
