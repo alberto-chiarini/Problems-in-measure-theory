@@ -4,6 +4,12 @@
 \end{equation*}  
 \end{problem}
 
+\begin{problem} Let $(\Omega,\cF,\mu)$ be a measure space, $A\in \cF$, and $f:\Omega\to \overline{\bbR}$ be a non-negative  function. We say that $f$ is measurable on $A$ if $f|_{A}$ is $\cF_A$-measurable. Show that $f \ind{A}$ is $\cF$ measurable and also 
+\begin{equation*}
+    \int_\Omega f  \ind{A} \,\De \mu = \int_A f \,\De \mu_A, 
+\end{equation*}
+where $\mu_A$ is the restriction of $\cF_A$.
+\end{problem}
 
 \begin{problem}
     Let $(\Omega,\cF,\mu)$ be a measure space and $f:\Omega\to \overline{\bbR}$ be a non-negative measurable function
@@ -26,6 +32,14 @@
          \lim_{n\to\infty} \int_A f_n\,\De \mu = \int_A f\,\De \mu.
      \end{equation*}  
      Show that the conclusion might fail if $ \int f\, \De\mu = \infty$.
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF,\mu)$ be a measure space and  $(\Omega,\overline{\cF},\overline{\mu})$ its completion. Suppose that $f$ is integrable with respect to $\mu$. Show that $f$ is integrable with respect to $\overline{\mu}$ and in particular 
+    \begin{equation*}
+        \int_{\Omega} f\,\De \mu =  \int_{\Omega} f\,\De \overline{\mu}.
+    \end{equation*}
+    (\emph{Hint: start with simple functions.})
 \end{problem}
 
 \begin{problem} Let $(\Omega,\cF,\mu)$ be a measure space and suppose that $(f_{n})$ is a sequence of measurable functions such that $f_1\geq f_2\geq\ldots \geq 0$. Show using the MCT that if $f :=\lim_{n\to\infty} f_n$ and $\int_{\Omega} f_1<\infty$, then
