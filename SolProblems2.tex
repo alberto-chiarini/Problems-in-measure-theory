@@ -63,16 +63,310 @@
     Thus $\mu$ is $\sigma$-additive and we can conclude that $\mu$ is a measure.
 \end{solution}
 
-\begin{solution}[3.21]{Beerens, L.}
-    Let $F:\mathbb{R}\rightarrow\mathbb{R}$ be a non-decreasing, right-continuous function. Let $\nu_F$ be the unique measure on $(\mathbb{R},\mathcal{B}_\mathbb{R})$ such that $\nu_F((a,b])=F(b)-F(a)$ for all $a<b$. For all $i\in\mathbb{Z}$, let
+\begin{solution}[3.15]{Castella, A.}
+    We note that for a set function $\mu$, continuity from above implies that for all sequences of sets $(A_n)$ such that $A_{i+1} \subset A_i$ and $\mu(A_1) < \infty$ we have
     $$
-        A_i:= (i,i+1]
+        \lim_{i\rightarrow\infty}\mu(A_i) = \mu\left(\bigcap_{i=1}^\infty A_i\right).
     $$
-    and let $\mathcal{A}$ be the collection of all these sets $A_i$. Note that $\mathcal{A}$ is a countable cover of $\mathbb{R}$. By the assumption we know that for all $i\in\mathbb{Z}$ we have
+    Let us now choose an arbitrary sequence $(B_n)$ of mutually disjoint sets in $\mathcal{F}$. Let us additionally define the the sequence $(C_n)$ such that $C_j = \bigcup_{i=j}^\infty B_i$. By finite additivity of the measure we find that
     $$
-        \nu(A_i)  = F(i+1) - F(i).
+        \mu(\Omega) = \mu(C_1) + \mu(C_1^c) < \infty,
     $$
-    Since $F$ takes values in $\mathbb{R}$, we find that $\nu(A_i)$ is finite for all $i\in\mathbb{Z}$. Therefore, $\mathcal{A}$ is a countable cover of $\mathbb{R}$ that consists of sets with finite measure. Thus we conclude that $\mu$ is $\sigma$-finite.
+    which, since the measure does not take on negative values, implies that
+    $$
+        \mu(C_1) < \infty.
+    $$
+    Additionally, it is clear that the sequence $(C_n)$ is such that $C_{i+1} \subset C_{i}$. We note that we can also interpret the definition of this sequence as $C_1 = \bigcup_{i=1}^\infty B_i$ and $C_j = C_1 \setminus \bigcup_{i=1}^{j-1} B_i$ for $j > 1$. In order to use this property we will quickly show that for all sets $A,B \in \mathcal{F}$ such that $A \subset B$, we have
+    $$
+        \mu(B\setminus A) = \mu(B) - \mu(A).
+    $$
+    We find that clearly $B = A \cup (B\setminus A)$. Thus by finite additivity we get that
+    $$
+        \mu(B) = \mu(A) + \mu(B\setminus A),
+    $$
+    which proves our property. Thus we can use this and finite additivity to find that for all finite $n$, we have
+    $$
+        \mu(C_n) = \mu(C_1) - \mu\left(\bigcup_{i=1}^{n-1} B_i\right) = \mu(C_1) - \sum_{i=1}^{n-1}\mu(B_i).
+    $$
+    Since we know that the limit exists, we find that
+    $$
+        \lim_{i\rightarrow\infty}\mu(C_i) = \lim_{i\rightarrow\infty}\left(\mu(C_1) - \sum_{j=1}^{i-1} \mu(B_j)\right) = \mu(C_1) - \lim_{i\rightarrow\infty}\sum_{j=1}^{i-1}\mu(B_j) = \mu(C_1) - \sum_{i=1}^\infty \mu(B_i).
+    $$
+    Applying continuity from above as we stated it at the start of this proof, we find that
+    $$
+        \lim_{i\rightarrow\infty}\mu(C_i) = \mu\left(\bigcap_{i=1}^\infty C_i\right) = \mu\left(C_1\setminus \bigcup_{i=1}^\infty B_i\right) = \mu(C_1) - \mu\left(\bigcup_{i=1}^\infty B_i\right).
+    $$
+    Combining both of these results and subtracting $\mu(C_1)$ from both sides, we find that
+    $$
+        \sum_{i=1}^\infty \mu(B_i) = \mu\left(\bigcup_{i=1}^\infty B_i\right).
+    $$
+    Since our sequence $(B_n)$ was chosen as an arbitrary mutually disjoint sequence of sets in $\mathcal{F}$ we find that countable additivity of $\mu$ does indeed hold and therefore $\mu$ must be a measure. We note that the inverse implication is covered by proposition 3.4.2 of the lecture notes.
+\end{solution}
+
+\begin{solution}[3.18]{Castella, A.}
+    We will tackle the two parts of the proof separately. We will first show that taking the limit from below will give us the measure of the one element said as proposed by the problem. Then we will use this to show that the set of rational numbers has measure zero if $F$ is continuous.
+    \begin{itemize}
+        \item Let us assume that $\nu_F$ is the unique measure associated to $F$ as given by the question. By definition, we know that
+        $$
+            \mu((a,b]) = F(b) - F(a).
+        $$
+        We begin the proof by defining the sequence $(A_n)_{n\in\mathbb{N}}$ such that $A_i = (x - \frac{1}{i},x]$ for all $i$. It is clear from its definition that
+        $$
+            \bigcap_{i=1}^\infty A_i = \{x\}.
+        $$
+        Additionally, by the continuity of the measure proven in proposition 3.4.2 we find that
+        $$
+            \lim_{i\rightarrow\infty}\nu_F(A_i) = \nu_{F}\left(\bigcap_{i=1}^\infty A_i\right) = \nu_F(\{x\}).
+        $$
+        By the definition of the measure stated above, we also know that
+        $$
+            \nu_F(A_n) = F(x) - F(x - \frac{1}{n}),
+        $$
+        for all $n \in \mathbb{N}$. Now assuming that the limit $F(x-)$ exists we find that
+        $$
+            \lim_{i\rightarrow\infty}\nu_F(A_i) = \lim_{i\rightarrow\infty}\left(F(x) - F(x-\frac{1}{i})\right) = F(x) - \lim_{i\rightarrow\infty}F(x-\frac{1}{i}) = F(x) - F(x-).
+        $$
+        Combining both of our results we arrive at the conclusion that
+        $$
+            \nu_F(\{x\}) = F(x) - F(x-).
+        $$
+        \item Assuming that the first part of the proof holds, we find that for all $x \in \mathbb{R}$ we have
+        $$
+            \nu_F(\{x\}) = F(x) - F(x-).
+        $$
+        By continuity of the function $F$ however, we find that
+        $$
+            F(x) = F(x-).
+        $$
+        This implies that for all one element sets $\{x\}$ we have
+        $$
+            \nu_F(\{x\}) = 0.
+        $$
+        We know that the set $\mathbb{Q}$ is countable and thus we can choose a sequence $(x_n)$ such that for all $y \in \mathbb{Q}$, there exists $i \in \mathbb{N}$ such that $x_i = y$. Thus we find that for such a sequence
+        $$
+            \mathbb{Q} = \bigcup_{i=1}^\infty \{x_i\}.
+        $$
+        However, by countable additivity of the measure $\nu_F$ we find that
+        $$
+            \nu_F(\mathbb{Q}) = \nu_F\left(\bigcup_{i=1}^\infty \{x_i\}\right) = \sum_{i=1}^\infty \nu_F(\{x_i\}).
+        $$
+        Since $\{x_n\}$ is $\nu_F$-null for all $n \in \mathbb{N}$, we find that
+        $$
+            \nu_F(\mathbb{Q}) = \sum_{i=1}^\infty 0 = 0.
+        $$
+    \end{itemize}
+\end{solution}
+
+\begin{solution}[3.19]{Castella, A.}
+    We will split the proof of this exercise into 5 individual parts for convenience.\\
+    \\
+    \textbf{Part I:} \textit{Equivalence of the measures on intervals of the form $(a,b]$}.
+    
+    Let us take a arbitrary values $a,b \in \mathbb{R}$. Let us define the set $A$ as $A = (a,b]$. Then $A$ is a Borel set. We find that for all $x\in\mathbb{R}$, we have $A + x = (a+x,b+x]$ and therefore, by the definition of $\lambda$, we get 
+    $$
+        \lambda(A+x) = (b+x)-(a+x) = b - a = \lambda(A).
+    $$
+    We will now show that we can extend this equivalence to the entire Borel set.\\
+    \\
+    \textbf{Part II:} \textit{Defining the set $\mathcal{A}_n$}
+    
+    We begin by defining the set $E_n$ as the half open interval
+    $$
+        E_n = (-n,n]
+    $$
+    for all $n \in \mathbb{N}$. We will now use the set $E_n$ to define the set of sets on which the two measures are equivalent for the restriction to $E_n$. We define the set as
+    $$
+        \mathcal{A}_n = \{A\in\cB_{\bbR} : \lambda(A\cap E_n + x) = \lambda(A\cap E_n) \text{ for all }x\in\mathbb{R}\}.
+    $$
+    We note that this set contains all the half open intervals in $\mathbb{R}$. This holds for all bounded and unbounded half open intervals.\\
+    \\
+    \textbf{Part III:} \textit{Proving that $\mathcal{A}_n$ is a $\lambda$-system on $\mathbb{R}$}
+    
+    We will split this into three parts. First we will show that the entire set $\mathbb{R}$ is contained in the set. Then we will show that all complements of sets are contained in $\mathcal{A}_n$ as well. Finally, we will show that all countable unions of mutually disjoint sets belong to it.
+    \begin{itemize}
+        \item It is clear from its definition that $E_n \subset \mathbb{R}$. Therefore we know that $\mathbb{R}\cap E_n = E_n$. Since $E_n$ is a half open interval, we know that
+        $$
+            \lambda(E_n + x) = \lambda(E_n).
+        $$
+        Thus we can conclude that $\mathbb{R} \in \mathcal{A}_n$.
+        \item Let us now take an arbitrary set $A \in \mathcal{A}_n$. By the definition of our set $\mathcal{A}_n$ we find that
+        $$
+            \lambda(A\cap E_n + x) = \lambda(A\cap E_n).
+        $$
+        Additionally, we note that the measure of $E_n$ is finite since
+        $$
+            \lambda(E_n) = 2n < \infty.
+        $$
+        Therefore, the restriction of the measures to $E_n$ is a finite measure. Additionally we note that
+        $$
+            A^c\cap E_n = E_n\setminus(A\cap E_n).
+        $$
+        It is clear form the fact that $A\cap E_n \subset E_n$ and since the measures of both sets are finite that we can therefore apply proposition 3.3.1 from the lecture notes. Thus we find that
+        $$
+            \lambda(A^c\cap E_n + x) = \lambda(E_n + x) - \lambda(A\cap E_n + x).
+        $$
+        Using what we have already stated and proposition 3.3.1 again we find that
+        $$
+            \lambda(E_n + x) - \lambda(A\cap E_n + x) = \lambda(E_n) - \lambda(A\cap E_n) = \lambda(A^c\cap E_n).
+        $$
+        We can now conclude that
+        $$
+            \lambda(A^c\cap E_n + x) = \lambda(A^c\cap E_n).
+        $$
+        Therefore we find that $A^c \in \mathcal{A}_n$ as well. Since $A$ was chosen arbitrarily, for all $A \in \mathcal{A}_n$ we have $A^c \in \mathcal{A}_n$.
+        \item We now take an arbitrary sequence $(A_k)_{k\in\mathbb{N}}$ of mutually disjoint sets in $\mathcal{A}_n$. By the disjointedness of the sets and countable additivity of the measures we find that
+        $$
+            \lambda\left(\bigcup_{i=1}^\infty (A_i\cap E_n) + x\right) = \sum_{i=1}^\infty \lambda(A_i\cap E_n + x).
+        $$
+        By the definition of $\mathcal{A}_n$ we find that
+        $$
+            \lambda(A_k \cap E_n + x) = \lambda(A_k \cap E_n)
+        $$
+        for all $k\in \mathbb{N}$. Using countable additivity again, we also find that
+        $$
+            \sum_{i=1}^\infty \lambda(A_i \cap E_n + x) = \sum_{i=1}^\infty \lambda(A_i \cap E_n) = \lambda\left(\bigcup_{i=1}^\infty A_i\cap E_n\right).
+        $$
+        Combining our results we can conclude that
+        $$
+            \lambda\left(\bigcup_{i=1}^\infty A_i\cap E_n + x\right) = \lambda\left(\bigcup_{i=1}^\infty A_i\cap E_n\right)
+        $$
+        and therefore we find that
+        $$
+            \bigcup_{i=1}^\infty A_i \in \mathcal{A}_n
+        $$
+        for all sequences of mutually disjoint sets.
+    \end{itemize}
+    Since we have proven all three properties, we can conclude that $\mathcal{A}_n$ is indeed a $\lambda$-system.\\
+    \\
+    \textbf{Part IV:} \textit{Applying the $\pi-\lambda$ theorem}
+    
+    Before we start this part of the proof let us note that the set of all half open intervals from below forms a $\pi$-system. A $\pi$-system requires only finite intersections to be possible. Finite intersections of half open intervals clearly result in half open intervals as well.
+    
+    As we stated previously, for all $n$ we know that all half open intervals (including unbounded ones) are contained in the $\lambda$-system $\mathcal{A}_n$. The $\pi-\lambda$ theorem states that a $\lambda$-system generated from a $\pi$-system must be a $\sigma$-algebra. Therefore, we can conclude that for all $n$, the set $\mathcal{A}_n$ must be a $\sigma$-algebra. Additionally, since it is generated by the half open intervals we find that
+    $$
+        \cB_{\bbR} \subset \mathcal{A}_n
+    $$
+    for all $n$. We also note that from the definition of the set $\mathcal{A}_n$ we find that
+    $$
+        \mathcal{A}_n \subset \cB_{\bbR}.
+    $$
+    Thus we can conclude that
+    $$
+        \cB_{\bbR} = \mathcal{A}_n
+    $$
+    for all $n$ in the natural numbers.\\
+    \\
+    \textbf{Part V:} \textit{Applying continuity of measures}
+    
+    Although we have proven that $\mathcal{A}_n$ is equal to the Borel set for all $n$, this does not imply that the two measures are equivalent on the Borel set. In order to prove this, we must go one step further and apply the continuity of measures.
+    
+    Let us take an arbitrary set $A \in \cB_{\bbR}$. We define the sequence $(B_n)_{n\in\mathbb{N}}$ such that for all $i$, the sets are defined=d as $B_i = A\cap E_i$. We note that $B_i$ is clearly an increasing sequence. We now begin by applying continuity of measures to find that
+    $$
+        \lim_{i\rightarrow\infty}\lambda(B_i) = \lambda\left(\bigcup_{i=1}^\infty A\cap E_i\right) = \lambda\left(A\cap\bigcup_{i=1}^\infty E_i\right) = \lambda(A\cap\mathbb{R}) = \lambda(A).
+    $$
+    Similarly for the other measure, we find that
+    $$
+        \lim_{i\rightarrow\infty}\lambda(B_i + x) = \lambda\left(\bigcup_{i=1}^\infty A\cap E_i + x\right) = \lambda(A\cap\mathbb{R} + x) = \lambda(A+x).
+    $$
+    Using the fact that the $\sigma$-algebras $\mathcal{A}_n$ are equal for all $n$, we find that the measures agree on $B_i$ for all $i$ and therefore
+    $$
+        \lim_{i\rightarrow\infty}\lambda(B_i + x) = \lim_{i\rightarrow\infty}\lambda(B_i) = \lambda(A),
+    $$
+    which implies that
+    $$
+        \lambda(A + x) = \lambda(A).
+    $$
+    Since we chose the set $A \in \cB_{\bbR}$ arbitrarily, we find that the two measures agree on the entire Borel set and we can therefore conclude the proof.
+\end{solution}
+
+\begin{solution}[3.20]{Castella, A.}
+    We make a case distinction between positive and negative $\tau$.
+    \begin{itemize}
+        \item  Let us take an arbitrary $A \in \mathcal{B}_\mathbb{R}$ such that there exist $a,b \in \mathbb{R}$, where $a < b$ and $A = (a,b]$. We take an arbitrary $\tau \in \mathbb{R}^+$. We find that $\tau A = (\tau a, \tau b]$ and therefore, by the definition of $\lambda$, we find
+        $$
+            \lambda(\tau A) = \tau b - \tau a = \tau (b-a) = \tau \lambda(A).
+        $$
+        By the same argument as in Problem 3.19 we find that $\lambda(\tau A) = \tau\lambda(A)$ holds for all $\tau \in \mathbb{R}^+$ and $A \in \mathcal{B}_\mathbb{R}$.
+        \item We begin this part of the proof by showing that for all $a,b \in \mathbb{R}$, where $a < b$, we have
+        $$
+            \lambda([a,b)) = \lambda((a,b]).
+        $$
+        Let us define the sequence $(A_n)_{n\in\mathbb{N}}$ as $A_n = (a-\frac{1}{n},b-\frac{1}{n}]$. From the definition, we find that $\lim_n A_n = [a,b)$, since for all $n \in \mathbb{N}$ we have $a \notin A_n$ and $b \in A_n$. Since we can interchange the measure and the limit, we find that
+        $$
+            \lambda([a,b)) = \lim_n \lambda(A_n) = \lim_n\left(b+\frac{1}{n}-a-\frac{1}{n}\right) = \lim_n(b-a) = (b-a).
+        $$
+        Therefore, by the definition of the measure we find that
+        $$
+            \lambda([a,b)) = \lambda((a,b]).
+        $$
+        We now use this to prove the statement for an arbitrary $\tau \in \mathbb{R}^-$. Let us take an arbitrary $B \in \mathcal{B}_\mathbb{R}$ such that $B = [a, b)$. We find that $\tau A = (\tau b, \tau a]$, since $\tau b < \tau a$. By the definition of $\lambda$ and the statement we just proved, we find
+        $$
+            \lambda(\tau B) = \tau a - \tau b = -\tau (b-a) = -\tau\lambda(B).
+        $$
+        By the same argument as in Problem 3.19 we find that $\lambda(\tau B) = -\tau\lambda(B)$ for all $B \in \mathcal{B}_\mathbb{R}$ and $\tau \in \mathbb{R}^-$.
+    \end{itemize}
+    We can now use these two results to conclude that
+    $$
+        \lambda(\tau A) = |\tau|\lambda(A),
+    $$
+    for all $A \in \mathcal{B}_\mathbb{R}$ and $\tau \in \mathbb{R}$.
+\end{solution}
+
+\begin{solution}[3.23]{Castella, A.}
+    Let $\mu$ be a finite measure on $(\bbR, \cB_{\bbR})$. Show that the set $\{x\in\bbR:\mu(\{x\}) > 0\}$ is at most countable.
+    We start the proof by denoting the set
+    $$
+        S = \{x\in\bbR : \mu(\{x\}) > 0\}
+    $$
+    in order to simplify our notation. We now define the sets $T_n$ such that
+    $$
+        T_n = \{x\in\bbR : \mu(\{x\} > \frac{1}{n}\},
+    $$
+    for all $n \in \mathbb{N}$. We will now use a proof by contradiction to show that $T_n$ must be finite for all $n$. Thus, let us assume the contrary. Then there exists a sequence $(x_n)_{n\in\mathbb{N}}$ in $T_n$ such that for all $i,j \in \mathbb{N}$ we have $x_i \neq x_j$. By countable additivity of the measure $\mu$ we find that
+    $$
+        \mu\left(\bigcup_{i=1}^\infty \{x_i\}\right) = \sum_{i=1}^\infty\mu(\{x_i\}).
+    $$
+    By definition of the set $T_n$ we find that
+    $$
+        \sum_{i=1}^\infty\mu(\{x_i\}) > \sum_{i=1}^\infty\frac{1}{n} = \infty.
+    $$
+    This implies that
+    $$
+        \mu\left(\bigcup_{i=1}^\infty \{x_i\}\right) > \infty,
+    $$
+    which is a contradiction to the finiteness of the measure $\mu$. Thus we can conclude that the sets $T_n$ are indeed finite for all $n$. Let us now define the set $T$ as
+    $$
+        T = \bigcup_{i=1}^\infty T_n.
+    $$
+    Since $T_n$ is finite for all $n$, this implies that $T$ must be at most countable. We will now show that $T = S$. Let us split this into two part. We being by noting that
+    $$
+        T \subset S
+    $$
+    follows trivially as $T_n$ is the set of one element sets with measure greater than $\frac{1}{n}$ which is greater than zero, which implies that
+    $$
+        T_n \subset S.
+    $$
+    Thus we only need to prove that $S \subset T$. Let us take some arbitrary element $s \in S$. By definition, we find that
+    $$
+        \mu(\{s\}) > 0.
+    $$
+    Since it is strictly greater than, we can choose some $n' \in \mathbb{N}$ such that
+    $$
+        \mu(\{s\}) > \frac{1}{n'}.
+    $$
+    From this we find that
+    $$
+        s \in T_{n'} \subset T.
+    $$
+    Since $s$ was chosen arbitrarily we find that
+    $$
+        S \subset T.
+    $$
+    We can now use this to conclude that
+    $$
+        S = T.
+    $$
+    Since $T$ is at most countable, we find that $S$ must be at most countable as well.
 \end{solution}
 
 \begin{solution}[3.22]{Beerens, L.}
@@ -125,4 +419,16 @@
         \mathbb{P}\left( \bigcap_{i=1}^\infty A_i \right) = \mathbb{P}(A) - \mathbb{P}\left( \bigcup_{i=1}^\infty(A\setminus A_i) \right) = 1-0=1,
     $$
     which completes the proof.
+  \end{solution}
+  
+  \begin{solution}[3.21]{Beerens, L.}
+    Let $F:\mathbb{R}\rightarrow\mathbb{R}$ be a non-decreasing, right-continuous function. Let $\nu_F$ be the unique measure on $(\mathbb{R},\mathcal{B}_\mathbb{R})$ such that $\nu_F((a,b])=F(b)-F(a)$ for all $a<b$. For all $i\in\mathbb{Z}$, let
+    $$
+        A_i:= (i,i+1]
+    $$
+    and let $\mathcal{A}$ be the collection of all these sets $A_i$. Note that $\mathcal{A}$ is a countable cover of $\mathbb{R}$. By the assumption we know that for all $i\in\mathbb{Z}$ we have
+    $$
+        \nu(A_i)  = F(i+1) - F(i).
+    $$
+    Since $F$ takes values in $\mathbb{R}$, we find that $\nu(A_i)$ is finite for all $i\in\mathbb{Z}$. Therefore, $\mathcal{A}$ is a countable cover of $\mathbb{R}$ that consists of sets with finite measure. Thus we conclude that $\mu$ is $\sigma$-finite.
 \end{solution}

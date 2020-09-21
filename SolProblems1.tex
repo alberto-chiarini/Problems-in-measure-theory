@@ -41,6 +41,148 @@
     $$
 \end{solution}
 
+\begin{solution}[2.3]{Castella, A.}
+    \begin{itemize}
+        \item Using the definition and standard set theory, we find that
+        $$
+            (\limsup_{n\rightarrow\infty}A_n)^c = \left(\bigcap_{n\in\mathbb{N}}\bigcup_{m\geq n}A_m\right)^c = \bigcup_{n\in\mathbb{N}}\left(\bigcup_{m\geq n}A_m\right)^c = \bigcup_{n\in\mathbb{N}}\bigcap_{m\geq n}(A_m)^c = \liminf_{n\rightarrow\infty}A_n^c.
+        $$
+        Therefore, the condition holds.
+        \item We know that $\mathcal{F}$ is a $\sigma$-algebra, and therefore countable unions and complements are contained in the set. We show that countable intersections follow from those two conditions. By complementation we know that $(A_n)^c$ is in $\mathcal{F}$. Using both conditions in combination we find that
+        $$
+            \left(\bigcup_{n\in\mathbb{N}}(A_n)^c\right)^c = \bigcap_{n\in\mathbb{N}}A_n \in \mathcal{F}.
+        $$
+        Thus we find that for all $n \in \mathbb{N}$, we find that
+        $$
+            \bigcap_{m\geq n}A_m \in \mathcal{F}.
+        $$
+        Additionally, all countable unions are contained in the set. therefore we find that
+        $$
+            \bigcup_{n\in\mathbb{N}}\bigcap_{m\geq n}A_m = \liminf_{n\rightarrow\infty}A_n \in \mathcal{F}.
+        $$
+        Since the sequence is arbitrary, we find that also 
+        $$
+            \liminf_{n\rightarrow\infty}(A_n)^c \in \mathcal{F}.
+        $$
+        By item one we find that
+        $$
+            (\limsup_{n\rightarrow\infty}A_n)^c \in \mathcal{F}.
+        $$
+        Finally, by the complement property of $\mathcal{F}$ we find that
+        $$
+            \limsup_{n\rightarrow\infty}A_n \in \mathcal{F}.
+        $$
+        \item Let us take an arbitrary $a \in \liminf_{n\rightarrow\infty}A_n$. Then we find that there exists $n \in \mathbb{N}$ such that
+        $$
+            a\in \bigcap_{m\geq n}A_m.
+        $$
+        Thus we find that for all $m \geq n$, we have
+        $$
+            a\in A_m.
+        $$
+        For all $k \in \mathbb{N}$ we can choose $m' \geq \max(k,n)$ such that
+        $$
+            a\in A_{m'} \subset \bigcup_{m\geq k}A_m.
+        $$
+        Therefore we find that
+        $$
+            a\in \bigcap_{n\in\mathbb{N}}\bigcup_{m\geq n}A_m = \limsup_{n\rightarrow\infty}A_n.
+        $$
+        Since $a$ was arbitrary, we now conclude that
+        $$
+            \liminf_{n\rightarrow\infty}A_n \subset \limsup_{n\rightarrow\infty}A_n.
+        $$
+        \item Let us take some $a \in \limsup_{n\rightarrow\infty}A_n$. By the definition of intersections we know that
+        $$
+            a \in \bigcup_{i=1}^\infty A_m
+        $$
+        Therefore there exists $m_0 \in \mathbb{N}$ such that
+        $$
+            a\in A_{m_0}.
+        $$
+        Again, by the definition of intersections, we know that for all $n \in \mathbb{N}$ we have
+        $$
+            a\in \bigcup_{m\geq n}A_m.
+        $$
+        Therefore, let us choose $n' \geq m_0$, then we know that
+        $$
+            a\in \bigcup_{m\geq n'}A_m
+        $$
+        which implies that there exists $m_1 \in \mathbb{N}$ such that
+        $$
+            a\in A_{m_1}.
+        $$
+        We find that using a simple induction we can create an increasing sequence $(m_n)_{n\in\mathbb{N}}$ such that for all $n$, we have
+        $$
+            a\in A_{m_n}.
+        $$
+        Thus we conclude that
+        $$
+            a\in \{\omega\in\Omega:\omega\in A_n\text{ for infinitely many }n\}.
+        $$
+        Let us now take an arbitrary $b \in \{\omega\in\Omega:\omega\in A_n\text{ for infinitely many }n\}$. Clearly, by the definition of the set we can choose a strictly increasing sequence $(n_i)_{i\in\mathbb{N}}$ such that
+        $$
+            b\in A_{n_i}
+        $$
+        for all $i$. Since for all $i$, we know that $n_i$ is integer, it is clear that
+        $$
+            \lim_{i\rightarrow\infty}n_i = \infty.
+        $$
+        Let us take an arbitrary $k\in\mathbb{N}$. Using the limit we find that there exists $i$ such that $n_i > k$ and therefore
+        $$
+            b \in A_{n_i} \subset \bigcup_{m\geq k}A_m.
+        $$
+        Since $k$ was arbitrary, this must hold for all $k$. Thus we find that
+        $$
+            b \in \bigcap_{n\in\mathbb{N}}\bigcup_{m\geq n}A_m = \limsup_{n\rightarrow\infty}A_n.
+        $$
+        Therefore, we now find that
+        $$
+            \{\omega\in\Omega:\omega\in A_n\text{ for infinitely many }n\} \subset \limsup_{n\rightarrow\infty}A_n
+        $$
+        and we can finally conclude that
+        $$
+            \limsup_{n\rightarrow\infty}A_n = \{\omega\in\Omega:\omega\in A_n\text{ for infinitely many }n\}.
+        $$
+        \item Let us take an arbitrary $a \in \liminf_{n\rightarrow\infty}A_n$. By the definition of a union, we find that there exists $n\in\mathbb{N}$ such that
+        $$
+            a \in \bigcap_{m\geq n}A_m.
+        $$
+        By the definition of intersections, we find that for all $m\geq n$ we have
+        $$
+            a \in A_m.
+        $$
+        Clearly this implies that
+        $$
+            a\in \{\omega\in\Omega:\exists_{m\in\mathbb{N}}\text{ such that }\omega\in A_n\text{ for all }n\geq m\}.
+        $$
+        Since $a$ was chosen arbitrarily we find that
+        $$
+            \liminf_{n\rightarrow\infty}A_n \subset \{\omega\in\Omega:\exists_{m\in\mathbb{N}}\text{ such that }\omega\in A_n\text{ for all }n\geq m\}.
+        $$
+        Now let us choose an arbitrary $b \in \{\omega\in\Omega:\exists_{m\in\mathbb{N}}\text{ such that }\omega\in A_n\text{ for all }n\geq m\}$. By the definition, there exists $n' \in \mathbb{N}$ such that
+        $$
+            b \in A_n
+        $$
+        for all $n \geq n'$. Therefore we find that
+        $$
+            b \in \bigcap_{m\geq n'}A_m.
+        $$
+        By the definition of a union we find that
+        $$
+            b\in \bigcap_{m\geq n'}A_m \subset \bigcup_{n\in\mathbb{N}}\bigcap_{m\geq n}A_m = \liminf_{n\rightarrow\infty}A_n.
+        $$
+        Therefore we find that
+        $$
+            \{\omega\in\Omega:\exists_{m\in\mathbb{N}}\text{ such that }\omega\in A_n\text{ for all }n\geq m\} \subset \liminf_{n\rightarrow\infty}A_n.
+        $$
+        We can now conclude that
+        $$
+            \liminf_{n\rightarrow\infty}A_n = \{\omega\in\Omega:\exists_{m\in\mathbb{N}}\text{ such that }\omega\in A_n\text{ for all }n\geq m\}.
+        $$
+    \end{itemize}
+\end{solution}
+
 \begin{solution}[2.4]{Castella, A.}
     A $\sigma$-algebra $\mathcal{G}$ is defined as a set of subsets such that
     \begin{itemize}
