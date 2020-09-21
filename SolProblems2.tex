@@ -2,7 +2,7 @@
     \begin{itemize}
         \item Let $x_1,x_2\in\mathbb{R}$ with $x_1<x_2$. Then
         $$
-            F(x_2) = \mu((-\infty,x_1]\cup (x_1,x_2]) = \mu((-\infty, x_1)) + \mu((x_1,x_2])\geq\mu((-\infty, x_1)) = F(x_1).
+            F(x_2) = \mu((-\infty,x_1]\cup (x_1,x_2]) = \mu((-\infty, x_1]) + \mu((x_1,x_2])\geq\mu((-\infty, x_2]) = F(x_1).
         $$
         Therefore, $F$ is non-decreasing.
         
@@ -158,17 +158,19 @@
 \end{solution}
 
 \begin{solution}[3.19]{Castella, A.}
-    We will split the proof of this exercise into 5 individual parts for convenience.\\
-    \\
-    \textbf{Part I:} \textit{Equivalence of the measures on intervals of the form $(a,b]$}.
+    We will split the proof of this exercise into 5 individual parts for convenience.
+    \vspace{0.5\baselineskip}
+
+    \noindent\textbf{Part I:} \textit{Equivalence of the measures on intervals of the form $(a,b]$}.
     
     Let us take a arbitrary values $a,b \in \mathbb{R}$. Let us define the set $A$ as $A = (a,b]$. Then $A$ is a Borel set. We find that for all $x\in\mathbb{R}$, we have $A + x = (a+x,b+x]$ and therefore, by the definition of $\lambda$, we get 
     $$
         \lambda(A+x) = (b+x)-(a+x) = b - a = \lambda(A).
     $$
-    We will now show that we can extend this equivalence to the entire Borel set.\\
-    \\
-    \textbf{Part II:} \textit{Defining the set $\mathcal{A}_n$}
+    We will now show that we can extend this equivalence to the entire Borel set.    
+    \vspace{0.5\baselineskip}
+    
+    \noindent\textbf{Part II:} \textit{Defining the set $\mathcal{A}_n$}
     
     We begin by defining the set $E_n$ as the half open interval
     $$
@@ -178,9 +180,10 @@
     $$
         \mathcal{A}_n = \{A\in\cB_{\bbR} : \lambda(A\cap E_n + x) = \lambda(A\cap E_n) \text{ for all }x\in\mathbb{R}\}.
     $$
-    We note that this set contains all the half open intervals in $\mathbb{R}$. This holds for all bounded and unbounded half open intervals.\\
-    \\
-    \textbf{Part III:} \textit{Proving that $\mathcal{A}_n$ is a $\lambda$-system on $\mathbb{R}$}
+    We note that this set contains all the half open intervals in $\mathbb{R}$. This holds for all bounded and unbounded half open intervals.
+    \vspace{0.5\baselineskip}
+    
+    \noindent\textbf{Part III:} \textit{Proving that $\mathcal{A}_n$ is a $\lambda$-system on $\mathbb{R}$}
     
     We will split this into three parts. First we will show that the entire set $\mathbb{R}$ is contained in the set. Then we will show that all complements of sets are contained in $\mathcal{A}_n$ as well. Finally, we will show that all countable unions of mutually disjoint sets belong to it.
     \begin{itemize}
@@ -236,9 +239,10 @@
         $$
         for all sequences of mutually disjoint sets.
     \end{itemize}
-    Since we have proven all three properties, we can conclude that $\mathcal{A}_n$ is indeed a $\lambda$-system.\\
-    \\
-    \textbf{Part IV:} \textit{Applying the $\pi-\lambda$ theorem}
+    Since we have proven all three properties, we can conclude that $\mathcal{A}_n$ is indeed a $\lambda$-system.
+    \vspace{0.5\baselineskip}
+
+    \noindent\textbf{Part IV:} \textit{Applying the $\pi-\lambda$ theorem}
     
     Before we start this part of the proof let us note that the set of all half open intervals from below forms a $\pi$-system. A $\pi$-system requires only finite intersections to be possible. Finite intersections of half open intervals clearly result in half open intervals as well.
     
@@ -254,9 +258,10 @@
     $$
         \cB_{\bbR} = \mathcal{A}_n
     $$
-    for all $n$ in the natural numbers.\\
-    \\
-    \textbf{Part V:} \textit{Applying continuity of measures}
+    for all $n$ in the natural numbers.
+    \vspace{0.5\baselineskip}
+
+    \noindent\textbf{Part V:} \textit{Applying continuity of measures}
     
     Although we have proven that $\mathcal{A}_n$ is equal to the Borel set for all $n$, this does not imply that the two measures are equivalent on the Borel set. In order to prove this, we must go one step further and apply the continuity of measures.
     
