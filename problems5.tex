@@ -4,6 +4,7 @@
 \end{equation*}  
 \end{problem}
 
+
 \begin{problem}
     Let $(\Omega,\cF,\mu)$ be a measure space and $f:\Omega\to \overline{\bbR}$ be a non-negative measurable function
     \begin{itemize}
@@ -18,6 +19,15 @@
     \end{itemize}
 \end{problem}
 
+\begin{problem}
+     Suppose that $(f_n)\subseteq L^+$, $f_n\to f$ pointwise and $\lim_{n\to\infty} \int f_n\, \De\mu =  \int f\, \De\mu <\infty$. Show, without the dominated convergence theorem, that 
+     for all $A\in \cF$
+     \begin{equation*}
+         \lim_{n\to\infty} \int_A f_n\,\De \mu = \int_A f\,\De \mu.
+     \end{equation*}  
+     Show that the conclusion might fail if $ \int f\, \De\mu = \infty$.
+\end{problem}
+
 \begin{problem} Let $(\Omega,\cF,\mu)$ be a measure space and suppose that $(f_{n})$ is a sequence of measurable functions such that $f_1\geq f_2\geq\ldots \geq 0$. Show using the MCT that if $f :=\lim_{n\to\infty} f_n$ and $\int_{\Omega} f_1<\infty$, then
 \begin{equation*}
     \lim_{n\to\infty} \int_\Omega f_n\,\De \mu =  \int_\Omega f\,\De \mu.
@@ -25,10 +35,21 @@
 Show that if $\int_{\Omega} f_1\,\De \mu = \infty$ the above conclusion might not hold.    
 \end{problem}
 
+\begin{problem}
+    Let $(\Omega,\cF,\mu)$ be a measure space and $f\in L^+$. Show that if $\int f\,\De \mu <\infty$, then
+    \begin{equation*}
+        \lim_{n\to\infty} \int_\Omega f \ind{f\geq n} \,\De \mu = 0. 
+    \end{equation*}
+\end{problem}
+
 \begin{problem} Suppose that $f$ is a Lebesgue-integrable function on $\bbR$. Show that for all $z\in \bbR$
     \begin{equation*}
         \int_\bbR f(x)\,\De \cL^1(x) = \int_\bbR f(x+z)\,\De \cL^1(x).
     \end{equation*}
+\end{problem}
+
+\begin{problem}
+    Assume Fatou's lemma and deduce the Monotone Convergence Theorem from it.
 \end{problem}
 
 \begin{problem}
