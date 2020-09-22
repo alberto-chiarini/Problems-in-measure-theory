@@ -1,3 +1,68 @@
+\begin{solution}[3.11]{Beerens, L.}
+    \begin{itemize}
+        \item Let $x_1,x_2\in\mathbb{R}$ with $x_1<x_2$. Then
+        $$
+            F(x_2) = \mu((-\infty,x_1]\cup (x_1,x_2]) = \mu((-\infty, x_1]) + \mu((x_1,x_2])\geq\mu((-\infty, x_2]) = F(x_1).
+        $$
+        Therefore, $F$ is non-decreasing.
+        
+        \item Consider $\lim_{x\downarrow x_0}F(x)$. This can be written as 
+        $$
+            \lim_{x\downarrow x_0}\mu((-\infty,x]).
+        $$
+        We know that this limit exists, so we can look at a sequence that converges to $x_0$ from above instead. Let $(x_n)$ be a strictly decreasing sequence in $\mathbb{R}$ such that $x_n\rightarrow x_0$. For all $n\in\mathbb{N}$, let $A_n:=(-\infty,x_n]$. Then
+        $$
+            \lim_{x\downarrow x_0}\mu((-\infty,x]) = \lim_{n\rightarrow \infty}\mu((-\infty,x_n]) = \lim_{n\rightarrow \infty}\mu(A_n).
+        $$
+        Since $A_n$ is a decreasing sequence of measurable sets such that $\mu(A_1)$ is finite, we find that
+        $$
+            \lim_{n\rightarrow \infty}\mu(A_n) = \mu\left( \bigcap_{i=1}^\infty A_i \right) = \mu((-\infty, x_0]),
+        $$
+        which completes the proof.
+        
+        \item We shall turn towards $\lim_{x\rightarrow -\infty}F(x)$. We know that this limit exists, so we can look at a sequence that diverges to $-\infty$ instead. Let the sequence $(x_n)$ be defined by $x_n = -n$. For all $n\in\mathbb{N}$, let $A_n:=(-\infty,x_n]$. Then
+        $$
+            \lim_{x\downarrow x_0}\mu((-\infty,x]) = \lim_{n\rightarrow \infty}\mu((-\infty,x_n]) = \lim_{n\rightarrow \infty}\mu(A_n).
+        $$
+        Since $A_n$ is a decreasing sequence of measurable sets such that $\mu(A_1)$ is finite, we find that
+        $$
+            \lim_{n\rightarrow \infty}\mu(A_n) = \mu\left( \bigcap_{i=1}^\infty A_i \right) = \mu(\varnothing) = 0,
+        $$
+        which completes the proof.
+        
+        \item Finally, we consider $\lim_{x\rightarrow \infty}F(x)$. We know that this limit exists, so we can look at a sequence that diverges to $\infty$ instead. Let $(x_n)$ be a sequence in $\mathbb{R}$ defined by $x_n = n$. For all $n\in\mathbb{N}$, let $A_n:=(-\infty,x_n]$. Then
+        $$
+            \lim_{x\rightarrow \infty}F(x) = \lim_{n\rightarrow \infty}F(x_n).
+        $$
+        Since $A_n$ is an increasing sequence of measurable sets, we find that
+        $$
+            \lim_{n\rightarrow \infty}\mu(A_n) = \mu\left( \bigcup_{i=1}^\infty A_i \right) = \mu(\mathbb{R}),
+        $$
+        which completes the proof.
+    \end{itemize}
+\end{solution}
+
+\begin{solution}[3.14]{Beerens, L.}
+    Let $(\Omega,\mathcal{F})$ be a measure space. Let $\mu:\mathcal{F}\rightarrow[0,\infty]$ be a set function which is finitely additive and such that $\mu(\varnothing) = 0$. If $\mu$ is a measure, then it is continuous from below, since that is a property of measures. Conversely, suppose that $\mu$ is continuous from below. Note that $\mu$ assigns to each set $A\in\mathcal{F}$ a nonnegative extended real number $\mu(A)$. It was already assumed that $\mu(\varnothing) =0$, so we will proceed by proving that $\mu$ is $\sigma$-additive. Let $A_1, A_2,\hdots$ be a sequence of mutually disjoint elements of $\mathcal{F}$. For all $n\in\mathbb{N}$, let 
+    $$
+        B_n = \bigcup_{i=1}^n A_i.
+    $$
+    Since $\mathcal{F}$ is a $\sigma$-algebra, we find that all $B_n$ are sets in $\mathcal{F}$.
+    From finite additivity, we find that for all $n\in\mathbb{N}$ we have
+    $$
+        \mu(B_n) = \mu\left( \bigcup_{i=1}^n A_i \right) = \sum_{i=1}^n \mu(A_i). 
+    $$
+    Note that $(B_n)$ is an increasing sequence of measurable sets in $\mathcal{F}$. By continuity from below it follows that
+    $$
+        \mu\left( \bigcup_{i=1}^\infty B_i \right) = \lim_{n\rightarrow\infty}\mu(B_n) = \sum_{i=1}^\infty\mu(A_i).
+    $$
+    Therefore,
+    $$
+        \mu\left( \bigcup_{i=1}^\infty A_i \right) = \mu\left( \bigcup_{i=1}^\infty B_i \right) = \sum_{i=1}^\infty\mu(A_i).
+    $$
+    Thus $\mu$ is $\sigma$-additive and we can conclude that $\mu$ is a measure.
+\end{solution}
+
 \begin{solution}[3.15]{Castella, A.}
     We note that for a set function $\mu$, continuity from above implies that for all sequences of sets $(A_n)$ such that $A_{i+1} \subset A_i$ and $\mu(A_1) < \infty$ we have
     $$
@@ -93,17 +158,19 @@
 \end{solution}
 
 \begin{solution}[3.19]{Castella, A.}
-    We will split the proof of this exercise into 5 individual parts for convenience.\\
-    \\
-    \textbf{Part I:} \textit{Equivalence of the measures on intervals of the form $(a,b]$}.
+    We will split the proof of this exercise into 5 individual parts for convenience.
+    \vspace{0.5\baselineskip}
+
+    \noindent\textbf{Part I:} \textit{Equivalence of the measures on intervals of the form $(a,b]$}.
     
     Let us take a arbitrary values $a,b \in \mathbb{R}$. Let us define the set $A$ as $A = (a,b]$. Then $A$ is a Borel set. We find that for all $x\in\mathbb{R}$, we have $A + x = (a+x,b+x]$ and therefore, by the definition of $\lambda$, we get 
     $$
         \lambda(A+x) = (b+x)-(a+x) = b - a = \lambda(A).
     $$
-    We will now show that we can extend this equivalence to the entire Borel set.\\
-    \\
-    \textbf{Part II:} \textit{Defining the set $\mathcal{A}_n$}
+    We will now show that we can extend this equivalence to the entire Borel set.    
+    \vspace{0.5\baselineskip}
+    
+    \noindent\textbf{Part II:} \textit{Defining the set $\mathcal{A}_n$}
     
     We begin by defining the set $E_n$ as the half open interval
     $$
@@ -113,9 +180,10 @@
     $$
         \mathcal{A}_n = \{A\in\cB_{\bbR} : \lambda(A\cap E_n + x) = \lambda(A\cap E_n) \text{ for all }x\in\mathbb{R}\}.
     $$
-    We note that this set contains all the half open intervals in $\mathbb{R}$. This holds for all bounded and unbounded half open intervals.\\
-    \\
-    \textbf{Part III:} \textit{Proving that $\mathcal{A}_n$ is a $\lambda$-system on $\mathbb{R}$}
+    We note that this set contains all the half open intervals in $\mathbb{R}$. This holds for all bounded and unbounded half open intervals.
+    \vspace{0.5\baselineskip}
+    
+    \noindent\textbf{Part III:} \textit{Proving that $\mathcal{A}_n$ is a $\lambda$-system on $\mathbb{R}$}
     
     We will split this into three parts. First we will show that the entire set $\mathbb{R}$ is contained in the set. Then we will show that all complements of sets are contained in $\mathcal{A}_n$ as well. Finally, we will show that all countable unions of mutually disjoint sets belong to it.
     \begin{itemize}
@@ -171,9 +239,10 @@
         $$
         for all sequences of mutually disjoint sets.
     \end{itemize}
-    Since we have proven all three properties, we can conclude that $\mathcal{A}_n$ is indeed a $\lambda$-system.\\
-    \\
-    \textbf{Part IV:} \textit{Applying the $\pi-\lambda$ theorem}
+    Since we have proven all three properties, we can conclude that $\mathcal{A}_n$ is indeed a $\lambda$-system.
+    \vspace{0.5\baselineskip}
+
+    \noindent\textbf{Part IV:} \textit{Applying the $\pi-\lambda$ theorem}
     
     Before we start this part of the proof let us note that the set of all half open intervals from below forms a $\pi$-system. A $\pi$-system requires only finite intersections to be possible. Finite intersections of half open intervals clearly result in half open intervals as well.
     
@@ -189,9 +258,10 @@
     $$
         \cB_{\bbR} = \mathcal{A}_n
     $$
-    for all $n$ in the natural numbers.\\
-    \\
-    \textbf{Part V:} \textit{Applying continuity of measures}
+    for all $n$ in the natural numbers.
+    \vspace{0.5\baselineskip}
+
+    \noindent\textbf{Part V:} \textit{Applying continuity of measures}
     
     Although we have proven that $\mathcal{A}_n$ is equal to the Borel set for all $n$, this does not imply that the two measures are equivalent on the Borel set. In order to prove this, we must go one step further and apply the continuity of measures.
     
@@ -302,4 +372,68 @@
         S = T.
     $$
     Since $T$ is at most countable, we find that $S$ must be at most countable as well.
+\end{solution}
+
+\begin{solution}[3.22]{Beerens, L.}
+    Let $(\Omega, \mathbb{F}, \mathbb{P})$ be a probability space. Let $(A_i)_{i\in\mathbb{N}}\subset\mathcal{F}$ be a sequence such that $\mathbb{P}(A_i) = 1$ for all $i\in\mathbb{N}$. Let
+    $$
+        A:=\bigcup_{i=1}^\infty A_i
+    $$
+    Since we are talking about a probability space, we know that $\mathbb{P}(\Omega) = 1$. Additionally, we have $A_1\subset A$, which implies that $\mathbb{P}(A)\geq 1$. However, $A\subset \Omega$, from which it now follows that $\mathbb{P}(A) = 1$. We can see that for all $i\in\mathbb{N}$, we have
+    $$
+        \mathbb{P}(A\setminus A_i) = \mathbb{P}(A) - \mathbb{P}(A_i) = 0.
+    $$
+    We shall now proceed by proving that 
+    $$
+        A\setminus\bigcup_{i=1}^\infty(A\setminus A_i) = \bigcap_{i=1}^\infty A_i.
+    $$
+    First, suppose that 
+    $$
+        x\in A\setminus\bigcup_{i=1}^\infty(A\setminus A_i).
+    $$
+    Then there does not exist an $i\in\mathbb{N}$ such that $x\in A\setminus A_i$. Thus, for all $i\in\mathbb{N}$ we have $x\in A_i$, from which it follows that 
+    $$
+        x\in\bigcap_{i=1}^\infty A_i.
+    $$
+    Conversely, suppose that 
+    $$
+        x\in\bigcap_{i=1}^\infty A_i.
+    $$
+    Then for all $i\in\mathbb{N}$ we have $x\in A_i$. Therefore, for all $i\in\mathbb{N}$ we have $x\notin A\setminus A_i$. However, $x\in A$. Thus we conclude that
+    $$
+        x\in A\setminus\bigcup_{i=1}^\infty(A\setminus A_i),
+    $$
+    from which it follows that indeed
+    $$
+        A\setminus\bigcup_{i=1}^\infty(A\setminus A_i) = \bigcap_{i=1}^\infty A_i.
+    $$
+    Hence, we find that
+    $$
+        \mathbb{P}\left( \bigcap_{i=1}^\infty A_i \right) = \mathbb{P}\left( A\setminus\bigcup_{i=1}^\infty(A\setminus A_i) \right) = \mathbb{P}(A) - \mathbb{P}\left( \bigcup_{i=1}^\infty(A\setminus A_i) \right).
+    $$
+    The countable subadditivity property of measures implies that
+    $$
+        \mathbb{P}\left( \bigcup_{i=1}^\infty(A\setminus A_i) \right)\leq\sum_{i=1}^\infty \mathbb{P}(A\setminus A_i)=0.
+    $$
+    Since measures map to $[0,\infty]$, we have
+    $$
+        \mathbb{P}\left( \bigcup_{i=1}^\infty(A\setminus A_i) \right)=0
+    $$
+    and therefore
+    $$
+        \mathbb{P}\left( \bigcap_{i=1}^\infty A_i \right) = \mathbb{P}(A) - \mathbb{P}\left( \bigcup_{i=1}^\infty(A\setminus A_i) \right) = 1-0=1,
+    $$
+    which completes the proof.
+  \end{solution}
+  
+  \begin{solution}[3.21]{Beerens, L.}
+    Let $F:\mathbb{R}\rightarrow\mathbb{R}$ be a non-decreasing, right-continuous function. Let $\nu_F$ be the unique measure on $(\mathbb{R},\mathcal{B}_\mathbb{R})$ such that $\nu_F((a,b])=F(b)-F(a)$ for all $a<b$. For all $i\in\mathbb{Z}$, let
+    $$
+        A_i:= (i,i+1]
+    $$
+    and let $\mathcal{A}$ be the collection of all these sets $A_i$. Note that $\mathcal{A}$ is a countable cover of $\mathbb{R}$. By the assumption we know that for all $i\in\mathbb{Z}$ we have
+    $$
+        \nu(A_i)  = F(i+1) - F(i).
+    $$
+    Since $F$ takes values in $\mathbb{R}$, we find that $\nu(A_i)$ is finite for all $i\in\mathbb{Z}$. Therefore, $\mathcal{A}$ is a countable cover of $\mathbb{R}$ that consists of sets with finite measure. Thus we conclude that $\mu$ is $\sigma$-finite.
 \end{solution}
