@@ -1,0 +1,83 @@
+\begin{solution}[4.10]{Castella, A.}
+    We will give two methods of proving this exercise. The first proof uses only the current course material to prove the extension of the identities to all Lebesgue measurable sets. However, the second proof makes use of the Carath\'{e}odory extension theorem and is thus presented only for the curiosity of the reader.
+    \begin{itemize}
+        \item Theorem 5.2.1 of the lectures notes states that the set of Lebesgue measurable sets, denoted by $\overline{\cB}^\mathcal{L}$, consists of all elements of the form $E\cup U$ where $E$ is a Borel set and $U \in \mathbb{R}^n$ is a Borel-null set. Additionally, we note that the Lebesgue measure is complete, and thus all null sets have measure zero. From this we know that
+        $$
+            \mathcal{L}(U) = 0.
+        $$
+        Now let us choose such an element $E\cup U \in \overline{\cB}^\mathcal{L}$ arbitrarily. We note that
+        $$
+            U \setminus E \subset U,
+        $$
+        and is therefore also a Borel-null set. Thus we can assume, without loss of generality, that $E$ and $U$ are disjoint. We now note that the Lebesgue measure $\mathcal{L}$ is equivalent to the measure $\lambda$ given in exercises 3.19 and 3.20 on all Borel measurable sets. Thus we find that since $E$ is a Borel set, we have
+        $$
+            \mathcal{L}(E + x) = \mathcal{L}(E)
+        $$
+        and
+        $$
+            \mathcal{L}(\tau E) = |\tau|\mathcal{L}(E).
+        $$
+        From the fact that $U$ is a null set we know that there exists a set $B \in \cB$ such that $U \subset B$ and
+        $$
+            \mathcal{L}(B) = 0.
+        $$
+        We note that since $B$ is a Borel set then, as we proved in exercises 3.19 and 3.20, both identities must hold. Thus we find that $\tau B$ and $B + x$ are sets of measure zero as well. It is clear from definition that $U + x \subset B + x$ and $\tau U \subset \tau B$. Therefore, $U + x$ and $\tau  U$ are Borel-null sets as well. Thus we find that since $\mathcal{L}$ is the completion of the measure $\lambda$, we have
+        $$
+            \mathcal{L}(U + x) = \mathcal{L}(\tau U) = 0.
+        $$
+        Combining this result with the last one and the fact that since $\mathcal{L}$ is a measure it is therefore finitely additive, we find that
+        $$
+            \mathcal{L}(E \cup U + x) = \mathcal{L}(E + x) + \mathcal{L}(U + x) = \mathcal{L}(E)
+        $$
+        and
+        $$
+            \mathcal{L}(\tau E\cup U) = \mathcal{L}(\tau E) + \mathcal{L}(\tau U) = |\tau|\mathcal{L}(E).
+        $$
+        Finally, we note that, since the measure of $U$ is zero and $U$ is disjoint from $E$, we have
+        $$
+            \mathcal{L}(E) = \mathcal{L}(E) + \mathcal{L}(U) = \mathcal{L}(E \cup U).
+        $$
+        We can therefore conclude that the identities
+        $$
+            \mathcal{L}(E\cup U + x) = \mathcal{L}(E\cup U)
+        $$
+        and
+        $$
+            \mathcal{L}(\tau E\cup U) = |\tau|\mathcal{L}(E\cup U)
+        $$
+        hold for arbitrary $E \cup U \in \overline{\cB}^\mathcal{L}$. Thus the equivalence of the measures is established for all Lebesgue measurable sets.
+        \item The Lebesgue measure $\mathcal{L}$ is defined on the ring of half open intervals $(a, b]$. On this ring the measure is defined as
+        $$
+            \mathcal{L}((a,b]) = b - a.
+        $$
+        This is clearly equivalent to the measure $\lambda$ defined in exercises 3.19 and 3.20. In these exercises we proved the equivalences
+        $$
+            \lambda(A + x) = \lambda(A)
+        $$
+        and
+        $$
+            \lambda(\tau A) = |\tau|\lambda(A)
+        $$
+        on the entire ring. Clearly any measure is a pre-measure as well. Thus $\mathcal{L}$ is a pre-measure on the half open intervals. Additionally, we note that the half open intervals form a ring. Thus they also form a semi-ring. Finally, we show that the pre-measure is also $\sigma$-finite. It is defined on the real numbers thus we need to find a countable cover for $\mathbb{R}$ of finite measure sets. Let us take the set
+        $$
+            \mathcal{A} = \{(n, n+1] : n\in \mathbb{Z}\}.
+        $$
+        It is clear that
+        $$
+            \bigcup_{A \in \mathcal{A}}A = \mathbb{R}.
+        $$
+        We also note that
+        $$
+            \mathcal{L}(A) = n - n+1 = 1 < \infty
+        $$
+        for all $A \in \mathcal{A}$. Thus we have found a countable cover of finite-measure sets. We can conclude that $\mathcal{L}$ is indeed $\sigma$-finite. We now find that, by the Carath\'{e}odory extension theorem, this implies that the extension is unique. And thus we find that the extension of both pairs of measures must be the same respectively. We thus find that
+        $$
+            \mathcal{L}(A + x) = \mathcal{L}(A)
+        $$
+        and
+        $$
+            \mathcal{L}(\tau A) = |\tau|\mathcal{L}(A)
+        $$
+        for all Lebesgue measurable sets $A$.
+    \end{itemize}
+\end{solution}
