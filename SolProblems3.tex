@@ -1,3 +1,37 @@
+\begin{solution}[4.7]{Castella, A.}
+    \begin{itemize}
+        \item Let us first assume there exists a set $\overline{A} \subset \Omega$ and another set $A \in \mathcal{F}$ such that $A\Delta\overline{A}$ is a null set with respect to the measure $\mu$. We first note that 
+        $$
+            A \Delta \overline{A} = (A\setminus\overline{A}) \cup (\overline{A}\setminus A),
+        $$
+        which implies that
+        $$
+            A \setminus \overline{A}
+        $$
+        and
+        $$
+            \overline{A} \setminus A
+        $$
+        are both $\mu$-null sets as well. Since they are both $\mu$-null then they must have measure 0 in the completion of the measure, $\overline{\mu}$. Thus both sets are $\overline{\mu}$-measurable and therefore in $\overline{\mathcal{F}}$. We now note that $A$ and $\overline{A}\setminus A$ are disjoint and therefore
+        $$
+            \overline{\mu}(A \cup (\overline{A}\setminus A)) = \overline{\mu}(A) + \overline{\mu}(\overline{A}\setminus A).
+        $$
+        Thus the set $A \cup (\overline{A}\setminus A) = A \cup \overline{A}$ is measurable as well. Since $\overline{\mathcal{F}}$ is a $\sigma$-algebra, we know that $(A\setminus\overline{A})^c$ is $\overline{\mu}$-measurable as well. The intersection of two measurable sets must be measurable as well and therefore we find that
+        $$
+            (A \cup \overline{A})\cap (A\setminus\overline{A})^c = (A\cup\overline{A})\setminus(A\setminus\overline{A}) = \overline{A}
+        $$
+        is a $\overline{\mu}$-measurable set. Thus we can conclude that indeed $\overline{A} \in \overline{\mathcal{F}}$.
+        \item We now assume the converse. Let us choose some arbitrary $\overline{A} \in \overline{\mathcal{F}}$. We note that the $\sigma$-algebra $\overline{\mathcal{F}}$ is defined as
+        $$
+            \overline{\mathcal{F}} = \{A \cup U : A \in \mathcal{F}, U\subset\Omega\text{ is a }\mu\text{-null set}\}.
+        $$
+        Thus there exists $A \in \mathcal{F}$ and $U \subset \Omega$, where $U$ is $\mu$-null, such that $\overline{A} = A\cup U$. We find that
+        $$
+            A\Delta\overline{A} = (A\setminus(A\cup U))\cup((A\cup U)\setminus A) = \varnothing\cup U = U.
+        $$
+        Since $U$ was a $\mu$-null set, we conclude this direction of the proof.
+    \end{itemize}
+\end{solution}
 \begin{solution}[4.10]{Castella, A.}
     We provide two proofs for the exercise. Let us first recall exercises 3.19 and 3.20. We will refer to the exercises in both proofs and use the result that we attained from them. The first proof is based on the current course content and uses Theorem 5.2.1 to extend the identities to the set of Lebesgue measurable sets. The second proof however, uses the Carath\'{e}odory extension theorem. We include this second proof in order to showcase an easier method of proving the identities. Additionally, the second proof only assumes that the identities hold on the half open intervals and does not need the full result of exercises 3.19 and 3.20, which prove the identities for all Borel measurable sets.
     \begin{itemize}
