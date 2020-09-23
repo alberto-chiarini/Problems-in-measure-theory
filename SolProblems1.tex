@@ -384,130 +384,130 @@
     $$
 \end{solution} 
 
-\begin{solution}[2.17]{Beerens, L.}
-    Let $(\Omega_0,\mathcal{F})$ be a measurable space, where $\mathcal{F}$ is an infinite $\sigma$-algebra.
+% \begin{solution}[2.17]{Beerens, L.}
+%     Let $(\Omega_0,\mathcal{F})$ be a measurable space, where $\mathcal{F}$ is an infinite $\sigma$-algebra.
     
-    \begin{itemize}
-        \item We shall first show that there exists non-empty $A\in\mathcal{F}$ such that the restriction of $\mathcal{F}$ to $A^c$ is infinite. 
+%     \begin{itemize}
+%         \item We shall first show that there exists non-empty $A\in\mathcal{F}$ such that the restriction of $\mathcal{F}$ to $A^c$ is infinite. 
         
-        Assume no such $A$ exists. Choose any non-empty $A\in\mathcal{F}$. Then the restriction of $\mathcal{F}$ to $A^c$, which is defined by $\{A^c\cap F: F\in\mathcal{F}\}$, is finite. Since $\mathcal{F}$ is a $\sigma$-algebra, we know that $A^c\in\mathcal{F}$. Therefore the assumption tells us that the restriction of $\mathcal{F}$ to $A$ is finite too.
+%         Assume no such $A$ exists. Choose any non-empty $A\in\mathcal{F}$. Then the restriction of $\mathcal{F}$ to $A^c$, which is defined by $\{A^c\cap F: F\in\mathcal{F}\}$, is finite. Since $\mathcal{F}$ is a $\sigma$-algebra, we know that $A^c\in\mathcal{F}$. Therefore the assumption tells us that the restriction of $\mathcal{F}$ to $A$ is finite too.
         
-        Let $\mathcal{A}_0$ and $\mathcal{A}_1$ be the restrictions of $\mathcal{F}$ to $A$ and $A^c$ respectively. Since $\sigma$-algebras are closed under intersecting and taking complements, we know that all elements of $\mathcal{A}_0$ and $\mathcal{A}_1$ are also elements in $\mathcal{F}$. Therefore, $\sigma(\mathcal{A}_0\cup\mathcal{A}_1)\subset \mathcal{F}$. Conversely, suppose that $F\in\mathcal{F}$. Then $A\cap F,A^c\cap F\in\mathcal{A}_0\cup\mathcal{A}_1$. Since $\sigma$-algebras are closed under unions, we find that $F\in\sigma(\mathcal{A}_0\cup\mathcal{A}_1)$. Thus, we conclude that $\mathcal{F} = \sigma(\mathcal{A}_0\cup\mathcal{A}_1)$.
+%         Let $\mathcal{A}_0$ and $\mathcal{A}_1$ be the restrictions of $\mathcal{F}$ to $A$ and $A^c$ respectively. Since $\sigma$-algebras are closed under intersecting and taking complements, we know that all elements of $\mathcal{A}_0$ and $\mathcal{A}_1$ are also elements in $\mathcal{F}$. Therefore, $\sigma(\mathcal{A}_0\cup\mathcal{A}_1)\subset \mathcal{F}$. Conversely, suppose that $F\in\mathcal{F}$. Then $A\cap F,A^c\cap F\in\mathcal{A}_0\cup\mathcal{A}_1$. Since $\sigma$-algebras are closed under unions, we find that $F\in\sigma(\mathcal{A}_0\cup\mathcal{A}_1)$. Thus, we conclude that $\mathcal{F} = \sigma(\mathcal{A}_0\cup\mathcal{A}_1)$.
         
-        At this point, we know that $\mathcal{F} = \sigma(\mathcal{A}_0\cup\mathcal{A}_1)$, where $\mathcal{A}_0\cup\mathcal{A}_1$ is finite. Let $n:=|\mathcal{A}_0\cup\mathcal{A}_1|$. Let $B_1\hdots B_n$ be the sets in $\mathcal{A}_0\cup\mathcal{A}_1$. For $k=1,\hdots n$, define $f_k: \Omega_0\rightarrow \{0,1\}$ by 
-        $$
-            f_k(x)=\begin{cases}
-            1&\text{if } x\in B_k\\
-            0&\text{otherwise}.
-            \end{cases}
-        $$
-        Additionally, define $f:\Omega_0\rightarrow \{0,1\}^n$ by $f(x)=(f_1(x),\hdots,f_n(x))$. Let $(c_1,\hdots c_{2^n})$ be the elements in $\{0,1\}^n$ and let $C_1,\hdots,C_{2^n}$ be their corresponding pre-images under $f$. 
-        Let $i\in\mathbb{N}\cap[1,n]$ and let $\mathcal{C}$ be the collection of all $C_j$. Additionally, let
-        $$
-            \mathcal{D} = \left\{C\in\Omega_0|\hspace{10pt} \exists_{y\in\{0,1\}^{2^n}}: C = \bigcup_{\{j\in\mathbb{N}:y_j=1\}}C_j \right\}
-        $$
-        be the set of all possible unions of sets in $\mathcal{C}$, which is clearly finite with at most $2^{(2^n)}$ elements.
-        Then
-        $$
-            B_i = \bigcup\{C\in\mathcal{C}: C\subset B_i\}\in\mathcal{D}.
-        $$
-        Therefore, $\mathcal{A}_0\cup\mathcal{A}_1\subset\mathcal{D}$.
-        We shall now prove that $\mathcal{D}$ is a $\sigma$-algebra. 
+%         At this point, we know that $\mathcal{F} = \sigma(\mathcal{A}_0\cup\mathcal{A}_1)$, where $\mathcal{A}_0\cup\mathcal{A}_1$ is finite. Let $n:=|\mathcal{A}_0\cup\mathcal{A}_1|$. Let $B_1\hdots B_n$ be the sets in $\mathcal{A}_0\cup\mathcal{A}_1$. For $k=1,\hdots n$, define $f_k: \Omega_0\rightarrow \{0,1\}$ by 
+%         $$
+%             f_k(x)=\begin{cases}
+%             1&\text{if } x\in B_k\\
+%             0&\text{otherwise}.
+%             \end{cases}
+%         $$
+%         Additionally, define $f:\Omega_0\rightarrow \{0,1\}^n$ by $f(x)=(f_1(x),\hdots,f_n(x))$. Let $(c_1,\hdots c_{2^n})$ be the elements in $\{0,1\}^n$ and let $C_1,\hdots,C_{2^n}$ be their corresponding pre-images under $f$. 
+%         Let $i\in\mathbb{N}\cap[1,n]$ and let $\mathcal{C}$ be the collection of all $C_j$. Additionally, let
+%         $$
+%             \mathcal{D} = \left\{C\in\Omega_0|\hspace{10pt} \exists_{y\in\{0,1\}^{2^n}}: C = \bigcup_{\{j\in\mathbb{N}:y_j=1\}}C_j \right\}
+%         $$
+%         be the set of all possible unions of sets in $\mathcal{C}$, which is clearly finite with at most $2^{(2^n)}$ elements.
+%         Then
+%         $$
+%             B_i = \bigcup\{C\in\mathcal{C}: C\subset B_i\}\in\mathcal{D}.
+%         $$
+%         Therefore, $\mathcal{A}_0\cup\mathcal{A}_1\subset\mathcal{D}$.
+%         We shall now prove that $\mathcal{D}$ is a $\sigma$-algebra. 
         
-        First, note that clearly $\varnothing\in\mathcal{D}$. Secondly, let 
-        $$
-            D:=\bigcup \mathcal{C}.
-        $$
-        We know that $D\in\mathcal{D}$. Suppose $d\in\Omega_0$. Clearly there is a $C\in\mathcal{C}$ such that $C$ is the pre-image of $f(d)$. Therefore $d\in D$. This implies that $\Omega_0\in\mathcal{D}$.
+%         First, note that clearly $\varnothing\in\mathcal{D}$. Secondly, let 
+%         $$
+%             D:=\bigcup \mathcal{C}.
+%         $$
+%         We know that $D\in\mathcal{D}$. Suppose $d\in\Omega_0$. Clearly there is a $C\in\mathcal{C}$ such that $C$ is the pre-image of $f(d)$. Therefore $d\in D$. This implies that $\Omega_0\in\mathcal{D}$.
         
-        Let $E\in \mathcal{D}$. Then there exists $y\in\{0,1\}^{(2^n)}$ such that 
-        $$
-            E = \bigcup_{\{j\in\mathbb{N}:y_j=1\}}C_j.
-        $$
-        Since all $C_j$ are disjoint, this is implies that
-        $$
-            E^c = \bigcup_{\{j\in\mathbb{N}:y_j=0\}}C_j.
-        $$
-        Let $z=(1,\hdots,1)-y$. Then 
-        $$
-            E^c = \bigcup_{\{j\in\mathbb{N}:z_j=1\}}C_j,
-        $$
-        from which we can conclude that $E^c\in\mathcal{D}$. 
+%         Let $E\in \mathcal{D}$. Then there exists $y\in\{0,1\}^{(2^n)}$ such that 
+%         $$
+%             E = \bigcup_{\{j\in\mathbb{N}:y_j=1\}}C_j.
+%         $$
+%         Since all $C_j$ are disjoint, this is implies that
+%         $$
+%             E^c = \bigcup_{\{j\in\mathbb{N}:y_j=0\}}C_j.
+%         $$
+%         Let $z=(1,\hdots,1)-y$. Then 
+%         $$
+%             E^c = \bigcup_{\{j\in\mathbb{N}:z_j=1\}}C_j,
+%         $$
+%         from which we can conclude that $E^c\in\mathcal{D}$. 
         
-        For the last condition, we suppose $D_1,D_2,\hdots$ is a sequence in $\mathcal{D}$. Since $\mathcal{D}$ is finite, this sequence can be assumed to be finite. Suppose it has $l$ elements. Let 
-        $$
-            F:=\bigcup_{j=1}^l D_j.
-        $$
-        Then there exist $y^1,y^2\hdots y^l\in\{0,1\}^{(2^n)}$ such that
-        $$
-            F = \bigcup_{j=1}^l\left( \bigcup_{\{k\in\mathbb{N}:y^j_k=1\}}C_k \right).
-        $$
-        Let 
-        $$
-            z=\left(\min\left(1,\hspace{5pt}\sum_{j=1}^{l}y^j_1 \right),\hdots, \min\left(1,\hspace{5pt}\sum_{j=1}^{l}y^j_{2^{(2^n)}} \right) \right).
-        $$
-        Then
-        $$
-            F = \bigcup_{\{j\in\mathbb{N}:z_j=1\}}C_j,
-        $$
-        from which it follows that $F\in\mathcal{D}$. Now that all conditions have been checked, we can conclude that $\mathcal{D}$ is a $\sigma$-algebra.
+%         For the last condition, we suppose $D_1,D_2,\hdots$ is a sequence in $\mathcal{D}$. Since $\mathcal{D}$ is finite, this sequence can be assumed to be finite. Suppose it has $l$ elements. Let 
+%         $$
+%             F:=\bigcup_{j=1}^l D_j.
+%         $$
+%         Then there exist $y^1,y^2\hdots y^l\in\{0,1\}^{(2^n)}$ such that
+%         $$
+%             F = \bigcup_{j=1}^l\left( \bigcup_{\{k\in\mathbb{N}:y^j_k=1\}}C_k \right).
+%         $$
+%         Let 
+%         $$
+%             z=\left(\min\left(1,\hspace{5pt}\sum_{j=1}^{l}y^j_1 \right),\hdots, \min\left(1,\hspace{5pt}\sum_{j=1}^{l}y^j_{2^{(2^n)}} \right) \right).
+%         $$
+%         Then
+%         $$
+%             F = \bigcup_{\{j\in\mathbb{N}:z_j=1\}}C_j,
+%         $$
+%         from which it follows that $F\in\mathcal{D}$. Now that all conditions have been checked, we can conclude that $\mathcal{D}$ is a $\sigma$-algebra.
         
-        Now, $\mathcal{A}_0\cup\mathcal{A}_1\subset\mathcal{D}$, where $\mathcal{D}$ is a $\sigma$-algebra which contains $\mathcal{A}_0\cup\mathcal{A}_1$. Therefore, 
-        $$
-            \mathcal{F} = \sigma(\mathcal{A}_0\cup\mathcal{A}_1)\subset\mathcal{D}.
-        $$
-        Therefore, there are at most $2^{(2^n)}$ elements in $\mathcal{F}$. However, this contradicts the assumption that $\mathcal{F}$ is infinite. We can therefore conclude that indeed there exists non-empty $A\in\mathcal{F}$ such that the restriction of $\mathcal{F}$ to $A^c$ is infinite. 
+%         Now, $\mathcal{A}_0\cup\mathcal{A}_1\subset\mathcal{D}$, where $\mathcal{D}$ is a $\sigma$-algebra which contains $\mathcal{A}_0\cup\mathcal{A}_1$. Therefore, 
+%         $$
+%             \mathcal{F} = \sigma(\mathcal{A}_0\cup\mathcal{A}_1)\subset\mathcal{D}.
+%         $$
+%         Therefore, there are at most $2^{(2^n)}$ elements in $\mathcal{F}$. However, this contradicts the assumption that $\mathcal{F}$ is infinite. We can therefore conclude that indeed there exists non-empty $A\in\mathcal{F}$ such that the restriction of $\mathcal{F}$ to $A^c$ is infinite. 
         
-        Now that the we have proven that there exists non-empty $A\in\mathcal{F}$ such that the restriction of $\mathcal{F}$ to $A^c$ is infinite, we can continue to construct an infinite sequence of non-empty disjoint sets. To start, pick some non-empty set $A_0\in\mathcal{F}$ such that the restriction of $\mathcal{F}$ to $A_0^c$ is infinite. Let $\Omega_1 = \Omega_0\setminus A_0$. Since the restriction of $\mathcal{F}$ to $A_0^c$ is again a $\sigma$-algebra which is infinite, we can repeat these steps iteratively to define the infinite sequence $(A_n)$ of non-empty disjoint sets in $\mathcal{F}$. A simple induction argument shows that all $\mathcal{F}_n$ are infinite subsets of $\mathcal{F}$, which makes this possible. By the definition of all $\Omega_k$ and $A_k$, we find that
-        $$
-            \forall_{k\in\mathbb{N}}: A_k\subset\Omega_k \subset\left(\bigcup_{i=0}^{k-1}A_i\right)^c,
-        $$
-        which implies that the sequence is disjoint. Since restrictions of $\sigma$-algebras are contained in the original $\sigma$-algebra, we know that all sets in the sequence are sets in $\mathcal{F}$. By definition, all $A_k$ are non-empty, which completes the proof.
+%         Now that the we have proven that there exists non-empty $A\in\mathcal{F}$ such that the restriction of $\mathcal{F}$ to $A^c$ is infinite, we can continue to construct an infinite sequence of non-empty disjoint sets. To start, pick some non-empty set $A_0\in\mathcal{F}$ such that the restriction of $\mathcal{F}$ to $A_0^c$ is infinite. Let $\Omega_1 = \Omega_0\setminus A_0$. Since the restriction of $\mathcal{F}$ to $A_0^c$ is again a $\sigma$-algebra which is infinite, we can repeat these steps iteratively to define the infinite sequence $(A_n)$ of non-empty disjoint sets in $\mathcal{F}$. A simple induction argument shows that all $\mathcal{F}_n$ are infinite subsets of $\mathcal{F}$, which makes this possible. By the definition of all $\Omega_k$ and $A_k$, we find that
+%         $$
+%             \forall_{k\in\mathbb{N}}: A_k\subset\Omega_k \subset\left(\bigcup_{i=0}^{k-1}A_i\right)^c,
+%         $$
+%         which implies that the sequence is disjoint. Since restrictions of $\sigma$-algebras are contained in the original $\sigma$-algebra, we know that all sets in the sequence are sets in $\mathcal{F}$. By definition, all $A_k$ are non-empty, which completes the proof.
         
-        \item In order to prove that
-        $$
-            \text{Card}(\mathcal{F})\geq\text{Card}([0,1]),
-        $$
-        we need to construct an injective function $f : [0,1] \rightarrow \mathcal{F}$. To do this, we first recall that for any $a\in[0,1]$, there is a sequence $(x_n)$ in $\{0,1\}$ such that 
-        $$
-            \sum_{n=1}^\infty x_n2^{-n} = a.
-        $$
-        These sequences are not necessarily unique, but for each $a\in[0,1]$, we can pick such a sequence. Let $h$ map each number $a\in[0,1]$ to its corresponding sequence $(x_n)=:h(a)$.
-        Let 
-        $$
-            D(a)=\{n\in\mathbb{N}:h(a)_n=1\}.
-        $$
-        Let $(A_n)$ be a sequence of non-empty disjoint sets in $\mathcal{F}$.
-        Define $f:[0,1]\rightarrow\mathcal{F}$ by
-        $$
-            f(a) = \bigcup_{n\in D(a)} A_n.
-        $$
-        Since $\mathcal{F}$ is a $\sigma$-algebra and all elements in $A_n$ are in $\mathcal{F}$, we find that for all $a\in[0,1]$, we have
-        $$
-            f(a)\in\mathcal{F}
-        $$
-        as intended. Now we need to prove that $f$ is injective.
+%         \item In order to prove that
+%         $$
+%             \text{Card}(\mathcal{F})\geq\text{Card}([0,1]),
+%         $$
+%         we need to construct an injective function $f : [0,1] \rightarrow \mathcal{F}$. To do this, we first recall that for any $a\in[0,1]$, there is a sequence $(x_n)$ in $\{0,1\}$ such that 
+%         $$
+%             \sum_{n=1}^\infty x_n2^{-n} = a.
+%         $$
+%         These sequences are not necessarily unique, but for each $a\in[0,1]$, we can pick such a sequence. Let $h$ map each number $a\in[0,1]$ to its corresponding sequence $(x_n)=:h(a)$.
+%         Let 
+%         $$
+%             D(a)=\{n\in\mathbb{N}:h(a)_n=1\}.
+%         $$
+%         Let $(A_n)$ be a sequence of non-empty disjoint sets in $\mathcal{F}$.
+%         Define $f:[0,1]\rightarrow\mathcal{F}$ by
+%         $$
+%             f(a) = \bigcup_{n\in D(a)} A_n.
+%         $$
+%         Since $\mathcal{F}$ is a $\sigma$-algebra and all elements in $A_n$ are in $\mathcal{F}$, we find that for all $a\in[0,1]$, we have
+%         $$
+%             f(a)\in\mathcal{F}
+%         $$
+%         as intended. Now we need to prove that $f$ is injective.
         
-        Suppose that $f$ is not injective. Then 
-        $$
-            \exists_{a_1,a_2\in[0,1]}: a_1\neq a_2 \land f(a_1) = f(a_2).
-        $$
-        This implies that 
-        $$
-            \bigcup_{n\in D(a_1)} A_n = \bigcup_{n\in D(a_2)} A_n .
-        $$
-        However, since $(A_n)$ is a mutually disjoint sequence of non-empty we find that
-        $$
-            D(a_1) = D(a_2)
-        $$
-        From this it follows that $h(a_1) = h(a_2)$. Thus,
-        $$
-            a_1 = \sum_{n=1}^\infty h_n(a_1)2^{-n} = \sum_{n=1}^\infty h_n(a_2)2^{-n} = a_2.
-        $$
-        Therefore, we can conclude that $f$ is injective and thus
-        $$
-            \text{Card}(\mathcal{F})\geq\text{Card}([0,1]),
-        $$
-        as was to be shown.
-    \end{itemize}
-\end{solution}
+%         Suppose that $f$ is not injective. Then 
+%         $$
+%             \exists_{a_1,a_2\in[0,1]}: a_1\neq a_2 \land f(a_1) = f(a_2).
+%         $$
+%         This implies that 
+%         $$
+%             \bigcup_{n\in D(a_1)} A_n = \bigcup_{n\in D(a_2)} A_n .
+%         $$
+%         However, since $(A_n)$ is a mutually disjoint sequence of non-empty we find that
+%         $$
+%             D(a_1) = D(a_2)
+%         $$
+%         From this it follows that $h(a_1) = h(a_2)$. Thus,
+%         $$
+%             a_1 = \sum_{n=1}^\infty h_n(a_1)2^{-n} = \sum_{n=1}^\infty h_n(a_2)2^{-n} = a_2.
+%         $$
+%         Therefore, we can conclude that $f$ is injective and thus
+%         $$
+%             \text{Card}(\mathcal{F})\geq\text{Card}([0,1]),
+%         $$
+%         as was to be shown.
+%     \end{itemize}
+% \end{solution}
