@@ -1,0 +1,83 @@
+\begin{solution}[5.3]{Kempen, S.F.M.}
+
+    \noindent "$\Rightarrow$" Let $s,t\in \mathbb{R}$ and define $A = \{X \geq s\}, B = \{Y \geq t\}$. We have
+    $$ A = \{X \geq s\} = \{\omega\in \Omega: X(\omega) \geq s\} = X^{-1}([s,\infty)). $$
+    By definition $\sigma(X)$ is the smallest $\sigma$-algebra such that $X^{-1}(B)\in \sigma(X)$ for all $B\in \mathcal{B}_\mathbb{R}$ and $[s,\infty)\in \mathcal{B}_\mathbb{R}$ so surely $A\in \sigma(X)$. In a similar way it can be shown that $B\in \sigma(Y)$. Now
+    $$ \mathbb{P}(X\geq s, Y\geq t) = \mathbb{P}(\{X\geq s\} \cap \{Y\geq t\}) = \mathbb{P}(A\cap B) $$
+    and by our assumption
+    $$ \mathbb{P}(A\cap B)  = \mathbb{P}(A) \mathbb{P}(B) = \mathbb{P}(\{X\geq s\})\cdot\mathbb{P}(\{Y\geq t\}) = \mathbb{P}(X\geq s)\cdot\mathbb{P}(Y\geq t). $$
+    
+    
+    \noindent "$\Leftarrow$" For the first part of the proof, let us define
+    \begin{align*}
+        \Lambda_s &= \{ \ B\in \sigma(Y): \mathbb{P}(X\geq s, B) = \mathbb{P}(X\geq s)\mathbb{P}(B)\ \}.
+    \end{align*}
+    $\Lambda_s$ is a collection of sets in $\sigma(Y)$ so $\Lambda_s \subseteq \sigma(Y)$. Furthermore we can show that $\Lambda_s$ is a $\lambda$-system.
+    \begin{enumerate}
+        \item We have $\Omega \in \Lambda_s$ since 
+        \begin{align*}
+            \mathbb{P}(X\geq s, \Omega) &= \mathbb{P}(\{X\geq s\} \cap \Omega) = \mathbb{P}(\{\omega\in \Omega: X(\omega) \geq s\}\cap \Omega) \\
+            &= \mathbb{P}(\{\omega\in \Omega: X(\omega) \geq s\}) \\
+            &= \mathbb{P}(X\geq s) \cdot 1 = \mathbb{P}(X\geq s)\mathbb{P}(\Omega).
+        \end{align*}
+        \item Let $A \in \Lambda_s$ then 
+        \begin{align*}
+            \mathbb{P}(X\geq s, \Omega\setminus A) &= \mathbb{P}(\{X\geq s\} \cap \Omega\setminus A) \\
+            &= \mathbb{P}(\{\omega\in \Omega: X(\omega)\geq s\} \cap \Omega\setminus A)\\
+            &= \mathbb{P}(\{\omega\in \Omega\setminus A: X(\omega)\geq s\})\\
+            &= \mathbb{P}(X\geq s) - \mathbb{P}(\{X\geq s\} \cap A)\\
+            &= \mathbb{P}(X\geq s)(1-\mathbb{P}(A)) \quad (\textrm{since }A\in\Lambda_s)\\
+            &= \mathbb{P}(X\geq s)\mathbb{P}(\Omega\setminus A). 
+        \end{align*}
+        \item Let $(A_i) \subset \Lambda_s$ be a sequence of mutually disjoint sets then by  the $\sigma$-additivity of the measure we have
+        \begin{align*}
+            \mathbb{P}(X\geq s, \bigcup_{i=1}^\infty A_i) &= \mathbb{P}(\{X\geq s\}\cap \bigcup_{i=1}^\infty A_i)\\
+            &= \mathbb{P}(\{\omega\in \left(\Omega\cap \bigcup_{i=1}^\infty A_i\right): X(\omega)\geq s\} )\\
+            &= \sum_{i=1}^\infty \mathbb{P}( \{\omega\in \Omega\cap A_i: X(\omega)\geq s\} )\\
+            &= \sum_{i=1}^\infty \mathbb{P}(\{X\geq s\} \cap A_i)\\
+            &= \sum_{i=1}^\infty \mathbb{P}(\{X\geq s\}) \mathbb{P}(A_i)\\
+            &= \mathbb{P}(X\geq s) \mathbb{P}(\bigcup_{i=1}^\infty A_i).
+        \end{align*}
+    \end{enumerate}
+    So we conclude that $\Lambda_s$ is a $\lambda$-system. By assumption, we also have $\{Y\geq t\}\subseteq \Lambda_s$ for all $t\in \mathbb{R}$.
+    
+    \noindent Next we define 
+    $$ \mathcal{E} = \{ \{Y\geq t\},t\in \mathbb{R}\}$$
+    and show that this is a $\pi$-system. Let $s,r\in \mathbb{R}$ then $\{Y\geq s\},\{Y\geq r\}\in \mathcal{E}$ and
+    $$ \{Y\geq s\} \cap \{Y\geq r\} = \{Y\geq \min(s,r)\} \in \mathcal{E},$$
+    since the minimum of two real numbers is just a real number. Thus $\mathcal{E}$ is a $\pi$-system.
+    
+    \noindent Note $\sigma(Y) \subseteq \sigma(\mathcal{E})$ by definition of $\sigma(Y)$ and next to that $\mathcal{E} \subseteq \Lambda_s$ by our assumption. We can now apply the $\pi$-$\lambda$ theorem, which tells us
+    $$ \sigma(Y) \subseteq \sigma(\mathcal{E}) \stackrel{\pi-\lambda}{\subseteq} \Lambda_s \subseteq \sigma(Y), $$
+    so in fact we have $\Lambda_s = \sigma(Y)$. Thus we can conclude that $\mathbb{P}(X\geq s, B) = \mathbb{P}(X\geq s)\mathbb{P}(B)$ holds for all $B\in \sigma(Y)$.
+    
+    \noindent For the second part of the proof, define
+    $$ \mathcal{H} = \{A\in \sigma(X): \mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B) \ \forall  B\in \sigma(Y) \}. $$
+    We will show that $\mathcal{H}$ is a $\lambda$-system. Let $B\in \sigma(Y)$.
+    \begin{enumerate}
+        \item We have $\Omega \in \mathcal{H}$ since $\mathbb{P}(\Omega\cap B) = \mathbb{P}(B) = \mathbb{P}(B)\mathbb{P}(\Omega)$.
+        \item Let $A \in \mathcal{H}$ then 
+        \begin{align*}
+            \mathbb{P}(B \cap (\Omega\setminus A) ) &= \mathbb{P}(B\setminus (A\cap B))\\
+            &= \mathbb{P}(B) - \mathbb{P}(A\cap B) \quad \textrm{(by exclusion)}\\
+            &= \mathbb{P}(B)(1-\mathbb{P}(A)) \quad \textrm{(since } A\in \mathcal{H})\\
+            &= \mathbb{P}(B)\mathbb{P}(\Omega \setminus A).
+        \end{align*}
+        \item Let $(A_i) \subset \mathcal{H}$ be a sequence of mutually disjoint sets then by the $\sigma$-additivity of the measure $\mathbb{P}(\bigcup_{i=1}^\infty A_i) = \sum_{i=1}^\infty \mathbb{P}(A_i)$ and
+        \begin{align*}
+            \mathbb{P}(B\cap \left(\bigcup_{i=1}^\infty A_i\right)) &= \mathbb{P}(\bigcup_{i=1}^\infty (B \cap A_i))\\
+            &= \sum_{i=1}^\infty \mathbb{P}(B\cap A_i) \quad (\sigma\textrm{-add.})\\
+            &= \sum_{i=1}^\infty \mathbb{P}(B) \mathbb{P}(A_i)\\
+            &= \mathbb{P}(B)\mathbb{P}(\bigcup_{i=1}^\infty A_i).
+        \end{align*}
+    \end{enumerate}
+    So $\mathcal{H}$ is a $\lambda$-system.
+
+    \noindent Let $\mathcal{G} = \{\{X\geq s\}: s\in \mathbb{R}\}$. It can be shown that $\mathcal{G}$ is a $\pi$-system in a similar way as we did for $\mathcal{E}$ and, as before, $\sigma(\mathcal{G}) \subseteq \sigma(X)$ (by definition of $\sigma(X)$ and $\mathcal{G} \in \mathcal{H}$ (by assumption). Applying the $\pi$-$\lambda$ theorem we obtain
+    \begin{align*}
+        \sigma(X) \subseteq \sigma(\mathcal{G}) \stackrel{\pi-\lambda}{\subseteq} \mathcal{H} \subseteq \sigma(X),
+    \end{align*}
+    which implies $\mathcal{H} = \sigma(X)$. Thus now we have
+    $$ \mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B) \ \forall A\in \sigma(X), B\in \sigma(Y).  $$
+
+\end{solution}

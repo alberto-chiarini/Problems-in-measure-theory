@@ -4,11 +4,11 @@
 \end{equation*}  
 \end{problem}
 
-\begin{problem} Let $(\Omega,\cF,\mu)$ be a measure space, $A\in \cF$, and $f:\Omega\to \overline{\bbR}$ be a non-negative  function. We say that $f$ is measurable on $A$ if $f|_{A}$ is $\cF_A$-measurable. Show that $f \ind{A}$ is $\cF$ measurable and also 
+\begin{problem} Let $(\Omega,\cF,\mu)$ be a measure space, $A\in \cF$, and $f:\Omega\to \overline{\bbR}$ be a non-negative  function. We say that $f$ is measurable on $A$ if $f|_{A}$ is $\cF_A$-measurable (recall that $\cF_A = \{A\cap B:\,B\in \cF\}$). Show that $f \indE{A}$ is $\cF$ measurable and also 
 \begin{equation*}
     \int_\Omega f  \indE{A} \,\De \mu = \int_A f \,\De \mu_A, 
 \end{equation*}
-where $\mu_A$ is the restriction of $\cF_A$.
+where $\mu_A$ is the restriction of $\mu$ to $\cF_A$.
 \end{problem}
 
 \begin{problem}
@@ -56,6 +56,10 @@ Show that if $\int_{\Omega} f_1\,\De \mu = \infty$ the above conclusion might no
     \end{equation*}
 \end{problem}
 
+\begin{problem} Let $(\Omega,\cF,\mu)$ be a measure space and assume that $f:\Omega\to \overline{\bbR}$ is integrable with respect to $\mu$. Show that $|f|<\infty$ $\mu$-almost everywhere.
+    
+\end{problem}
+
 \begin{problem} Suppose that $f$ is a Lebesgue-integrable function on $\bbR$. Show that for all $z\in \bbR$
     \begin{equation*}
         \int_\bbR f(x)\,\De \cL^1(x) = \int_\bbR f(x+z)\,\De \cL^1(x).
@@ -63,11 +67,36 @@ Show that if $\int_{\Omega} f_1\,\De \mu = \infty$ the above conclusion might no
 \end{problem}
 
 \begin{problem}
-    Assume Fatou's lemma and deduce the Monotone Convergence Theorem from it.
+    Assume Fatou's lemma and deduce the Monotone Convergence Theorem.
+\end{problem}
+
+\begin{problem} Let $(\Omega,\cF,\mu)$ be a measure space and assume that $f$ is integrable with respect to $\mu$ and $g$ is a measurable function such that $f = g$ $\mu$-almost everywhere. Show that $g$ is integrable with respect to $\mu$ and 
+    \begin{equation*}
+        \int_\Omega f\, \De \mu =  \int_\Omega g\, \De \mu.
+    \end{equation*}
+\end{problem}
+
+\begin{problem}  Let $(\Omega,\cF,\mu)$ be a measure space and $f$ be integrable with respect to $\mu$. Show that the set $\{\omega\in \Omega :\, f(\omega) \neq 0 \}$ is a $\sigma$-finite set. 
+\end{problem}
+
+\begin{problem}
+    Let $(\Omega,\cF,\mu)$ be a measure space and $f,g$ be integrable with respect to $\mu$. Then 
+    \begin{equation*}
+        \int_A f \,\De \mu = \int_A g \,\De \mu,\qquad \forall A\in\cF,
+    \end{equation*}
+    if and only if $f = g$ $\mu$-almost everywhere, and if and only if $\int_{\Omega}|f-g|\,\De \mu = 0$.
 \end{problem}
 
 \begin{problem}
     Let $(\Omega_1,\cF_1)$ and $(\Omega_2,\cF_2)$ be two measure spaces. Let $f:\Omega_1\times\Omega_2\to \overline{\bbR}$, $f\geq 0$ be a $\cF_1\otimes \cF_2$-measurable function. Show that for all $y\in \Omega_2$ the map $f_y : \Omega_1\to \overline{\bbR}$, defined by $f_y(x) = f(x,y)$ for all $x\in \Omega_1$, is $\cF_1$-measurable.
 
     \noindent (\emph{Hint:} use approximations with simple functions.)
+\end{problem}
+
+\begin{problem}
+    Let $f$ be Lebesgue-integrable on the real line. Show that
+    \begin{equation*}
+        \lim_{n\to\infty} \frac{1}{2 n} \int_{[-n,n]} f \,\De\cL^1 = 0.
+    \end{equation*}
+    Show that the result need not be true if $f$ is not assumed to be integrable on $\bbR$.
 \end{problem}
