@@ -1,0 +1,117 @@
+\begin{solution}[4.7]{Castella, A.}
+    \begin{itemize}
+        \item Let us first assume there exists a set $\overline{A} \subset \Omega$ and another set $A \in \mathcal{F}$ such that $A\Delta\overline{A}$ is a null set with respect to the measure $\mu$. We first note that 
+        $$
+            A \Delta \overline{A} = (A\setminus\overline{A}) \cup (\overline{A}\setminus A),
+        $$
+        which implies that
+        $$
+            A \setminus \overline{A}
+        $$
+        and
+        $$
+            \overline{A} \setminus A
+        $$
+        are both $\mu$-null sets as well. Since they are both $\mu$-null then they must have measure 0 in the completion of the measure, $\overline{\mu}$. Thus both sets are $\overline{\mu}$-measurable and therefore in $\overline{\mathcal{F}}$. We now note that $A$ and $\overline{A}\setminus A$ are disjoint and therefore
+        $$
+            \overline{\mu}(A \cup (\overline{A}\setminus A)) = \overline{\mu}(A) + \overline{\mu}(\overline{A}\setminus A).
+        $$
+        Thus the set $A \cup (\overline{A}\setminus A) = A \cup \overline{A}$ is measurable as well. Since $\overline{\mathcal{F}}$ is a $\sigma$-algebra, we know that $(A\setminus\overline{A})^c$ is $\overline{\mu}$-measurable as well. The intersection of two measurable sets must be measurable as well and therefore we find that
+        $$
+            (A \cup \overline{A})\cap (A\setminus\overline{A})^c = (A\cup\overline{A})\setminus(A\setminus\overline{A}) = \overline{A}
+        $$
+        is a $\overline{\mu}$-measurable set. Thus we can conclude that indeed $\overline{A} \in \overline{\mathcal{F}}$.
+        \item We now assume the converse. Let us choose some arbitrary $\overline{A} \in \overline{\mathcal{F}}$. We note that the $\sigma$-algebra $\overline{\mathcal{F}}$ is defined as
+        $$
+            \overline{\mathcal{F}} = \{A \cup U : A \in \mathcal{F}, U\subset\Omega\text{ is a }\mu\text{-null set}\}.
+        $$
+        Thus there exists $A \in \mathcal{F}$ and $U \subset \Omega$, where $U$ is $\mu$-null that we can assume disjoint from $A$, such that $\overline{A} = A\cup U$. We find that
+        $$
+            A\Delta\overline{A} = (A\setminus(A\cup U))\cup((A\cup U)\setminus A) = \varnothing\cup U = U.
+        $$
+        Since $U$ was a $\mu$-null set, we conclude this direction of the proof.
+    \end{itemize}
+\end{solution}
+\begin{solution}[4.10]{Castella, A.}
+    We provide two proofs for the exercise. Let us first recall exercises 3.19 and 3.20. We will refer to the exercises in both proofs and use the result that we attained from them. The first proof is based on the current course content and uses Theorem 5.2.1 to extend the identities to the set of Lebesgue measurable sets. The second proof however, uses the Carath\'{e}odory extension theorem. We include this second proof in order to showcase an easier method of proving the identities. Additionally, the second proof only assumes that the identities hold on the half open intervals and does not need the full result of exercises 3.19 and 3.20, which prove the identities for all Borel measurable sets.
+    \begin{itemize}
+        \item Theorem 5.2.1 of the lectures notes states that the set of Lebesgue measurable sets, denoted by $\overline{\cB}^\mathcal{L}$, consists of all elements of the form $E\cup U$ where $E$ is a Borel set and $U \in \mathbb{R}^n$ is a Borel-null set. Additionally, we note that the Lebesgue measure is complete, and thus all null sets have measure zero. From this we know that
+        $$
+            \mathcal{L}(U) = 0.
+        $$
+        Now let us choose such an element $E\cup U \in \overline{\cB}^\mathcal{L}$ arbitrarily. We note that
+        $$
+            U \setminus E \subset U,
+        $$
+        and is therefore also a Borel-null set. Thus we can assume, without loss of generality, that $E$ and $U$ are disjoint. We now note that the Lebesgue measure $\mathcal{L}$ is equivalent to the measure $\lambda$ given in exercises 3.19 and 3.20 on all Borel measurable sets. Thus we find that since $E$ is a Borel set, we have
+        $$
+            \mathcal{L}(E + x) = \mathcal{L}(E)
+        $$
+        and
+        $$
+            \mathcal{L}(\tau E) = |\tau|\mathcal{L}(E).
+        $$
+        From the fact that $U$ is a null set we know that there exists a set $B \in \cB$ such that $U \subset B$ and
+        $$
+            \mathcal{L}(B) = 0.
+        $$
+        We note that since $B$ is a Borel set then, as we proved in exercises 3.19 and 3.20, both identities must hold. Thus we find that $\tau B$ and $B + x$ are sets of measure zero as well. It is clear from definition that $U + x \subset B + x$ and $\tau U \subset \tau B$. Therefore, $U + x$ and $\tau  U$ are Borel-null sets as well. Thus we find that since $\mathcal{L}$ is the completion of the measure $\lambda$, we have
+        $$
+            \mathcal{L}(U + x) = \mathcal{L}(\tau U) = 0.
+        $$
+        Combining this result with the last one and the fact that since $\mathcal{L}$ is a measure it is therefore finitely additive, we find that
+        $$
+            \mathcal{L}(E \cup U + x) = \mathcal{L}(E + x) + \mathcal{L}(U + x) = \mathcal{L}(E)
+        $$
+        and
+        $$
+            \mathcal{L}(\tau E\cup U) = \mathcal{L}(\tau E) + \mathcal{L}(\tau U) = |\tau|\mathcal{L}(E).
+        $$
+        Finally, we note that, since the measure of $U$ is zero and $U$ is disjoint from $E$, we have
+        $$
+            \mathcal{L}(E) = \mathcal{L}(E) + \mathcal{L}(U) = \mathcal{L}(E \cup U).
+        $$
+        We can therefore conclude that the identities
+        $$
+            \mathcal{L}(E\cup U + x) = \mathcal{L}(E\cup U)
+        $$
+        and
+        $$
+            \mathcal{L}(\tau E\cup U) = |\tau|\mathcal{L}(E\cup U)
+        $$
+        hold for arbitrary $E \cup U \in \overline{\cB}^\mathcal{L}$. Thus the equivalence of the measures is established for all Lebesgue measurable sets.
+        \item The Lebesgue measure $\mathcal{L}$ is defined on the ring of half open intervals $(a, b]$. On this ring the measure is defined as
+        $$
+            \mathcal{L}((a,b]) = b - a.
+        $$
+        This is clearly equivalent to the measure $\lambda$ defined in exercises 3.19 and 3.20. In these exercises we proved the equivalences
+        $$
+            \lambda(A + x) = \lambda(A)
+        $$
+        and
+        $$
+            \lambda(\tau A) = |\tau|\lambda(A)
+        $$
+        on the entire ring. Clearly any measure is a pre-measure as well. Thus $\mathcal{L}$ is a pre-measure on the half open intervals. Additionally, we note that the half open intervals form a ring. Thus they also form a semi-ring. Finally, we show that the pre-measure is also $\sigma$-finite. It is defined on the real numbers thus we need to find a countable cover for $\mathbb{R}$ of finite measure sets. Let us take the set
+        $$
+            \mathcal{A} = \{(n, n+1] : n\in \mathbb{Z}\}.
+        $$
+        It is clear that
+        $$
+            \bigcup_{A \in \mathcal{A}}A = \mathbb{R}.
+        $$
+        We also note that
+        $$
+            \mathcal{L}(A) = n - n+1 = 1 < \infty
+        $$
+        for all $A \in \mathcal{A}$. Thus we have found a countable cover of finite-measure sets. We can conclude that $\mathcal{L}$ is indeed $\sigma$-finite. We now find that, by the Carath\'{e}odory extension theorem, this implies that the extension is unique. And thus we find that the extension of both pairs of measures must be the same respectively. We thus find that
+        $$
+            \mathcal{L}(A + x) = \mathcal{L}(A)
+        $$
+        and
+        $$
+            \mathcal{L}(\tau A) = |\tau|\mathcal{L}(A)
+        $$
+        for all Lebesgue measurable sets $A$.
+    \end{itemize}
+\end{solution}
