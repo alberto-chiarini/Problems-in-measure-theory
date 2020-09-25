@@ -81,3 +81,75 @@
     $$ \mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B) \ \forall A\in \sigma(X), B\in \sigma(Y).  $$
 
 \end{solution}
+
+\begin{solution}[5.4]{Castella, A.}
+    \begin{itemize}
+        \item We begin by showing that $\max(f,g)$ is measurable. It is clear that for all $t \in \mathbb{R}$ we have
+        $$
+            \max(f,g) \leq t \implies f \leq t \land g \leq t.
+        $$
+        Thus let us take such an arbitrary $t$. We find that the equality
+        $$
+            \{\omega \in \Omega : \max(f,g)(\omega) \leq t\} = \{\omega \in \Omega : f(\omega) \leq t \land g(\omega) \leq t\}
+        $$
+        directly follows. Additionally, we note that this set is the intersection of the sets
+        $$
+            \{\omega \in \Omega : f(\omega) \leq t\}
+        $$
+        and
+        $$
+            \{\omega \in \Omega : g(\omega) \leq t\}.
+        $$
+        Since $f$ and $g$ are both measurable functions, we know that the two above mentioned sets are measurable. Additionally, since $\mathcal{F}$ is a $\sigma$-algebra, we know that the intersection of the two sets must be in $\mathcal{F}$ as well. Thus we conclude that the set
+        $$
+            \{\omega \in \Omega : \max(f, g)(\omega) \leq t\}
+        $$
+        is indeed measurable. Since $t$ was arbitrary, this holds for all $t \in \mathbb{R}$. Thus we can conclude that $\max(f,g)$ is indeed a measurable function.
+        \item We will now prove that $\min(f,g)$ is a measurable function as well. We note that $-f$ and $-g$ are clearly measurable functions, since
+        $$
+            \{\omega \in \Omega : f(\omega) \leq t\} = \{\omega \in \Omega : -f(\omega) > -t\}
+        $$
+        holds for all $t \in \mathbb{R}$. The same applies to any measurable function. Thus the measurablility of $-g$ and $-f$ directly follows. By what we proven in the previous item we find that $\max(-f, -g)$ must be measurable. This implies that the function
+        $$
+            -\max(-f,-g)
+        $$
+        must be measurable as well. Finally we note that
+        $$
+            \min(f,g) = -\max(-f,-g),
+        $$
+        which implies that $\min(f,g)$ is a measurable function.
+        \item Since the function $0$ is clearly measurable and $f$ and $g$ were arbitrary measurable functions, we know that
+        $$
+            -\min(f,0)
+        $$
+        and
+        $$
+            \max(f,0)
+        $$
+        must be measurable as well. Let us now prove an intermediary. We will show that $f+g$ is measurable. We note that for some arbitrary $t \in \mathbb{R}$, we have that $(f+g)(\omega) < t$ if and only if there exists a rational number $r$ such that $f(\omega) < r$ and $g(\omega) < t-r$. Therefore we find that
+        $$
+            \{\omega \in \Omega : (f+g)(\omega) < t\} = \bigcup_{r\in\mathbb{Q}}\left(\{\omega \in \Omega : f(\omega) < r\}\cap \{\omega \in \Omega : g(\omega) < t-r\}\right).
+        $$
+        Since the intersection of two measurable sets must be measurable, each term in the union is measurable. Since countable unions of measurable sets must be measurable, we conclude that the set
+        $$
+            \{\omega \in \Omega : (f+g)(\omega) < t\}
+        $$
+        is indeed measurable. Since $t$ was arbitrary, we have proven the intermediary that $f+g$ is measurable. Thus we can now use this result to show that
+        $$
+            \max(f,0) - \min(f,0)
+        $$
+        is measurable. Since
+        $$
+            |f| = \max(f,0) - \min(f,0)
+        $$
+        we conclude that the function $|f|$ is indeed measurable.
+    \end{itemize}
+\end{solution}
+
+\begin{solution}[5.14]{Castella, A.}
+    We have already proven in problem 5.4 that if $f$ is measurable, then $\max(f,0)$ and $\min(f,0)$ are measurable as well. Thus we only need to prove the other direction of the implication. Let us assume that $f^+$ and $f^-$ are measurable. Then, by intermediaries proven in problem 5.4, we know that $f^+ + f^-$ is measurable as well. It is clear that
+    $$
+        f = f^+ + f^-
+    $$
+    and therefore we can already conclude that $f$ is measurable. Thus we have proven both directions of the implication. 
+\end{solution}
