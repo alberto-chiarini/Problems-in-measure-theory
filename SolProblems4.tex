@@ -145,6 +145,42 @@
     \end{itemize}
 \end{solution}
 
+\begin{solution}[5.8]{Castella, A.}
+    We begin the proof by showing that the set
+    $$
+        \{\omega \in \Omega : f(\omega) < g(\omega)\}
+    $$
+    is measurable. We know that $\omega$ is in this set if and only if there exists some $r \in \mathbb{Q}$ such that
+    $$
+        f(\omega) < r < g(\omega).
+    $$
+    Thus we find that
+    $$
+        \{\omega \in \Omega : f(\omega) < g(\omega)\} = \bigcup_{r \in \mathbb{Q}}\{\omega\in\Omega : f(\omega) < r\} \cap \{\omega\in\Omega : g(\omega) > r\}.
+    $$
+    Since $\mathbb{Q}$ is countable and both the sets
+    $$
+        \{\omega \in \Omega : f(\omega) < r\}
+    $$
+    and
+    $$
+        \{\omega \in \Omega : g(\omega) > r\}
+    $$
+    are measurable, we find that the set $\{\omega \in \Omega : f(\omega) < g(\omega)\}$ is measurable as well. Since $g$ and $f$ are arbitrary measurable functions, we now that if we flip the functions, then the new set is still measurable. Additionally, a $\sigma$-algebra contains the complement of all of its sets and thus we find that
+    $$
+        \{\omega \in \Omega : g(\omega) < f(\omega)\}^c = \{\omega \in \Omega : f(\omega) \leq g(\omega)\}
+    $$
+    is measurable as well. By the same argument, the set
+    $$
+        \{\omega \in \Omega : g(\omega) \leq f(\omega)\}
+    $$
+    is measurable too. Finally, since finite intersections of measurable sets are measurable, we find that the set
+    $$
+        \{\omega \in \Omega : g(\omega) = f(\omega)\} = \{\omega \in \Omega : f(\omega) \leq g(\omega)\} \cap \{\omega \in \Omega : g(\omega) \leq f(\omega)\}
+    $$
+    is measurable. We thus conclude the proof.
+\end{solution}
+
 \begin{solution}[5.14]{Castella, A.}
     We have already proven in problem 5.4 that if $f$ is measurable, then $\max(f,0)$ and $\min(f,0)$ are measurable as well. Thus we only need to prove the other direction of the implication. Let us assume that $f^+$ and $f^-$ are measurable. Then, by intermediaries proven in problem 5.4, we know that $f^+ + f^-$ is measurable as well. It is clear that
     $$
