@@ -145,6 +145,126 @@
     \end{itemize}
 \end{solution}
 
+\begin{solution}[5.7]{Castella, A.}
+    We will present two different proofs for this problem. The first proof will make us of the hint and properties of measurable sets. The second proof however, will use of the result from Problem 5.8 rather than the hint.
+    \begin{itemize}
+        \item Let us begin by denoting the set
+        $$
+            A = \{\omega \in \Omega : \lim_{n\rightarrow\infty}f_n(\omega) = 0\}.
+        $$
+        We will now show that this set is equivalent to the set denoted by
+        $$
+            B = \bigcap_{k=1}^\infty\bigcup_{N=1}^\infty\bigcap_{n=N}^\infty\{\omega \in \Omega : |f_n(\omega)| < \frac{1}{m}\}.
+        $$
+        We will prove this equivalence in the standard way, by choosing an element $\omega$ from either set and showing that it is contained in the other. We split this into two parts.
+        \begin{itemize}
+            \item Let us take some $\omega \in A$. We note that for all $m \geq 1$, and therefore also all $k \in \mathbb{N}$ (where $k \leq m$), there exists some $N' \in \mathbb{N}$ such that
+            $$
+                \forall_{n \geq N}: |f_n(\omega)| < \frac{1}{m} \leq \frac{1}{k}.
+            $$
+            Thus it is clear that, for all $k \in \mathbb{N}$, we have
+            $$
+                \omega \in \bigcap_{n = N'}^\infty\{\omega \in \Omega : |f_n(\omega)| < \frac{1}{k}\}
+            $$
+            and therefore also
+            $$
+                \omega \in \bigcup_{N=1}^\infty\bigcap_{n = N}^\infty\{\omega \in \Omega : |f_n(\omega)| < \frac{1}{k}\}.
+            $$
+            Since we stated that this holds for all $k \in \mathbb{N}$, it is clear that
+            $$
+                \omega \in B.
+            $$
+            We therefore conclude this direction of the proof.
+            \item Let us take some $\omega \in B$. From the definition of our set, we can derive that this implies that for all $k \in \mathbb{N}$, there exists $N \in \mathbb{N}$ such that
+            $$
+                \forall_{n \geq N}: |f_n(\omega)| < \frac{1}{k}.
+            $$
+            Let us thus take some arbitrary $m > 0$. We know that for all such $m$ there exists some $k \in \mathbb{N}$ such that $k \geq m$ which implies that $\frac{1}{k} \leq \frac{1}{m}$. Since there always exists $N \in \mathbb{N}$ such that the above holds, we find that
+            $$
+                \forall_{n \geq N}: |f_n(\omega)| < \frac{1}{k} \leq \frac{1}{m}.
+            $$
+            Following the hint, this implies that
+            $$
+                \lim_{n\rightarrow\infty}f_n(\omega) = 0.
+            $$
+            Thus we find that
+            $$
+                \omega \in A.
+            $$
+        \end{itemize}
+        Having proven both directions, we can conclude that the sets $A$ and $B$ are equal. We can now use this to prove the measurability of $A$ by proving the measurability of $B$ instead. However, in order to do this, we must first prove the measurability of the set
+        $$
+            \{\omega\in\Omega : |f_n(\omega)| < \frac{1}{k}\}
+        $$
+        for all $k \in \mathbb{N}$. We begin by noting that from the measurability of $f_n$ and the fact that $\frac{1}{k} \in \mathbb{R}$ it follows that
+        $$
+            \{\omega \in \Omega : f_n(\omega) < \frac{1}{k}\}
+        $$
+        and
+        $$
+            \{\omega \in \Omega : f_n(\omega) > -\frac{1}{k}\}
+        $$
+        are measurable sets. The intersection of these two sets is equal to
+        $$
+            \{\omega \in \Omega : |f_n(\omega)| < \frac{1}{k}\}.
+        $$
+        Since the intersection of two measurable sets must be measurable (as they form a $\sigma$-algebra), we find that this set is measurable. We now note that all countable intersections of measurable sets must be measurable. Thus the set
+        $$
+            \bigcap_{n = N}^\infty \{\omega\in\Omega : |f_n(\omega)| < \frac{1}{k}\}
+        $$
+        is measurable for all $N, k \in \mathbb{N}$. By the same countability argument for unions we find that the set
+        $$
+            \bigcup_{N=1}^\infty\bigcap_{n = N}^\infty \{\omega\in\Omega : |f_n(\omega)| < \frac{1}{k}\}
+        $$
+        and therefore also the set
+        $$
+            \bigcap_{k=1}^\infty\bigcup_{N=1}^\infty\bigcap_{n = N}^\infty \{\omega\in\Omega : |f_n(\omega)| < \frac{1}{k}\}
+        $$
+        must be measurable. Thus we conclude that $B$ is measurable and therefore $A$ must be measurable.
+        \item We begin this proof by proving the measurability of the functions $\limsup_{n\rightarrow\infty}f_n$ and $\liminf_{n\rightarrow\infty}f_n$. In order to do this we first prove the measurability of the functions $\sup_{n\geq k}f_n$ and $\inf_{n\geq k}f_n$ for all $k \in \mathbb{N}$. Let us take an arbitrary $t \in \mathbb{R}$. By the definition of the supremum and the infimum we find that
+        $$
+            \{\omega \in \Omega : \sup_{n \geq k}f_n(\omega) \leq t\} = \bigcap_{n=k}^\infty \{\omega \in \Omega : f_n(\omega) \leq t\}
+        $$
+        and
+        $$
+            \{\omega \in \Omega : \inf_{n \geq k}f_n(\omega) \leq t\} = \bigcup_{n=k}^\infty \{\omega \in \Omega : f_n(\omega) \leq t\}.
+        $$
+        Since $f_n$ is measurable for all $n$, we find that the above sets must be measurable. Since $t$ was arbitrary, we find that this holds for all $t \in \mathbb{R}$ and therefore $\sup_{n \geq k}f_n$ and $\inf_{n \geq k}f_n$ are measurable functions. We note that $k$ was arbitrary as well. Thus let us define the sequences $g_k = \infs_{n \geq k}f_n$ and $h_k = \sup_{n \geq k}f_n$. These are two sequences of measurable sets just like $f_n$ and thus we find that, setting $k = 1$, the functions
+        $$
+            \inf_kh_k
+        $$
+        and
+        $$
+            \sup_kg_k
+        $$
+        are measurable. Finally, we know that
+        $$
+            \limsup_nf_n = \inf_n\sup_{k\geq n}f_n
+        $$
+        and
+        $$
+            \liminf_nf_n = \sup_n\inf_{k \geq n}f_n,
+        $$
+        which implies the measurability of the functions $\limsup_nf_n$ and $\liminf_nf_n$. We can now use this result combined with the result from Problem 5.8 to prove the exercise. Using problem 5.8, and the measurability of the 0 function, we find that
+        $$
+            \{\omega \in \Omega : \liminf_nf_n(\omega) = 0\}
+        $$
+        and
+        $$
+            \{\omega \in \Omega : \limsup_nf_n(\omega) = 0\}
+        $$
+        are measurable sets. Finally, we know that
+        $$
+            \limsup_{n\rightarrow\infty}f_n(\omega) = \limsup_{n\rightarrow\infty}f_n(\omega) = \lim_{n\rightarrow\infty}f_n(\omega)
+        $$
+        for all $\omega$ where the limit exists. From this we find that
+        $$
+            \{\omega \in \Omega : \lim_{n\rightarrow\infty}f_n(\omega) = 0\} = \{\omega \in \Omega : \liminf_{n\rightarrow\infty}f_n(\omega) = 0\}\cap\{\omega \in \Omega : \limsup_{n\rightarrow\infty}f_n(\omega) = 0\}.
+        $$
+        Since the intersection of measurable sets must be measurable, we now conclude the proof.
+    \end{itemize}
+\end{solution}
+
 \begin{solution}[5.8]{Castella, A.}
     We begin the proof by showing that the set
     $$
