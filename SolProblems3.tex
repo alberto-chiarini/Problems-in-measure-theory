@@ -32,6 +32,195 @@
         Since $U$ was a $\mu$-null set, we conclude this direction of the proof.
     \end{itemize}
 \end{solution}
+
+\begin{solution}[4.8]{Beerens, L.}
+    Let $E\subset \mathbb{R}$ such that $\mathcal{L}^1(E)>0$. For all $i\in\mathbb{Z}$, let
+    $$
+        E_i = [i,i+1)\cap E.
+    $$
+    Since $(E_i)$ is a collection of disjoint measurable sets that covers $E$, we find that
+    $$
+        \mathcal{L}^1(E) = \sum_{i\in\mathbb{Z}}\mathcal{L}^1(E_i).
+    $$
+    Thus, there exists $i\in\mathbb{Z}$ such that $\mathcal{L}^1(E_i) >0$.
+    We shall now consider 
+    $$
+        A = E_i + i = \{a+i:a\in E_i\}.
+    $$
+    Notice that problem 4.10 implies that $A\subset[0,1]$ with 
+    $$
+        \mathcal{L}^1(A) = \mathcal{L}^1(E_i)>0.
+    $$ 
+    Let $V\subset[0,1]$ be a Vitali set, such that for every $a\in A$ the representative that is chosen for the coset $\mathbb{Q}+a$ lies within $A$. This can be done, since there is always at least one representative within $A$, which is the element $a$ itself.
+    
+    Let $B=A\cap V$. Let $(q_j)$ be a sequence of all rational numbers in $[-1,1]$. For all $k\in\mathbb{N}$, let
+    $$
+        B_k = B+ q_k = \{a+q_k:a\in B\}.
+    $$
+    We shall now prove three properties of $(B_k)$:
+    \begin{itemize}
+        \item A property of $V$ is that the difference between two elements of $V$ can never be a rational. Since $B\subset V$, we know that $B$ has the same property. Suppose there exist $j,k\in\mathbb{N}$, where $j\neq k$, such that $B_j\cap B_k\neq\varnothing$. Then let $a\in B_j\cap B_k$. This would imply that there exist $c,d\in B$ such that
+        $$
+            a = q_j + c = q_k + d.
+        $$
+        However, this would mean that $q_j-q_k = d-c\in\mathbb{Q}$, which is a contradiction. Therefore, all $B_k$ are disjoint. 
+        
+        \item Now suppose that 
+        $$
+            a\in\bigcup_{k=1}^\infty B_k.
+        $$
+        Then there exist $b\in B\subset[0,1]$ and $q\in\mathbb{Q}\cap[-1,1]$ such that $a=b+1$. Therefore $a\in[-1,2]$ and hence 
+        $$
+            \bigcup_{k=1}^\infty B_k \subset [-1,2].
+        $$
+        
+        \item Let $a\in A$ and consider the coset $\mathbb{Q} + a$. By construction of the particular Vitali set $V$, we know that there is a representative for $\mathbb{Q} + a$ within $B$. Let $b\in B$ be this representative. Then there exists $q\in\mathbb{Q}$ such that $q+b =a$. Since $a,b\in [0,1]$, we know that $q\in[-1,1]$. Therefore, there exists $k\in\mathbb{N}$ such that $q=q_k$ and thus $a\in B_k$. Hence 
+        $$
+            a\in\bigcup_{k=1}^\infty B_k
+        $$
+        and we can conclude that
+        $$
+            A\subset\bigcup_{k=1}^\infty B_k.
+        $$
+    \end{itemize}
+    Now, we assume that $B$ is measurable. Using the properties that we proved, we find that
+    $$
+        A\subset\bigcup_{k=1}^\infty B_k\subset[-1,2].
+    $$
+    Taking the Lebesgue measures of these sets and using that measures are monotonic and $\sigma$-additive, we find that
+    $$
+        \mathcal{L}^1(A) \leq \sum_{k=1}^\infty \mathcal{L}^1(B_k)\leq \mathcal{L}^1([-1,2]).
+    $$
+    By problem 4.10, we find that for all $k\in\mathbb{N}$ we have $\mathcal{L}^1(B_k) = \mathcal{L}^1(B)$. Therefore,
+    $$
+        \mathcal{L}^1(A) \leq \sum_{k=1}^\infty \mathcal{L}^1(B)\leq 3.
+    $$
+    Now we can differentiate between two cases. Either $\mathcal{L}^1(B)=0$ or $\mathcal{L}^1(B)>0$. In the first case, we find that $\mathcal{L}^1(A) \leq 0$, which is contradicts the fact that $\mathcal{L}^1(A) > 0$. In the second case,
+    $$
+        \sum_{k=1}^\infty \mathcal{L}^1(B)
+    $$
+    diverges towards infinity, which contradicts that
+    $$
+        \sum_{k=1}^\infty \mathcal{L}^1(B)\leq 3.
+    $$
+    Hence, we have a contradiction and we can conclude that $B$ is not measurable. Let $N = B + i$. Then $N\subset E_i\subset E$. However, problem 4.10 shows that the Lebesgue measure is translation invariant, which implies that $N$ is not measurable. Therefore, we have found a set $N\subset E$, which is not measurable.
+\end{solution}
+
+\begin{solution}[4.9]{Beerens, L.}
+    Let $C$ be the Cantor set.
+    \begin{itemize}
+        \item For any $A\subset\mathbb{R}$ and $\lambda, b\in\mathbb{R}$, we use the following notation:
+        $$
+            \lambda A = \{\lambda a : a\in A \},\hspace{20pt} A+b = \{a+b:a\in A\}.
+        $$
+        Let
+        $$
+            C_0 = [0,1]
+        $$
+        and for $n\in\mathbb{N}$
+        $$
+            C_n := \left(\frac{1}{3}C_{n-1}\right) \cup \left(\frac{1}{3}C_{n-1} + \frac{2}{3}\right).
+        $$
+        Then 
+        $$
+            C = \bigcap_{i=0}^\infty C_i.
+        $$
+        By this definition of the cantor set, it is clear that $C\subset[0,1]$. Hence, $C$ is bounded. 
+        
+        Note that $C_0$ is closed. Suppose for some $k\in\mathbb{N}$ that $C_{k-1}$ is closed. Then let $(x_n)$ be a sequence in $C_{k-1}/3$ and for all $n\in\mathbb{N}$ let $y_n=3\cdot x_n$. Then $(y_n)$ is a sequence in $C_{k-1}$ and therefore converges to some point $y\in C_{k-1}$. However, this implies that $x_n\rightarrow y/3\in C_{k-1}/3$. Thus, we find that $C_{k-1}/3$ is closed. Similarly, we can find that $C_{k-1}/3+2/3$ is closed too. By the definition of $C_k$, we now find that $C_k$ is closed too. By induction, all $C_n$ are closed. Therefore $C$ is the intersection of closed sets and hence is a closed set itself.
+        
+        Now we found that $C$ is a closed and bounded subset of $\mathbb{R}$ and hence is compact. 
+        
+        Note that $C$ and all $C_n$ are Borel sets.
+        Since $(C_n)$ is a decreasing sequence with $\mathcal{L}^1(C_0)=1<\infty$, we find that
+        $$
+            \mathcal{L}^1(C) = \lim_{n\rightarrow\infty}\mathcal{L}^1(C_n)
+        $$
+        Notice that for all $n\in\mathbb{N}$, we have that $\frac{1}{3}C_{n-1}$ and $\frac{1}{3}C_{n-1} + \frac{2}{3}$ are disjoint. Thus, we can use problems 3.19 and 3.20 to find that for all $n\in\mathbb{N}$ we have
+        \begin{align*}
+            \mathcal{L}^1 (C_n) &= \mathcal{L}^1\left(\frac{1}{3}C_{n-1}\right)+\mathcal{L}^1\left( \frac{1}{3}C_{n-1} + \frac{2}{3} \right)\\ 
+            &= \frac{1}{3}\mathcal{L}^1(C_{n-1}) + \mathcal{L}^1\left(\frac{1}{3}C_{n-1}\right)\\
+            &= \frac{2}{3}\mathcal{L}^1(C_{n-1})
+        \end{align*}
+        In addition, we have $\mathcal{L}^1(C_0)=1$. Therefore $\mathcal{L}^1(C_n) = \left(\frac{2}{3}\right)^{n}$. It follows that 
+        $$
+            \mathcal{L}^1(C)  = \lim_{n\rightarrow \infty}\mathcal{L}^1(C_n) = \lim_{n\rightarrow \infty}\left(\frac{2}{3}\right)^{n} = 0.
+        $$
+        We conclude that the Cantor set is compact and with zero Lebesgue measure.
+        
+        \item We will prove that
+        $$
+            \text{Card}(C) = \text{Card}([0,1]).
+        $$
+        Since $C\subset [0,1]$, we know that 
+        $$
+            \text{Card}(C) \leq \text{Card}([0,1]).
+        $$
+        Since the cardinality of the domain of a surjective function is greater than or equal to the cardinality of its codomain, we shall construct a surjective function $f:C\rightarrow[0,1]$. Let $x\in C$. Then there is a unique sequence $(a_j)$ in $\{ 0,2 \}$ such that 
+        $$
+            x = \sum_{j=1}^\infty \frac{a_j}{3^j}.
+        $$
+        Uniqueness follows from the fact that a tail of trailing 2's implies that there is an alternative expansion that does not repeat, but ends in a 1, which is a sequence that is not considered here. Other sequences are obviously unique.
+        
+        Let $g$ be a function that maps each element $x\in C$ to the corresponding sequence $g(x):=(a_j)$. Define $f:C\rightarrow [0,1]$ by
+        $$
+            f(x) = \sum_{j=1}^\infty\frac{g(x)_j}{2^{j+1}}.
+        $$
+        First, we shall prove that $f$ is surjective. Let $y\in[0,1]$ with binary expansion
+        $$
+            y=\sum_{j=1}^\infty \frac{b_j}{2^j},
+        $$
+        where $(b_j)$ is a sequence in $\{0,1\}$. Let
+        $$
+            x = \sum_{j=1}^\infty\frac{2\cdot b_j}{3^j}.
+        $$
+        Since $2\cdot(b_j)$ is a sequence in $\{0,2\}$, we find that $x\in C$. Clearly, $f(x)=y$. Thus, we find that $f$ is a surjection.
+        Thus we can finally conclude that 
+        $$
+            \text{Card}(C) = \text{Card}([0,1]).
+        $$
+        
+        \item First, we shall show that int $C=\varnothing$. Suppose that int $C\neq \varnothing$. Let $x\in\text{int}C$. Then for some $\delta>0$, we have 
+        $$
+            (x-\delta, x+\delta)\in C.
+        $$
+        We can pick $n\in \mathbb{N}$ such that
+        $$
+            \frac{1}{3^n}<2\delta.
+        $$
+        Then 
+        $$
+            (x-\delta, x+\delta)\in C\subset C_n.
+        $$
+        However, $C_n$  is a disjoint union of closed intervals of length $3^{-n}$, which leads us to a contradiction. Therefore, we can conclude that int $C =\varnothing$.
+        
+        Secondly, we shall show that $C$ is totally disconnected. Let $x,y\in C$ such that $x<y$. Let $k\in\mathbb{N}$ such that for $i=1,\hdots,k-1$ we have 
+        $$
+            g(x)_i = g(y)_i
+        $$ 
+        and 
+        $$
+            g(x)_k \neq g(y)_k.
+        $$ 
+        Then $g(x)_k=0$ and $g(y)_k=2$. For $i=1,\hdots,k-1$, let $a_i=g(x)_i$. Then 
+        $$
+            x\leq \sum_{j=1}^{k-1}\frac{a_j}{3^j} + 3^{-k} < \sum_{j=1}^{k-1}\frac{a_j}{3^j} + 3^{-k} + 3^{-k-1} < y.
+        $$
+        As the ternary representation of 
+        $$
+            \sum_{j=1}^{k-1}\frac{a_j}{3^j} + 3^{-k} + 3^{-k-1}
+        $$
+        ends in two 1's, it does not have an alternative representation without 1's. Thus we can conclude that $C$ is totally disconnected. 
+        
+        Finally, we shall show that $C$ has no isolated points. Let $x\in C$ and $\epsilon > 0$. Choose $n\in\mathbb{N}$ such that 
+        $$
+            \frac{1}{3^n}<\epsilon.
+        $$
+        Note that after each step from $C_k$ to $C_{k+1}$, the two boundary points of all the disjoint closed intervals that make up $C_k$ remain in the set. Therefore, these are also in $C$. We now consider $C_n$. We know that $C_n$ is the disjoint union of closed intervals of length $3^{-n}$. Thus, $x$ lies in such an interval. Let $[a,b]\subset C_n$ be this interval. Then $[a,b]\subset B(x,\epsilon)$. As noted before, we have $a,b\in C$. Since at least one of these two is unequal to $x$, we have found at least one element $y\in C\setminus\{x\}$ such that $|x-y|<\epsilon$. Thus we can conclude that $C$ has no isolated points.
+        
+    \end{itemize}
+\end{solution}
+
 \begin{solution}[4.10]{Castella, A.}
     We provide two proofs for the exercise. Let us first recall exercises 3.19 and 3.20. We will refer to the exercises in both proofs and use the result that we attained from them. The first proof is based on the current course content and uses Theorem 5.2.1 to extend the identities to the set of Lebesgue measurable sets. The second proof however, uses the Carath\'{e}odory extension theorem. We include this second proof in order to showcase an easier method of proving the identities. Additionally, the second proof only assumes that the identities hold on the half open intervals and does not need the full result of exercises 3.19 and 3.20, which prove the identities for all Borel measurable sets.
     \begin{itemize}

@@ -1,0 +1,33 @@
+\begin{problem}
+Prove that the Lebesgue measure on $(\bbR^n, \cB_{\bbR^n})$ is both inner regular and outer regular.
+\end{problem}
+
+\begin{problem}
+Let $\mu$ be an outer regular measure on $(\bbR^n, \cB_{\bbR^n})$. Suppose that $\mu$ is \textit{inner regular on open sets}, i.e. 
+$$
+    \mu(O) = \sup \left( \mu(K) ~ : ~ K \subset O, ~ K ~ \text{is compact} \right)
+$$
+for every open $O \in \cB_{\bbR^n}$. Show that $\mu$ is inner regular on every $B \in \cB_{\bbR^n}$ if $\mu(B) < \infty$.
+\end{problem}
+
+\begin{problem} Let $(\Omega, \cF, \mu)$ be a measure space.
+Let $(f_n)_{n\in\bbN}$ be a sequence of measurable functions such that converges pointwise a.e. to $f$ and for all $n\in\bbN$ $|f_n| \leq g$, where $g$ is integrable.
+ Prove that for any $\varepsilon > 0$ there exists $E\in\cF$ s.t. $\mu(E) < \varepsilon$ and $f_n \to f$ uniformly on $E^c$.
+\end{problem}
+
+\begin{problem} Let $(\Omega, \cF, \mu)$ be a $\sigma$-finite measure space.
+Suppose that $(f_n)_{n\in\bbN}$ is a sequence of measurable functions such that converges pointwise a.e. to $f$.
+Show that there exists a sequence of measurable sets $(A_k)$, such that $\mu \left( \bigcap_k A_k^c \right) = 0$ and such that for any $k\in\bbN$ $(f_n)$ converges uniformly to $f$ on $A_k$.
+\end{problem}
+
+\begin{problem} Let $(\Omega, \cF, \mu)$ be a finite measure space. Use Egorov's theorem (and not Dominated convergence) to show the following \emph{bounded convergence} theorem. 
+Suppose that $(f_n)_{n\in\bbN}$ is a sequence of measurable functions such that converges pointwise a.e. to $f$, and assume that there is $M>0$ such that $|f_n|\leq M$ for all $n\in \bbN$. Show that 
+\begin{equation*}
+    \int_\Omega|f_n-f|\,\De \mu \to 0.
+\end{equation*}
+    
+\end{problem}
+
+\begin{problem}
+Let $\cL_{(0, 1)}$ be a restriction of the Lebesgue measure on $\bbR$ to $(0, 1)$. Consider a function $f = \ind{(0,1)\cap \bbQ}$. Lusin's theorem asserts that for every $\varepsilon > 0$ there exists a compact set $K \subset (0, 1)$ and a continuous function $g$ such that $\cL_{(0, 1)} \left( (0, 1) \setminus K \right) < \varepsilon$ and $f = g$ on $K$. Find such $g$ and $K$.
+\end{problem}

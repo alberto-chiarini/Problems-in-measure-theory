@@ -64,6 +64,10 @@ Show that if $\int_{\Omega} f_1\,\De \mu = \infty$ the above conclusion might no
     \begin{equation*}
         \int_\bbR f(x)\,\De \cL^1(x) = \int_\bbR f(x+z)\,\De \cL^1(x).
     \end{equation*}
+Show that for all $\tau \neq 0$
+\begin{equation*}
+    \int_\bbR f\Big(\frac{x}{\tau}\Big)\,\De \cL^1(x) = |\tau| \int_\bbR f(x)\,\De \cL^1(x).
+\end{equation*}
 \end{problem}
 
 \begin{problem}
@@ -100,3 +104,72 @@ Show that if $\int_{\Omega} f_1\,\De \mu = \infty$ the above conclusion might no
     \end{equation*}
     Show that the result need not be true if $f$ is not assumed to be integrable on $\bbR$.
 \end{problem}
+
+\begin{problem} Let $\mu$ be a measure on $(\bbR,\cB_\bbR)$ concentrated on $\bbZ$. This means that $\mu(B) = \mu(B\cap \bbZ)$ for all $B\in \cB_\bbR$, or equivalently 
+$\mu = \sum_{n\in \bbZ}\mu_n \delta_n$, where $\mu_n$ are non-negative real numbers and $\delta_n$ is the Dirac measura at $n\in \bbZ$. Show that $\mu_n = \mu(\{n\})$ for all $n\in \bbZ$ and that  for all $f$ non-negative and measurable
+\begin{equation*}
+    \int_\bbR f\,\De \mu = \sum_{n\in \bbZ} \mu_n f(n).
+\end{equation*}
+\end{problem}
+
+\begin{problem}Consider the functions
+    \begin{equation*}
+        f_1(x) = \begin{cases}
+            +\infty, & \text{if } x=0,\\
+            \log|x|, & \text{if } 0<|x|<1,\\
+            0, & \text{if }|x|\geq 1,
+        \end{cases}
+        \qquad 
+        f_2(x) = \begin{cases}
+            \frac{1}{x^2-1}, & \text{if } |x|\neq 0,\\
+            20, & \text{if } |x| = 0,\\
+        \end{cases}
+        \qquad f_3(x)\equiv 1.
+    \end{equation*}
+    Determine if these functions are integrable on $(\bbR,\cB_\bbR)$ in each of the following two cases, and if possible compute the value of the integral
+    \begin{enumerate}[a)]
+        \item $m =\cL^1$ is the Lebesgue measure,
+        \item $m$ is defined by
+        \begin{equation*}
+            m(B) = \sum_{n\in \bbZ} \frac{1}{1+(n+1)^2} \delta_n(B)
+        \end{equation*}
+    \end{enumerate}
+    for all $B\in \cB_\bbR$.
+\end{problem}
+
+\begin{problem} Let $f,g: [0,1]\to\bbR$ be two non-negative integrable functions. Show that $fg$ is not necessarily integrable.
+\end{problem}
+
+\begin{problem} Let $f$ be integrable on $(\bbR,\cB_\bbR)$ with respect to the Lebesgue measure. 
+    \begin{enumerate}[a)]
+        \item Show that for all $\epsilon>0$ there exists a simple function $g = \sum_{i=1}^k a_i \indE{A_i}$ with $A_1,\ldots, A_k$ bounded intervals, such that $\int_\bbR |f-g|\,\De \cL<\epsilon$.
+        \item Show that all $\epsilon>0$ there exists a bounded continuous function $h$ such that $\int_\bbR |f-h|\,\De \cL<\epsilon$.
+    \end{enumerate}
+\end{problem}
+
+\begin{problem} Determine the limits of 
+    \begin{equation*}
+        \int_0^n \Big(1-\frac{x}{n}\Big)^n e^{x/2}\,\De x,\quad\text{and}\quad \int_0^n \Big(1+\frac{x}{n}\Big)^n e^{-2x}\,\De x.
+    \end{equation*}
+\end{problem}
+
+\begin{problem} Let $(\Omega,\cF,\mu)$ be a finite measure space. Let $(f_n)_n$ be a sequence of measurable functions such that $f_n\to f$ uniformly on $\Omega$. Show that if $f_n$ is integrable for all $n\in\bbN$ then $f$ is also integrable and
+    \begin{equation*}
+        \lim_{n\to\infty} \int_\Omega f_n \,\De \mu = \int_\Omega f \,\De \mu. 
+    \end{equation*}
+Recall that $f_n$ converges uniformly to $f$ on $\Omega$ if $\lim_{n\to\infty} \sup_{\omega\in \Omega} |f_n(\omega)-f(\omega)| = 0$.
+Show that the result is in general false if $\mu(\Omega) = \infty$.
+\end{problem}
+
+\begin{problem}
+    Let $f:\bbR\to \bbR$ be integrable with respect to the Lebesgue measure. Show that the map $x\mapsto \int_{[-\infty,x]} f\,\De \cL$ is continuous in $x\in \bbR$.
+\end{problem}
+
+% \begin{problem}
+%     Let $f_n(x) = a e^{-n a x} - b e^{-b n x}$ with $0<a<b$. Show that
+%     \begin{enumerate}
+%         \item $\sum_{n=1}^\infty \int_0^\infty |f_n|\,\De \cL = \infty$,
+%         \item $\sum_{n=1}^\infty \int_0^\infty f_n\,\De \cL = 0$,
+%         \item $\sum_{n=1}^\infty \int_0^\infty f_n\,\De \cL$ is summable and $\int_0^\infty \sum_{n=1}^\infty f_n \,\De \cL = \log(b/a)$.
+%     \end{enumerate}
+% \end{problem}

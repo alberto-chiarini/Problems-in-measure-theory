@@ -81,6 +81,7 @@
     $$ \mathbb{P}(A\cap B) = \mathbb{P}(A)\mathbb{P}(B) \ \forall A\in \sigma(X), B\in \sigma(Y).  $$
 \end{solution}
 
+
 \begin{solution}[5.4]{Castella, A.}
     \begin{itemize}
         \item We begin by showing that $\max(f,g)$ is measurable. It is clear that for all $t \in \mathbb{R}$ we have
@@ -307,4 +308,64 @@
         f = f^+ + f^-
     $$
     and therefore we can already conclude that $f$ is measurable. Thus we have proven both directions of the implication. 
+=======
+\end{solution}
+
+\begin{solution}[5.9]{Beerens, L.}
+    Let $(\Omega, \mathcal{F})$ be a measurable space and $(f_n)$ be a sequence of $\mathcal{F}$-measurable functions. 
+    We know that $\limsup_{n\rightarrow\infty}f_n$ and $\liminf_{n\rightarrow\infty}f_n$ are $\mathcal{F}$-measurable functions. For all $\omega\in\Omega$ we have 
+    $$
+        \lim_{n\rightarrow\infty}f_n(\omega) \text{ exists} \iff \limsup_{n\rightarrow\infty}f_n(\omega)=\liminf_{n\rightarrow\infty}f_n(\omega).
+    $$
+    From problem 5.8 it now follows that
+    $$
+        \{\omega \in \Omega : \lim_{n\rightarrow\infty}f_n(\omega) \text{ exists}\} = \{\omega \in \Omega :\limsup_{n\rightarrow\infty}f_n(\omega)=\liminf_{n\rightarrow\infty}f_n(\omega) \}
+    $$
+    is measurable.
+\end{solution}
+
+\begin{solution}[5.19]{Beerens, L.}
+    Suppose $f:\mathbb{R}\rightarrow\mathbb{R}$ is a non-negative function such that $\sqrt{f}$ is measurable. It is known that the product of two measurable functions is measurable. Therefore, $\sqrt{f}\cdot\sqrt{f}=f$ is measurable. Thus, there does not exist such non-measurable $f$. Since it was not proven in the notes that the product of two measurable functions is measurable, we shall give a quick proof here. 
+    
+    Let $f,g:(\Omega,\mathcal{F})\rightarrow \mathbb{R}$ be $\mathcal{F}$-measurable. First, we show that $f^2$ is measurable. For all $t\in\mathbb{R}$, we have
+    $$
+        \{ \omega\in\Omega:f^2(\omega)\geq t \} = \{ \omega\in\Omega:|f(\omega)|\geq\sqrt{\max\{0,t\}} \},
+    $$
+    which is measurable by the measurability of $|f|$. Therefore, $f^2$ is measurable. In the same way, the square of any measurable function is measurable, including $g^2$ and $(f+g)^2$. But $(f+g)^2 = f^2 + g^2 +2fg$, so $fg = 1/2 ((f+g)^2 - f^2 - g^2)$ and hence is measurable.
+\end{solution}
+
+\begin{solution}[5.20]{Beerens, L.}
+    Suppose $f:(\mathbb{R},\overline{\mathcal{B}}^\mathcal{L})\rightarrow(\mathbb{R},\mathcal{B}_\mathbb{R})$ is continuous almost everywhere. Then $f$ is continuous at $\omega$ for all $\omega\in\mathbb{R}\setminus U$ and not continuous at $\omega$ for all $\omega\in U$, for some set $U\in \overline{\mathcal{B}}^\mathcal{L}$ such that $\mathcal{L}^1(U)=0$. Let $A=\mathbb{R}\setminus U$. Then $f|_A$ is continuous and therefore measurable. Since $U$ has measure zero, we know that all its subsets are measurable, as the Lebesgue measure is a complete measure. Therefore, $f|_U$ is a measurable function. Now, we shall prove that $f$ is measurable. Let $B\in\mathcal{B}_\mathbb{R}$. Since $f|_A$ and $f|_U$ are measurable, we find that there exists $C,D\in\overline{\mathcal{B}}^\mathcal{L}$ such that
+    $$
+        f|_A^{-1}(B) = C\cap A
+    $$ 
+    and
+    $$
+        f|_U^{-1}(B) = D\cap U.
+    $$
+    Therefore,
+    $$
+        f^{-1}(B) = f|_A^{-1}(B) \cup f|_U^{-1}(B) = (C\cap A) \cup (D\cap U) \in \overline{\mathcal{B}}^\mathcal{L}.
+    $$
+    Thus, we can conclude that $f$ is Lebesgue measurable.
+\end{solution}
+
+\begin{solution}[5.21]{Beerens, L.}
+    Let $f:\mathbb{R}\rightarrow\mathbb{R}$ be a differentiable function. Then for all $a\in\mathbb{R}$, the limit 
+    $$
+        \lim_{h\rightarrow 0}\frac{f(a+h)-f(a)}{h}
+    $$
+    exists. This limit is $f'(a)$. Therefore, 
+    $$
+        \lim_{n\rightarrow\infty}n\left(f\left(a+\frac{1}{n}\right)-f(a)\right) = f'(a).
+    $$
+    For all $n\in\mathbb{N}$, let 
+    $$
+        f_n(x) = n\left(f\left(x+\frac{1}{n}\right)-f(x)\right).
+    $$
+    Then for all $a\in\mathbb{R}$ we have $\lim_{n\rightarrow\infty}f_n(a) = f'(a)$. Therefore $(f_n)$ converges to $f'$ pointwise and we can denote $f'$ by 
+    $$
+        f' = \limsup_{n\rightarrow\infty}f_n.
+    $$
+    Note that $f(x+1/n)$ is just a shifted version of $f$ and is therefore measurable. It is clear that $f_n$ is simply a linear combination of two measurable functions and hence is measurable itself. Thus, $(f_n)$ is a sequence of measurable functions and we can conclude that $f'$ is measurable.
 \end{solution}
