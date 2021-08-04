@@ -209,7 +209,7 @@ frametitleaboveskip=\dimexpr-\ht\strutbox\relax
     \vspace{1.5cm}
     {\huge\bfseries{\@title} \par}
     \vspace{2cm}
-    \includegraphics[width=0.25\textwidth]{figures/TUe_logo.png}
+    \includegraphics[width=0.25\textwidth]{Figures/TUe_logo.png}
     \vfill
     % Bottom of the page
     {\Large\itshape \@author \par}

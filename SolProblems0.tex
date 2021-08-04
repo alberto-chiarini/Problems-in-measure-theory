@@ -90,6 +90,70 @@ So, from this observation and the first part of the problem, one has that for an
 where the summation in the middle is with respect the new notion.
 \end{solution}
 
+\begin{solution}[1.11]{Vrămuleț, A. Ș.}\\
+Note for every $a_i > 0$, there exists $n \in \bbN$ such that
+\[a_i > \frac{1}{n}\] (choose $n := \max(\ceil{a_i} + 1, \ceil*{\frac{1}{a_i}} + 1)).$\\
+We can now define  	
+\[
+A := \{i \in I | a_i > 0 \} = \bigcup_{n \geq 1} J_n.
+\]
+Suppose for a contradiction $J_n$ is infinite. Since 
+\[
+\sum_{i \in I} a_i = \sum_{i \in I, a_i > 0} a_i,
+\]
+it suffices to show the supremum of (finite) partial sums on RHS is infinity (to derive a contradiction). \\
+Let $n \in \bbN$. Since $J_n$ is infinite, then for every $N_0 \in \bbN$ we may choose a finite subset $K \subset I$ with at least $N_0$ elements, such that
+\[
+\sum_{i \in K} a_i > \frac{N_0}{n}. 
+\]
+Since the set of partial sums is unbounded above, then it does not admit a finite supremum. Hence the supremum is $\infty$ (over the extended real line).\\
+This contradicts that the arbitrary indexed sum is finite. So each $J_n$ is finite.\\
+Finally, since countable union of finite sets is countable, we conclude $A$ is countable.
+
+\end{solution}
+
 \begin{solution}[1.12]{Bakker, A.}
 	Proof by contradiction. Suppose $\sum_{i\in I}a_i < \infty$, then by Problem 1.11 we have that the set $I$ contains at most a countable number of elements $i$ with $a_i$ positive. This, together with the fact that $a_i>0$ for all $i\in I$, contradicts that there are uncountable many elements in $I$. Hence  $\sum_{i\in I}a_i = \infty$.
+\end{solution}
+
+\begin{solution}[1.13]{Vrămuleț, A. Ș}\\
+	Note by the previous exercise that since the indexed sum over $\Omega$ is finite (here, 1), then there are countably many positive (and nonzero) $p_{\omega}$.\\
+	Suffices to show $\bbP(\emptyset) = 0$ and that $\bbP$ is countably additive. 
+	Then 
+	\[
+	\bbP(\emptyset) = \sum_{\omega \in \emptyset} p_w = 0.
+	\]
+	Now let $(A_i)$ be a sequence of pairwise disjoint subsets of $\Omega$. We show 
+	\[
+	\bbP( \bigcup_{i = 1}^{\infty} A_i) = \sum_{i = 1}^\infty \bbP(A_i).
+	 \]
+   
+   Let $A := \bigcup_{i = 1}^{\infty} A_i$. Since the sequence of sets is pairwise disjoint, then
+   \begin{align*}
+   \bbP(A) &= \sum_{\omega \in A} p_w \\
+   			&= \sup\{\sum_{\omega \in A_0} p_w | \text{ finite} A_0 \subset A \} \\
+   			&= \sup\{\sum_{i = 1}^n \sum_{\omega \in A_i} p_w | \text{ finite} A_i \subset A_0 \subset A  \} \quad \text{(after relabelling)}   \\
+   			&= \sum_{i = 1}^{\infty} \sum_{\omega \in A_i} p_w \quad \text{(definition of series as limit of the (increasing) sequence of partial sums)} \\
+   			&= \sum_{i = 1}^{\infty} \bbP(A_i).
+   \end{align*}
+   Note the suprema above are finite, since the indexed sum over $\Omega$ is 1 and we are summing subsets of omega. Hence $\bbP$ is a measure on $(\Omega, 2^{\Omega})$.
+\end{solution}
+
+\begin{solution}[1.14]{Vrămuleț, A. Ș}\\
+Let $x \in A$. Then $x$ is an interior point of A. So there exists $r > 0$ such that 
+\[
+B(x,r) \subset A, \text{ where } B(x,r) = (x-r,x+r).
+\]
+Since $\bbQ$ is dense in $\bbR$, then there exist rationals $p$ and $q$ such that
+\[
+p \in (x-r,x) \text{ and } q \in (x,x+p).
+\]
+So $(p,q) \subset (x-r,x+r) \subset A$ and $x \in (p,q)$. Note there are countably many such intervals (since $\bbQ$ is countable, so is $\bbQ \times \bbQ$). So A is the union of countably many intervals with rational endpoints of the form $(p,q)$.
+\end{solution}
+
+\begin{solution}[1.15]{Vrămuleț, A. Ș}\\
+Note from before that an indexed sum of positive reals is finite if and only if there are countably many nonzero reals (in the sum). So in the case that at least one of $I$ and $J$ is uncountable, we actually have countable sums. \\
+
+\noindent So the sums can be split as uncountable sum of zeros plus countable sum of positive reals. So in all cases the sums reduce to summing over countable sets.
+It's known that the result holds (by considering (absolute) convergence of the series)). Note the result also holds when the series converges to $\infty$ (over the extended real line).
 \end{solution}
